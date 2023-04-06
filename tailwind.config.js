@@ -9,7 +9,15 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      display: ["Inter", "sans-serif"],
+    },
+    extend: {
+      backgroundImage: {
+        Light: "url('./assets/img/Light.svg')",
+        Dark: "url('/img/footer-texture.png')",
+      },
+    },
   },
   plugins: [],
 };

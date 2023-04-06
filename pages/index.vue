@@ -1,4 +1,5 @@
 <template>
-  <navbar></navbar>
-  <h1>INI index</h1>
+  <div class="w-screen h-screen -mt-9 bg-Light">
+    <navbar></navbar>
+  </div>
 </template>

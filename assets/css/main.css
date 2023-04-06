@@ -7,9 +7,13 @@
 @tailwind utilities;
 /* container */
 
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+* {
+  font-family: "Inter", sans-serif;
+}
 @layer components {
   .container {
-    @apply max-w-5xl py-8 mx-auto;
+    @apply max-w-3xl py-8 mx-auto;
   }
 }
 /* hamburger */
