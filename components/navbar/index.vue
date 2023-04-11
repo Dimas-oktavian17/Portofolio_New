@@ -1,34 +1,5 @@
-<script>
-// import { reactive, ref } from "nuxt/dist/app/compat/capi";
-import { NuxtImage, useImage } from "@nuxt/image";
-
-// import figma from "../../assets/img/figma.svg";
-// import instagram from "../../assets/img/insta.svg";
-// import sun from "../../assets/img/sun.svg";
-// import moon from "../../assets/img/moon.svg";
-// import twitter from "../../assets/img/twitterr.svg";
-// const medsos = reactive(
-//   {
-//     title: "Figma",
-//     picture: figma,
-//   },
-//   {
-//     title: "Twitter",
-//     picture: twitter,
-//   },
-//   {
-//     title: "Instagram",
-//     picture: instagram,
-//   }
-// );
-// let navOpen = true;
-export default {
-  data() {
-    return {
-      navOpen: false,
-    };
-  },
-};
+<script setup>
+const navOpen = ref(true);
 </script>
 <template>
   <header class="container" id="beranda">
@@ -219,7 +190,6 @@ export default {
             </div>
             <!-- end -->
           </div>
-          <!-- @click="navOpen = !navOpen" -->
           <button
             @click="navOpen = !navOpen"
             data-collapse-toggle="mobile-menu-3"
@@ -232,7 +202,7 @@ export default {
             <div class="flex flex-col items-end pr-4">
               <p
                 :class="{
-                  ' origin-bottom-left rotate-[0deg] bg-slate-300 transition duration-1000 ease-in-out w-[30px] h-2 rounded-lg':
+                  ' origin-bottom-left rotate-0 bg-slate-300 transition duration-1000 ease-in-out w-[30px] h-2 rounded-lg':
                     navOpen,
                 }"
                 class="origin-bottom-left rotate-[45deg] w-[40px] h-2 bg-slate-300 rounded-lg duration-1000 ease-in-out"
@@ -240,14 +210,14 @@ export default {
 
               <p
                 :class="{
-                  ' origin-top-right rotate-[0deg] w-4 h-2 my-1 transition duration-1000 ease-in-out rounded-lg bg-slate-300':
+                  ' origin-top-right rotate-0 w-4 h-2 my-1 transition duration-1000 ease-in-out rounded-lg bg-slate-300':
                     navOpen,
                 }"
                 class="w-4 h-2 my-1 transition duration-1000 ease-in-out origin-right scale-100 rotate-45 rounded-lg bg-slate-300"
               ></p>
               <p
                 :class="{
-                  'rotate-45 origin-top-right w-2 h-2 transition duration-1000 ease-in-out rounded-lg bg-slate-300':
+                  'rotate-0 origin-top-right w-2 h-2 transition duration-1000 ease-in-out rounded-lg bg-slate-300':
                     navOpen,
                 }"
                 class="rotate-[45deg] origin-top-right w-[30px] h-2 transition duration-1000 ease-in-out rounded-lg bg-slate-300"
@@ -256,7 +226,7 @@ export default {
           </button>
         </div>
         <div
-          :class="{ navOpen: ' block' }"
+          :class="{ hidden: navOpen }"
           class="items-center justify-between w-full backdrop-blur-md md:backdrop-blur-0 md:flex md:w-auto md:order-1"
           id="mobile-menu-3"
         >
