@@ -3,14 +3,14 @@ const navOpen = ref(true);
 </script>
 <template>
   <header class="container" id="beranda">
-    <nav class="px-2 pt-8 mb-10">
+    <nav class="px-2 lg:pt-8 mb-10">
       <div
         id="sidemenu"
         class="backdrop-blur-lg text-focus-in fixed container bg-[#ffffff33] w-[95%] z-[999] mx-auto flex flex-wrap items-center justify-between rounded-xl lg:w-[98%]"
       >
         <NuxtLink to="./" class="flex ml-4 group">
           <svg
-            class="w-[70px] h-[70px]"
+            class="w-[70px] h-[20px]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 3508 2480"
             xmlns:v="https://vecta.io/nano"
