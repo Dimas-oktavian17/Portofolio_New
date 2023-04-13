@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
+  modules: ["@nuxtjs/color-mode"],
+  colorMode: {
+    classSuffix: "",
+  },
   css: ["~/assets/css/style.css"],
-  // modules: ["@nuxt/image"],  // modules: ["@nuxt/image"],
 });

@@ -1,6 +1,6 @@
 <template>
   <!-- wrapper  -->
-  <div class="flex flex-col items-start p-4 gap-4">
+  <div class="flex flex-col items-start gap-4 p-4 transition-all duration-500">
     <!-- pict profile -->
     <div
       class="flex flex-row items-center gap-[.938rem] pb-[.75rem] w-[15.563rem] h-[6.375rem]"
@@ -10,7 +10,9 @@
         <img src="../../assets/img/Hexagon.svg" alt="Profile" />
       </picture>
       <div class="">
-        <h1 class="text-lg text-black font-medium">Dimas Okta</h1>
+        <h1 class="text-lg font-medium text-black dark:text-white">
+          Dimas Okta
+        </h1>
         <!-- wrapper -->
         <div class="flex flex-row items-center gap-1">
           <p class="text-base font-semibold text-[#4A576F] opacity-70">
@@ -34,7 +36,7 @@
     </div>
     <!-- deskripsi -->
     <p
-      class="font-normal text-[20px] leading-8 tracking-[-1.7%] text-[#22242C]"
+      class="font-normal text-[20px] dark:text-[#ECEDEE] leading-8 tracking-[-1.7%] text-[#22242C]"
     >
       A design wizard voyaging into the metaverse. I tell the story through my
       design and illustrations. I spent most of my time designing for brands and
