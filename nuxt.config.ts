@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/color-mode", "@nuxt/image-edge"],
-  target: "public",
+  modules: [
+    "@nuxtjs/color-mode",
+    "@nuxt/image-edge",
+    "nuxt-icons",
+    // "nuxt-icon",
+  ],
+  // target: "public",
   buildModules: ["@nuxt/image"],
   colorMode: {
     classSuffix: "",
