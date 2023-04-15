@@ -1,6 +1,8 @@
 <template>
   <!-- wrapper  -->
-  <div class="flex flex-col items-start gap-4 p-4 transition-all duration-500">
+  <div
+    class="flex flex-col items-start gap-4 p-4 transition-all duration-500 lg:py-16"
+  >
     <!-- pict profile -->
     <div
       class="flex flex-row items-center gap-[.938rem] pb-[.75rem] w-[15.563rem] h-[6.375rem]"
@@ -43,8 +45,8 @@
       creating open-source design resources.
     </p>
     <!-- footer text -->
-    <div class="flex flex-row items-start gap-[9px] w-[344px] h-[24px]">
-      <h1 class="font-medium text-lg text-[#4A576F] opacity-70 pr-2 lg:pr-0">
+    <div class="flex flex-row items-start gap-[9px] lg:w-[344px] h-[24px]">
+      <h1 class="font-medium text-lg text-[#4A576F] opacity-70 lg:pr-0">
         Building what I love at
         <span
           class="opacity-100 font-semibold text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#4AB1F1] to-[#FF7C51]"
