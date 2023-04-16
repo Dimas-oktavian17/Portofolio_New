@@ -4,36 +4,36 @@ const title = ref("FEATURED PROJECTS");
 const workOne = reactive([
   {
     style: "w-24 h-24 rounded-xl lg:w-auto lg:h-auto",
-    picture: "/oval.png",
+    picture: "/v1681651592/portofolio/oval.png",
     title: "Overlayz",
     deskripsi: "My Dream Studio",
   },
   {
     style: "rounded-xl ",
-    picture: "/3dicons.png",
+    picture: "/v1681651592/portofolio/3dicons.png",
     title: "3dicons",
     deskripsi: "Beautifully crafted open source 3D icons",
   },
   {
     style: " rounded-xl",
-    picture: "/V5.png",
+    picture: "/v1681652146/portofolio/V5.png",
     title: "V5 UI Kit",
     deskripsi: "Open-source Figma UI Kit made for this website",
   },
 ]);
 const workTwo = reactive([
   {
-    picture: "/love.png",
+    picture: "/v1681651592/portofolio/love.png",
     title: "uiLogos",
     deskripsi: "Add dummby logos to your design quickly",
   },
   {
-    picture: "/uihues.png",
+    picture: "/v1681651592/portofolio/uihues.png",
     title: "UIHues",
     deskripsi: "Generate color palattes directly on figma",
   },
   {
-    picture: "/croods.png",
+    picture: "/v1681651592/portofolio/croods.png",
     title: "croods",
     deskripsi: "illustration system made for blush.design",
   },
@@ -41,7 +41,7 @@ const workTwo = reactive([
 </script>
 
 <template>
-  <div class="container overflow-x-hidden lg:overflow-auto">
+  <div class="container pb-8 overflow-x-hidden lg:overflow-auto">
     <!-- wrapper deskripsi -->
     <div class="pt-8 pb-4">
       <h1
@@ -74,7 +74,9 @@ const workTwo = reactive([
               :src="projectFirst.picture"
             />
           </div>
-          <div class="flex flex-col items-start gap-[2px] pl-3 pr-8 lg:p-0">
+          <div
+            class="flex flex-col items-start gap-[2px] pl-3 pr-8 lg:pt-2 lg:px-0"
+          >
             <h1 class="font-bold text-base text-[#22242C] dark:text-[#ECEDEE]">
               {{ projectFirst.title }}
             </h1>

@@ -4,17 +4,17 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/image-edge",
     "nuxt-icons",
-    // "nuxt-icon",
+    "nuxt-icon",
   ],
   // target: "public",
-  buildModules: ["@nuxt/image"],
+  // buildModules: ["@nuxt/image"],
   colorMode: {
     classSuffix: "",
   },
   css: ["~/assets/css/style.css"],
   image: {
     cloudinary: {
-      baseURL: "https://res.cloudinary.com/duvpel2np/image/upload/v1681488442/",
+      baseURL: "https://res.cloudinary.com/duvpel2np/image/upload/",
     },
   },
 });

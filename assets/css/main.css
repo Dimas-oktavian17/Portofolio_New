@@ -11,6 +11,7 @@
 * {
   font-family: "Inter", sans-serif;
 }
+
 @layer components {
   .container {
     @apply max-w-3xl py-8 mx-auto;
