@@ -57,7 +57,10 @@ const nav = reactive([
                 <!-- linkendin -->
                 <div v-for="icons in medsosIcon" :key="icons" class="ml-2">
                   <NuxtLink class="group" :to="icons.url" target="_blank">
-                    <nuxt-icon :name="icons.icon" filled />
+                    <nuxt-icon
+                      :name="icons.icon"
+                      class="transition-all duration-500 group-hover:rotate-12 dark:text-white"
+                    />
                   </NuxtLink>
                 </div>
               </div>
@@ -70,9 +73,15 @@ const nav = reactive([
                 class="pr-4 group"
               >
                 <!-- moon -->
-                <nuxt-icon name="moon" class="dark:block" />
+                <nuxt-icon
+                  name="moon"
+                  class="hidden transition-all duration-500 dark:block group-hover:rotate-12 dark:text-white"
+                />
                 <!-- sun -->
-                <nuxt-icon name="sun" class="dark:hidden" />
+                <nuxt-icon
+                  name="sun"
+                  class="transition-all duration-500 dark:hidden group-hover:rotate-12"
+                />
               </button>
             </div>
             <!-- end -->

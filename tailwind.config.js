@@ -17,6 +17,11 @@ module.exports = {
       display: ["Inter", "sans-serif"],
     },
     extend: {
+      cursor: {
+        item: "url(https://api.iconify.design/solar:programming-broken.svg?color=%23000000), item",
+        deafult:
+          "url(https://api.iconify.design/solar:programming-broken.svg?color=%23ffffff), default",
+      },
       backgroundImage: {
         Light: "url('./assets/img/Light.svg')",
         lightMb: "url('./assets/img/Lightmb.svg')",
