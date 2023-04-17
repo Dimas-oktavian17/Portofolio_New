@@ -23,7 +23,11 @@ module.exports = {
           "url(https://api.iconify.design/solar:programming-broken.svg?color=%23ffffff), default",
       },
       backgroundImage: {
-        Light: "url('./assets/img/Light.svg')",
+        start: "url('./assets/img/startLight.svg')",
+        end: "url('./assets/img/endLight.svg')",
+        startDark: "url('./assets/img/startDark.svg')",
+        endDark: "url('./assets/img/endDark.svg')",
+        Light: "url('./assets/img/BG.svg')",
         lightMb: "url('./assets/img/Lightmb.svg')",
         Dark: "url('./assets/img/Dark.svg')",
         darkMb: "url('./assets/img/Darkmb.svg')",
