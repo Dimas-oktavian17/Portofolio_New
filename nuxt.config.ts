@@ -6,8 +6,6 @@ export default defineNuxtConfig({
     "nuxt-icons",
     "nuxt-icon",
   ],
-  // target: "public",
-  // buildModules: ["@nuxt/image"],
   colorMode: {
     classSuffix: "",
   },
