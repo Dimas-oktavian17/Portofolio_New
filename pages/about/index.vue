@@ -1,7 +1,11 @@
 <template>oke</template>
 
 <script>
-export default {};
+definePageMeta({
+  pageTransition: {
+    name: "rotate",
+  },
+});
 </script>
 
 <style></style>
