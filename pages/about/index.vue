@@ -1,11 +1,17 @@
-<template>oke</template>
+<script setup></script>
 
-<script>
-definePageMeta({
-  pageTransition: {
-    name: "rotate",
-  },
-});
-</script>
-
-<style></style>
+<template>
+  <div
+    class="scrolling transition-all duration-500 bg-top bg-no-repeat bg-cover bg-lightMb dark:bg-darkMb lg:dark:bg-Dark lg:bg-Light"
+  >
+    <navbar></navbar>
+    <main class="container">
+      <aboutme></aboutme>
+      <artikel></artikel>
+      <accordion></accordion>
+      <profil></profil>
+      <forms></forms>
+      <footerr></footerr>
+    </main>
+  </div>
+</template>

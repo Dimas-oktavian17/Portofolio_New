@@ -1,11 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    pageTransition: {
+      name: "rotate",
+      mode: "out-in",
+    },
+  },
   modules: [
+    "nuxt-swiper",
     "@nuxtjs/color-mode",
     "@nuxt/image-edge",
     "nuxt-icons",
     "nuxt-icon",
   ],
+  swiper: {
+    // Swiper options
+    //----------------------
+    // prefix: 'Swiper',
+    // styleLang: 'css',
+    // modules: ["navigation", "SwiperAutoplay", "pagination"], // all modules are imported by default
+  },
   colorMode: {
     classSuffix: "",
   },
