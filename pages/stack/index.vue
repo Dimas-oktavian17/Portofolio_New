@@ -1,7 +1,13 @@
-<template>ede</template>
+<template>
+  <div class="1">stacj</div>
+</template>
 
 <script>
-export default {};
+definePageMeta({
+  pageTransition: {
+    name: "rotate",
+  },
+});
 </script>
 
 <style></style>

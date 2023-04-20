@@ -19,11 +19,11 @@ const medsosIcon = reactive([
   },
 ]);
 const nav = reactive([
-  { link: "./about", title: "about" },
-  { link: "./work", title: "work" },
-  { link: "./story", title: "story" },
-  { link: "./timeline", title: "timeline" },
-  { link: "./stack", title: "stack" },
+  { link: "/about", title: "about" },
+  { link: "/work", title: "work" },
+  { link: "/story", title: "story" },
+  { link: "/timeline", title: "timeline" },
+  { link: "/stack", title: "stack" },
 ]);
 </script>
 <template>
@@ -31,7 +31,7 @@ const nav = reactive([
     <nav class="px-2 mb-10 lg:pt-8">
       <div
         id="sidemenu"
-        class="transition-all duration-500 backdrop-blur-lg text-focus-in fixed container dark:bg-[#1c162f33] bg-[#ffffff33] w-[95%] z-[999] flex flex-wrap items-center justify-between rounded-xl lg:w-[98%]"
+        class="transition-all duration-500 backdrop-blur-lg fixed container dark:bg-[#1c162f33] bg-[#ffffff33] w-[95%] z-[999] flex flex-wrap items-center justify-between rounded-xl lg:w-[98%]"
       >
         <NuxtLink
           to="./"
@@ -144,3 +144,4 @@ const nav = reactive([
     </nav>
   </header>
 </template>
+<style></style>
