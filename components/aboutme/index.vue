@@ -1,7 +1,7 @@
 <script setup>
 const title = ref(`About`);
 const deskripsi = ref(
-  `It's not that difficult to find my contact information by searching realvjy. Know little more about me here`
+  `It's notee that difficult to find my contact information by searching realvjy. Know little more about me here`
 );
 // import {
 //   Scene,
