@@ -1,43 +1,110 @@
 <script setup>
-const open = ref(false);
-const slider = reactive([
-  {
-    picture: "/v1681990026/portofolio/PPDB.png",
-    title: "Website PPDB Kawung 1",
-    deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem.`,
-    read: "Get Started",
-  },
-  {
-    picture: "/v1681990026/portofolio/mountain.png",
-    title: "Volcano",
-    deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem.`,
-    read: "Get Started",
-  },
-  {
-    picture: "/v1681990025/portofolio/vue.png",
-    title: "MSTSKP Landing Page",
-    deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem.`,
-    read: "Get Started",
-  },
-  {
-    picture: "/v1681990026/portofolio/shorlink.png",
-    title: "Short Url",
-    deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem.`,
-    read: "Get Started",
-  },
-]);
+// modal
+import { ModalsContainer, VueFinalModal } from "vue-final-modal";
+const getInitialValues = () => ({
+  teleportTo: "body",
+  modelValue: false,
+  displayDirective: "if",
+  hideOverlay: false,
+  overlayTransition: "vfm-fade",
+  contentTransition: "vfm-fade",
+  clickToClose: true,
+  escToClose: true,
+  background: "non-interactive",
+  lockScroll: true,
+  swipeToClose: "none",
+});
+const getInitialValues2 = () => ({
+  teleportTo: "body",
+  modelValue: false,
+  displayDirective: "if",
+  hideOverlay: false,
+  overlayTransition: "vfm-fade",
+  contentTransition: "vfm-fade",
+  clickToClose: true,
+  escToClose: true,
+  background: "non-interactive",
+  lockScroll: true,
+  swipeToClose: "none",
+});
+const getInitialValues3 = () => ({
+  teleportTo: "body",
+  modelValue: false,
+  displayDirective: "if",
+  hideOverlay: false,
+  overlayTransition: "vfm-fade",
+  contentTransition: "vfm-fade",
+  clickToClose: true,
+  escToClose: true,
+  background: "non-interactive",
+  lockScroll: true,
+  swipeToClose: "none",
+});
+const getInitialValues4 = () => ({
+  teleportTo: "body",
+  modelValue: false,
+  displayDirective: "if",
+  hideOverlay: false,
+  overlayTransition: "vfm-fade",
+  contentTransition: "vfm-fade",
+  clickToClose: true,
+  escToClose: true,
+  background: "non-interactive",
+  lockScroll: true,
+  swipeToClose: "none",
+});
+const options = ref(getInitialValues());
+function reset() {
+  options.value = getInitialValues();
+}
+const options2 = ref(getInitialValues2());
+function reset2() {
+  options2.value = getInitialValues2();
+}
+const options3 = ref(getInitialValues3());
+function reset3() {
+  options3.value = getInitialValues3();
+}
+const options4 = ref(getInitialValues4());
+function reset4() {
+  options4.value = getInitialValues4();
+}
+// slider & modal data
+const one = reactive({
+  picture: "/v1681990026/portofolio/PPDB.png",
+  title: `Website PPDB Kawung 1`,
+  read: "Get Started",
+  modal: `Merupakan website pendaftaran peserta baru, bagi siswa yang ingin melanjutkan pendidikan di SMK Kawung 1 Surabaya.
+  Website ini saya buat atas permintaan sekolah saya, dan website ini saya buat menggunakan js,tailwindcss dll.
+  Pada project ini saya bertugas fokus pada tampilan front-end saja, bagian backend'nya telah dikerjakan sendiri oleh tim IT disekolah.
+  `,
+  link: `https://psb.smkkawung1sby.sch.id/`,
+});
+const two = reactive({
+  picture: "/v1681990026/portofolio/mountain.png",
+  title: `Volcano`,
+  read: "Get Started",
+  modal: `Merupakan website pencarian gunung berapi yang ada di Indonesia, website ini dibuat menggunakan bantuan API dari Yogi Saputro.
+  Website ini memiliki beberapa fitur seperti search, filter dan clear. Untuk info lebih lanjut kalian bisa mencoba'nya sendiri.`,
+  github: `https://github.com/Dimas-oktavian17/Volcano-Project.git`,
+  link: `https://volcano-project-pi.vercel.app/`,
+});
+const three = reactive({
+  picture: "/v1681990025/portofolio/vue.png",
+  title: `MSTSKP Landing Page`,
+  read: "Get Started",
+  modal: `Merupakan sebuah landing page sedherhana yang dibuat melalui slincing figma dari array id, website ini dibuat dengan vue js 3 serta berbagai macam libray animation`,
+  github: `https://github.com/Dimas-oktavian17/Mtskp--arrayid.git`,
+  link: `//mstskp-id.vercel.app/`,
+});
+const four = reactive({
+  picture: "/v1681990026/portofolio/shorlink.png",
+  title: `Short Url`,
+  read: "Get Started",
+  modal: `Merupakan website yang saya buat berdasarkan tantangan dari front-end mentor, website ini memiliki fungsi untuk mengkonversi link yang panjang menjadi lebih ringkas.`,
+  link: `https://url-shortening-api-master-vite-project.vercel.app/`,
+  github: `https://github.com/Dimas-oktavian17/url-shortening-api-master.git`,
+});
 </script>
 <template>
   <swiper
@@ -53,8 +120,6 @@ optio, eaque rerum! Provident similique accusantium nemo autem.`,
   >
     <swiper-slide
       class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
-      v-for="item in slider"
-      :key="item"
     >
       <div>
         <picture>
@@ -63,40 +128,228 @@ optio, eaque rerum! Provident similique accusantium nemo autem.`,
             loading="lazy"
             format="webp"
             provider="cloudinary"
-            :src="item.picture"
+            :src="one.picture"
           />
         </picture>
         <h1
-          class="pt-16 font-bold text-center text-3xl text-primary dark:text-secondary"
+          class="pt-16 text-3xl font-bold text-center text-primary dark:text-secondary"
         >
-          {{ item.title }}
+          {{ one.title }}
         </h1>
       </div>
-
       <button
-        @click="open = true"
-        class="transition-all duration-500 group text-center py-4 hover:opacity-70 text-primary dark:text-secondary text-lg"
+        @click="options.modelValue = true"
+        class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
       >
-        {{ item.read }}
+        {{ one.read }}
         <Icon
           name="uil:arrow-right"
-          class="group-hover:ml-3 transition-all duration-500"
+          class="transition-all duration-500 group-hover:ml-3"
         />
       </button>
-      <div
-        v-if="open"
-        class="bg-white dark:bg-black fixed z-[999] h-[30rem] w-[47rem] top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"
+      <!-- modal -->
+      <VueFinalModal
+        v-model="options.modelValue"
+        :teleport-to="options.teleportTo"
+        :display-directive="options.displayDirective"
+        :hide-overlay="options.hideOverlay"
+        :overlay-transition="options.overlayTransition"
+        :content-transition="options.contentTransition"
+        :click-to-close="options.clickToClose"
+        :esc-to-close="options.escToClose"
+        :background="options.background"
+        :lock-scroll="options.lockScroll"
+        :swipe-to-close="options.swipeToClose"
+        class="flex items-center justify-center"
+        content-class="max-w-xl p-4 mx-4 space-y-2 bg-white border rounded-lg dark:bg-gray-900 dark:border-gray-700"
       >
-        <p class="text-base text-primary/70 dark:text-secondary/70">
-          {{ item.deskripsi }}
+        <h1 class="text-xl">{{ one.title }}</h1>
+        <p>{{ one.modal }}</p>
+        <button @click="options.modelValue = false">Close</button>
+      </VueFinalModal>
+      <ModalsContainer />
+    </swiper-slide>
+    <!-- 2 -->
+    <swiper-slide
+      class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+    >
+      <div>
+        <picture>
+          <nuxt-img
+            class="rounded-2xl"
+            loading="lazy"
+            format="webp"
+            provider="cloudinary"
+            :src="two.picture"
+          />
+        </picture>
+        <h1
+          class="pt-16 text-3xl font-bold text-center text-primary dark:text-secondary"
+        >
+          {{ two.title }}
+        </h1>
+      </div>
+      <button
+        @click="options2.modelValue = true"
+        class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+      >
+        {{ two.read }}
+        <Icon
+          name="uil:arrow-right"
+          class="transition-all duration-500 group-hover:ml-3"
+        />
+      </button>
+      <!-- modal -->
+      <VueFinalModal
+        v-model="options2.modelValue"
+        :teleport-to="options2.teleportTo"
+        :display-directive="options2.displayDirective"
+        :hide-overlay="options2.hideOverlay"
+        :overlay-transition="options2.overlayTransition"
+        :content-transition="options2.contentTransition"
+        :click-to-close="options2.clickToClose"
+        :esc-to-close="options2.escToClose"
+        :background="options2.background"
+        :lock-scroll="options2.lockScroll"
+        :swipe-to-close="options2.swipeToClose"
+        class="flex items-center justify-center"
+        content-class="max-w-xl p-4 mx-4 space-y-2 bg-white border rounded-lg dark:bg-gray-900 dark:border-gray-700"
+      >
+        <h1 class="text-xl">{{ two.title }}</h1>
+        <p>{{ two.modal }}</p>
+        <button @click="options2.modelValue = false">Close</button>
+      </VueFinalModal>
+      <ModalsContainer />
+    </swiper-slide>
+    <!-- tiga -->
+    <swiper-slide
+      class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+    >
+      <div>
+        <picture>
+          <nuxt-img
+            class="rounded-2xl"
+            loading="lazy"
+            format="webp"
+            provider="cloudinary"
+            :src="three.picture"
+          />
+        </picture>
+        <h1
+          class="pt-16 text-3xl font-bold text-center text-primary dark:text-secondary"
+        >
+          {{ three.title }}
+        </h1>
+      </div>
+      <button
+        @click="options3.modelValue = true"
+        class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+      >
+        {{ three.read }}
+        <Icon
+          name="uil:arrow-right"
+          class="transition-all duration-500 group-hover:ml-3"
+        />
+      </button>
+      <!-- modal -->
+      <VueFinalModal
+        v-model="options3.modelValue"
+        :teleport-to="options3.teleportTo"
+        :display-directive="options3.displayDirective"
+        :hide-overlay="options3.hideOverlay"
+        :overlay-transition="options3.overlayTransition"
+        :content-transition="options3.contentTransition"
+        :click-to-close="options3.clickToClose"
+        :esc-to-close="options3.escToClose"
+        :background="options3.background"
+        :lock-scroll="options3.lockScroll"
+        :swipe-to-close="options3.swipeToClose"
+        class="flex items-center justify-center"
+        content-class="max-w-xl p-4 mx-4 space-y-2 bg-white border rounded-lg dark:bg-gray-900 dark:border-gray-700"
+      >
+        <h1 class="text-xl">{{ three.title }}</h1>
+        <p>{{ three.modal }}</p>
+        <button @click="options3.modelValue = false">Close</button>
+      </VueFinalModal>
+      <ModalsContainer />
+    </swiper-slide>
+    <!-- four -->
+    <swiper-slide
+      class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+    >
+      <div>
+        <picture>
+          <nuxt-img
+            class="rounded-2xl"
+            loading="lazy"
+            format="webp"
+            provider="cloudinary"
+            :src="four.picture"
+          />
+        </picture>
+        <h1
+          class="pt-16 text-3xl font-bold text-center text-primary dark:text-secondary"
+        >
+          {{ four.title }}
+        </h1>
+      </div>
+      <button
+        @click="options4.modelValue = true"
+        class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+      >
+        {{ four.read }}
+        <Icon
+          name="uil:arrow-right"
+          class="transition-all duration-500 group-hover:ml-3"
+        />
+      </button>
+      <!-- modal -->
+      <VueFinalModal
+        v-model="options4.modelValue"
+        :teleport-to="options4.teleportTo"
+        :display-directive="options4.displayDirective"
+        :hide-overlay="options4.hideOverlay"
+        :overlay-transition="options4.overlayTransition"
+        :content-transition="options4.contentTransition"
+        :click-to-close="options4.clickToClose"
+        :esc-to-close="options4.escToClose"
+        :background="options4.background"
+        :lock-scroll="options4.lockScroll"
+        :swipe-to-close="options4.swipeToClose"
+        class="flex items-center justify-center"
+        content-class="max-w-xl p-4 mx-4 space-y-2 modall"
+      >
+        <h1 class="text-xl font-semibold text-primary dark:text-secondary">
+          {{ four.title }}
+        </h1>
+        <p class="text-primary/70 dark:text-secondary/70">
+          {{ four.modal }} -
+          <NuxtLink
+            to="https://github.com/Dimas-oktavian17/url-shortening-api-master.git"
+          >
+            <Icon
+              name="uil:github"
+              class="transition-all duration-500 group-hover:ml-3"
+            />
+          </NuxtLink>
+          -
+          <NuxtLink
+            to="https://url-shortening-api-master-vite-project.vercel.app/"
+          >
+            <Icon
+              name="uil:arrow-right"
+              class="transition-all duration-500 group-hover:ml-3"
+            />
+          </NuxtLink>
         </p>
         <button
-          @click="open = false"
-          class="py-2 px-6 bg-primary dark:bg-secondary dark:text-primary text-secondary rounded-lg mt-4"
+          @click="options4.modelValue = false"
+          class="text-primary/70 dark:text-secondary/70"
         >
           Close
         </button>
-      </div>
+      </VueFinalModal>
+      <ModalsContainer />
     </swiper-slide>
   </swiper>
 </template>

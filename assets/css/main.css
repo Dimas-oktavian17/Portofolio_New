@@ -12,6 +12,9 @@
   font-family: "Inter", sans-serif;
 }
 
+.modall {
+  @apply dark:from-[#1E1C32] rounded-2xl dark:to-[#2B161D] bg-gradient-to-r from-slate-100 to-slate-300;
+}
 @layer components {
   .container {
     @apply max-w-3xl py-8 mx-auto;

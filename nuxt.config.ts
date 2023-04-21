@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
   },
-  css: ["~/assets/css/style.css"],
+  css: ["~/assets/css/style.css", "vue-final-modal/style.css"],
   image: {
     cloudinary: {
       baseURL: "https://res.cloudinary.com/duvpel2np/image/upload/",
