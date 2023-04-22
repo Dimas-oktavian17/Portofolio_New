@@ -43,11 +43,11 @@ const endDark = ref(`/v1681746827/portofolio/endDark.svg`);
       </div>
       <!-- motivation -->
       <div class="flex flex-row items-center justify-center">
-        <div
+        <button
           class="cursor-text text-xs font-medium text-[#22242C]/70 px-4 py-2 dark:text-[#ECEDEE]/70 hover:border outline-none hover:transition-all hover:duration-500 transition-all duration-500 border-[#22242C]/70 dark:border-[#ECEDEE]/70 border-x border-solid rounded"
         >
           stay hungry, stay foolish
-        </div>
+        </button>
       </div>
     </div>
   </div>

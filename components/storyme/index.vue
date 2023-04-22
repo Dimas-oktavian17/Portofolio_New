@@ -1,9 +1,7 @@
 <script setup>
-const title = ref(`Work`);
+const title = ref(`Story`);
 const deskripsi = ref(
-  `
-  Over the course of the year, I spent a significant amount of time creating resources and tools for the community and many project for brands.
-  `
+  `Occasionally, I will share my processes and case studies. I usually publish on Medium or through Twitter threads. `
 );
 </script>
 <template>
@@ -15,7 +13,7 @@ const deskripsi = ref(
     >
       <div class="">
         <h1
-          class="text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text to-[#DC79FF] from-[#256BFA]"
+          class="text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-[#8D2DE3] to-[#FF2497]"
         >
           {{ title }}
         </h1>
