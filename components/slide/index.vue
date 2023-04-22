@@ -6,8 +6,8 @@ const getInitialValues = () => ({
   modelValue: false,
   displayDirective: "if",
   hideOverlay: false,
-  overlayTransition: "vfm-fade",
-  contentTransition: "vfm-fade",
+  overlayTransition: "vfm-slide-up",
+  contentTransition: "vfm-slide-up",
   clickToClose: true,
   escToClose: true,
   background: "non-interactive",
@@ -19,8 +19,8 @@ const getInitialValues2 = () => ({
   modelValue: false,
   displayDirective: "if",
   hideOverlay: false,
-  overlayTransition: "vfm-fade",
-  contentTransition: "vfm-fade",
+  overlayTransition: "vfm-slide-up",
+  contentTransition: "vfm-slide-up",
   clickToClose: true,
   escToClose: true,
   background: "non-interactive",
@@ -32,8 +32,8 @@ const getInitialValues3 = () => ({
   modelValue: false,
   displayDirective: "if",
   hideOverlay: false,
-  overlayTransition: "vfm-fade",
-  contentTransition: "vfm-fade",
+  overlayTransition: "vfm-slide-up",
+  contentTransition: "vfm-slide-up",
   clickToClose: true,
   escToClose: true,
   background: "non-interactive",
@@ -45,8 +45,8 @@ const getInitialValues4 = () => ({
   modelValue: false,
   displayDirective: "if",
   hideOverlay: false,
-  overlayTransition: "vfm-fade",
-  contentTransition: "vfm-fade",
+  overlayTransition: "vfm-slide-up",
+  contentTransition: "vfm-slide-up",
   clickToClose: true,
   escToClose: true,
   background: "non-interactive",
@@ -161,11 +161,32 @@ const four = reactive({
         :lock-scroll="options.lockScroll"
         :swipe-to-close="options.swipeToClose"
         class="flex items-center justify-center"
-        content-class="max-w-xl p-4 mx-4 space-y-2 bg-white border rounded-lg dark:bg-gray-900 dark:border-gray-700"
+        content-class="max-w-xl p-4 mx-4 space-y-2 modall"
       >
-        <h1 class="text-xl">{{ one.title }}</h1>
-        <p>{{ one.modal }}</p>
-        <button @click="options.modelValue = false">Close</button>
+        <h1 class="text-xl font-semibold text-primary dark:text-secondary">
+          {{ one.title }}
+        </h1>
+        <p class="text-primary/70 dark:text-secondary/70">
+          {{ one.modal }}
+          <NuxtLink
+            class="font-bold group text-primary dark:text-secondary"
+            :to="one.link"
+            target="_blank"
+          >
+            <Icon
+              name="mdi:application"
+              size="1.5rem"
+              class="transition-all duration-500 group-hover:rotate-45"
+            />
+            preview
+          </NuxtLink>
+        </p>
+        <button
+          @click="options.modelValue = false"
+          class="text-primary/70 dark:text-secondary/70"
+        >
+          Close
+        </button>
       </VueFinalModal>
       <ModalsContainer />
     </swiper-slide>
@@ -213,11 +234,44 @@ const four = reactive({
         :lock-scroll="options2.lockScroll"
         :swipe-to-close="options2.swipeToClose"
         class="flex items-center justify-center"
-        content-class="max-w-xl p-4 mx-4 space-y-2 bg-white border rounded-lg dark:bg-gray-900 dark:border-gray-700"
+        content-class="max-w-xl p-4 mx-4 space-y-2 modall"
       >
-        <h1 class="text-xl">{{ two.title }}</h1>
-        <p>{{ two.modal }}</p>
-        <button @click="options2.modelValue = false">Close</button>
+        <h1 class="text-xl font-semibold text-primary dark:text-secondary">
+          {{ two.title }}
+        </h1>
+        <p class="text-primary/70 dark:text-secondary/70">
+          {{ two.modal }}
+          <NuxtLink
+            class="font-bold group text-primary dark:text-secondary"
+            :to="two.github"
+            target="_blank"
+          >
+            <Icon
+              name="uil:github"
+              size="1.5rem"
+              class="transition-all duration-500 group-hover:rotate-45"
+            />
+            Repository
+          </NuxtLink>
+          <NuxtLink
+            class="font-bold group text-primary dark:text-secondary"
+            :to="two.link"
+            target="_blank"
+          >
+            <Icon
+              name="mdi:application"
+              size="1.5rem"
+              class="transition-all duration-500 group-hover:rotate-45"
+            />
+            Preview
+          </NuxtLink>
+        </p>
+        <button
+          @click="options2.modelValue = false"
+          class="text-primary/70 dark:text-secondary/70"
+        >
+          Close
+        </button>
       </VueFinalModal>
       <ModalsContainer />
     </swiper-slide>
@@ -265,11 +319,44 @@ const four = reactive({
         :lock-scroll="options3.lockScroll"
         :swipe-to-close="options3.swipeToClose"
         class="flex items-center justify-center"
-        content-class="max-w-xl p-4 mx-4 space-y-2 bg-white border rounded-lg dark:bg-gray-900 dark:border-gray-700"
+        content-class="max-w-xl p-4 mx-4 space-y-2 modall"
       >
-        <h1 class="text-xl">{{ three.title }}</h1>
-        <p>{{ three.modal }}</p>
-        <button @click="options3.modelValue = false">Close</button>
+        <h1 class="text-xl font-semibold text-primary dark:text-secondary">
+          {{ three.title }}
+        </h1>
+        <p class="text-primary/70 dark:text-secondary/70">
+          {{ three.modal }}
+          <NuxtLink
+            class="font-bold group text-primary dark:text-secondary"
+            :to="three.github"
+            target="_blank"
+          >
+            <Icon
+              name="uil:github"
+              size="1.5rem"
+              class="transition-all duration-500 group-hover:rotate-45"
+            />
+            Repository
+          </NuxtLink>
+          <NuxtLink
+            class="font-bold group text-primary dark:text-secondary"
+            :to="three.link"
+            target="_blank"
+          >
+            <Icon
+              name="mdi:application"
+              size="1.5rem"
+              class="transition-all duration-500 group-hover:rotate-45"
+            />
+            Preview
+          </NuxtLink>
+        </p>
+        <button
+          @click="options3.modelValue = false"
+          class="text-primary/70 dark:text-secondary/70"
+        >
+          Close
+        </button>
       </VueFinalModal>
       <ModalsContainer />
     </swiper-slide>
@@ -323,23 +410,30 @@ const four = reactive({
           {{ four.title }}
         </h1>
         <p class="text-primary/70 dark:text-secondary/70">
-          {{ four.modal }} -
+          {{ four.modal }}
           <NuxtLink
-            to="https://github.com/Dimas-oktavian17/url-shortening-api-master.git"
+            class="font-bold group text-primary dark:text-secondary"
+            :to="four.github"
+            target="_blank"
           >
             <Icon
               name="uil:github"
-              class="transition-all duration-500 group-hover:ml-3"
+              size="1.5rem"
+              class="transition-all duration-500 group-hover:rotate-45"
             />
+            Repository
           </NuxtLink>
-          -
           <NuxtLink
-            to="https://url-shortening-api-master-vite-project.vercel.app/"
+            class="font-bold group text-primary dark:text-secondary"
+            :to="four.link"
+            target="_blank"
           >
             <Icon
-              name="uil:arrow-right"
-              class="transition-all duration-500 group-hover:ml-3"
+              name="mdi:application"
+              size="1.5rem"
+              class="transition-all duration-500 group-hover:rotate-45"
             />
+            preview
           </NuxtLink>
         </p>
         <button

@@ -22,29 +22,30 @@ const deskripsi = ref(`
   <div class="flex flex-row items-center justify-center">
     <div class="flex flex-col items-center justify-center gap-12 w-[500px]">
       <!-- artikel about me  -->
-      <article class="text-base font-normal text-primary dark:text-secondary">
+      <article
+        class="pl-8 text-base font-normal lg:pl-0 text-primary dark:text-secondary"
+      >
         {{ article }}
       </article>
       <!-- current -->
-      <div class="flex flex-col items-start gap-4">
+      <div class="flex flex-col items-start gap-4 pl-8 lg:pl-0">
         <h1
           class="text-base font-bold uppercase text-uniqe/70 dark:text-secondary"
         >
           {{ current }}
         </h1>
-        <p class="font-normal text-base text-primary dark:text-secondary">
+        <p class="text-base font-normal text-primary dark:text-secondary">
           {{ deskripsi }}
         </p>
       </div>
       <!-- faq about me -->
-      <div class="flex flex-col justify-start items-start gap-4">
+      <div class="flex flex-col items-start justify-start gap-4">
         <h1
-          class="text-start font-bold text-base uppercase text-uniqe/70 dark:text-secondary/70"
+          class="text-base font-bold uppercase text-start text-uniqe/70 dark:text-secondary/70"
         >
           faq
         </h1>
       </div>
-
       <!-- close accordion -->
     </div>
   </div>

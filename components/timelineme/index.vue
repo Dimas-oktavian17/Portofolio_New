@@ -1,9 +1,7 @@
 <script setup>
-const title = ref(`Work`);
+const title = ref(`Timeline`);
 const deskripsi = ref(
-  `
-  Over the course of the year, I spent a significant amount of time creating resources and tools for the community and many project for brands.
-  `
+  `The linear view of some milestones and notable moments that happened so far. Check other stuff on twitter or linkedin`
 );
 </script>
 <template>
@@ -13,9 +11,9 @@ const deskripsi = ref(
     <div
       class="flex flex-col items-center gap-[.938rem] pb-[.75rem] w-[15.563rem]"
     >
-      <div class="">
+      <div>
         <h1
-          class="text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text to-[#DC79FF] from-[#256BFA]"
+          class="text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-[#DC36FA] via-[#566CEC] to-[#04D18E]"
         >
           {{ title }}
         </h1>
