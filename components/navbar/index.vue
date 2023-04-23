@@ -13,10 +13,10 @@ const medsosIcon = reactive([
     url: "https://github.com/Dimas-oktavian17",
     icon: "github",
   },
-  {
-    url: "https://www.instagram.com/dimas_okr/",
-    icon: "insta",
-  },
+  // {
+  //   url: "https://www.instagram.com/dimas_okr/",
+  //   icon: "insta",
+  // },
 ]);
 const nav = reactive([
   { link: "/about", title: "about" },
