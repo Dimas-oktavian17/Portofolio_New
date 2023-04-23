@@ -1,13 +1,13 @@
+<script setup></script>
 <template>
-  <div class="1">stacj</div>
+  <div
+    class="transition-all duration-500 bg-top bg-no-repeat bg-cover scrolling bg-lightMb dark:bg-darkMb lg:dark:bg-Dark lg:bg-Light"
+  >
+    <navbar></navbar>
+    <main class="container">
+      <stack></stack>
+      <tech></tech>
+      <footerr></footerr>
+    </main>
+  </div>
 </template>
-
-<script>
-definePageMeta({
-  pageTransition: {
-    name: "rotate",
-  },
-});
-</script>
-
-<style></style>
