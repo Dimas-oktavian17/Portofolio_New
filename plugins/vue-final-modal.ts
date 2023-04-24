@@ -5,3 +5,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   nuxtApp.vueApp.use(vfm);
 });
+// import emailejs from "@emailjs/browser";
+// export default defineNuxtPlugin((nuxtApp) => {
+//   const emailjs = emailejs as any;
+//   nuxtApp.vueApp.use(emailjs);
+// });
