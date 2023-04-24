@@ -6,7 +6,7 @@ function mode(theme) {
 
 const medsosIcon = reactive([
   {
-    url: "https://www.linkedin.com/in/dimas-oktavian-268740241/",
+    url: "https://www.linkedin.com/in/dimas-oktavian/",
     icon: "linkendin",
   },
   {

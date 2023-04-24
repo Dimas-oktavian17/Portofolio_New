@@ -15,10 +15,16 @@
   .gradient {
     @apply dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50;
   }
+  .gradientForm {
+    @apply dark:from-[#1E1C32] dark:to-[#2B161D] bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50;
+  }
+}
+.btnGradient {
+  @apply bg-gradient-to-r from-[#DC79FF] to-[#256BFA];
 }
 @layer components {
   .pages {
-    @apply transition-all duration-500 bg-top bg-no-repeat bg-cover  bg-lightMb dark:bg-darkMb lg:dark:bg-Dark lg:bg-Light;
+    @apply transition-all bg-top bg-no-repeat bg-cover  bg-lightMb dark:bg-darkMb lg:dark:bg-Dark lg:bg-Light;
   }
 }
 .modall {
