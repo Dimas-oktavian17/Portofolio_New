@@ -13,9 +13,7 @@ const profil = ref(`/v1681908492/portofolio/Profil.png`);
         :src="profil"
       />
     </picture>
-    <h1
-      class="text-2xl font-profil text-primary/70 dark:text-secondary/70 font-bold pt-2"
-    >
+    <h1 class="text-2xl text-primary/70 dark:text-secondary/70 font-bold pt-2">
       Front-end Developer
     </h1>
   </div>

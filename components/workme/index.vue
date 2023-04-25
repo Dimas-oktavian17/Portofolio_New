@@ -2,7 +2,7 @@
 const title = ref(`Work`);
 const deskripsi = ref(
   `
-  Over the course of the year, I spent a significant amount of time creating resources and tools for the community and many project for brands.
+   Sepanjang tahun, saya menghabiskan banyak waktu untuk membuat berbagai project serta berbagai teknologi yang berbeda. Saya juga pernah membuat tampilan website PPDB untuk sekolah saya.
   `
 );
 </script>

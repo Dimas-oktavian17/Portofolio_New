@@ -83,7 +83,7 @@ export default {
           type="email"
           name="email"
           placeholder="Okta@gmail.com"
-          class="dark:text-secondary/70 text-sm rounded-lg focus:outline-1 capitalize gradientForm block w-full p-2.5"
+          class="normal-case dark:text-secondary/70 text-sm rounded-lg focus:outline-1 gradientForm block w-full p-2.5"
         />
       </div>
       <!-- text area -->
@@ -98,7 +98,7 @@ export default {
         v-model="msg"
         name="msg"
         rows="4"
-        class="dark:text-secondary/70 text-sm rounded-lg focus:outline-1 capitalize gradientForm block w-full p-2.5"
+        class="normal-case dark:text-secondary/70 text-sm rounded-lg focus:outline-1 gradientForm block w-full p-2.5"
         placeholder="Leave a message..."
       ></textarea>
       <button

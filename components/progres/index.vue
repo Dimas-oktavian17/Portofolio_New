@@ -7,41 +7,41 @@ const story = reactive([
     date: `Oct 22, 2022 • Mirror`,
     picture: `/v1682158940/portofolio/fire.png`,
   },
-  {
-    link: `https://medium.com/@dimas.ooktavian.17`,
-    title: "elemental - web",
-    deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-    date: `Aug 22, 2022 • Mirror`,
-    picture: `/v1682158940/portofolio/fire.png`,
-  },
-  {
-    link: `https://medium.com/@dimas.ooktavian.17`,
-    title: "elemental - figma",
-    deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-    date: `Oct 22, 2022 • Mirror`,
-    picture: `/v1682158940/portofolio/fire.png`,
-  },
-  {
-    link: `https://medium.com/@dimas.ooktavian.17`,
-    title: "elemental - web",
-    deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-    date: `Aug 22, 2022 • Mirror`,
-    picture: `/v1682158940/portofolio/fire.png`,
-  },
-  {
-    link: `https://medium.com/@dimas.ooktavian.17`,
-    title: "elemental - figma",
-    deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-    date: `Oct 22, 2022 • Mirror`,
-    picture: `/v1682158940/portofolio/fire.png`,
-  },
-  {
-    link: `https://medium.com/@dimas.ooktavian.17`,
-    title: "elemental - web",
-    deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-    date: `Aug 22, 2022 • Mirror`,
-    picture: `/v1682158940/portofolio/fire.png`,
-  },
+  // {
+  //   link: `https://medium.com/@dimas.ooktavian.17`,
+  //   title: "elemental - web",
+  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
+  //   date: `Aug 22, 2022 • Mirror`,
+  //   picture: `/v1682158940/portofolio/fire.png`,
+  // },
+  // {
+  //   link: `https://medium.com/@dimas.ooktavian.17`,
+  //   title: "elemental - figma",
+  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
+  //   date: `Oct 22, 2022 • Mirror`,
+  //   picture: `/v1682158940/portofolio/fire.png`,
+  // },
+  // {
+  //   link: `https://medium.com/@dimas.ooktavian.17`,
+  //   title: "elemental - web",
+  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
+  //   date: `Aug 22, 2022 • Mirror`,
+  //   picture: `/v1682158940/portofolio/fire.png`,
+  // },
+  // {
+  //   link: `https://medium.com/@dimas.ooktavian.17`,
+  //   title: "elemental - figma",
+  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
+  //   date: `Oct 22, 2022 • Mirror`,
+  //   picture: `/v1682158940/portofolio/fire.png`,
+  // },
+  // {
+  //   link: `https://medium.com/@dimas.ooktavian.17`,
+  //   title: "elemental - web",
+  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
+  //   date: `Aug 22, 2022 • Mirror`,
+  //   picture: `/v1682158940/portofolio/fire.png`,
+  // },
 ]);
 const length = ref(2);
 const loadMore = () => {
@@ -60,7 +60,7 @@ const loaded = computed(() => {
       class="flex flex-col lg:flex-row items-start justify-center gap-12 w-[500px]"
     >
       <!--wrapper v-for  -->
-      <div class="lg:w-3/12 hidden lg:block pl-8 lg:pl-0">
+      <div class="lg:w-3/12 blur hidden lg:block pl-8 lg:pl-0">
         <h1
           v-for="(processes, index) in story"
           :key="index"
@@ -73,7 +73,7 @@ const loaded = computed(() => {
         <ul
           v-for="(processes, index) in story"
           :key="index"
-          class="w-full lg:w-9/12 lg:list-disc font-black text-[#CEC8CC] text-3xl"
+          class="w-full blur lg:w-9/12 lg:list-disc font-black text-[#CEC8CC] text-3xl"
         >
           <li
             class="dark:border-[#CEC8CC]/50 border-[#CEC8CC] lg:border-l lg:pl-4"

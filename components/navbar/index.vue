@@ -31,7 +31,7 @@ const nav = reactive([
     <nav class="px-2 mb-10 lg:pt-8">
       <div
         id="sidemenu"
-        class="transition-all duration-500 backdrop-blur-lg fixed container dark:bg-[#1c162f33] bg-[#ffffff33] w-[95%] z-[999] flex flex-wrap items-center justify-between rounded-xl lg:w-[98%]"
+        class="transition-all backdrop-blur-lg fixed container dark:bg-[#1c162f33] bg-[#ffffff33] w-[95%] z-[999] flex flex-wrap items-center justify-between rounded-xl lg:w-[98%]"
       >
         <NuxtLink
           to="./"
@@ -75,7 +75,7 @@ const nav = reactive([
                 <!-- moon -->
                 <nuxt-icon
                   name="moon"
-                  class="hidden transition-all duration-500 dark:block group-hover:rotate-12 dark:text-white"
+                  class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white"
                 />
                 <!-- sun -->
                 <nuxt-icon

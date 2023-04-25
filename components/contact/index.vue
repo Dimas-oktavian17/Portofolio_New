@@ -1,8 +1,9 @@
 <script setup>
 const title = ref("Say hi!");
 const deskripsi = ref(
-  `Want to create something awesome? Or, you have any query? Drop an email or tweet.`
+  `Ingin bekerja sama dalam Front-end Development? Atau, ada peluang bekerja? Hubungi saya melalui surel.`
 );
+const email = ref("mailto:dimas.ooktavian.17@gmail.com");
 const footer = ref("email");
 const urlLight = ref("/v1681651613/portofolio/contactLight.svg");
 const urlDark = ref("/v1681651613/portofolio/contactDark.svg");
@@ -30,7 +31,7 @@ const urlDark = ref("/v1681651613/portofolio/contactDark.svg");
             <div
               class="flex flex-row items-center justify-start py-[2px] gap-1 w-full"
             >
-              <NuxtLink to="">
+              <NuxtLink :to="email">
                 <Icon name="bx:bxl-gmail" class="text-[#1584EB]" />
                 <span
                   class="pl-2 text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#1584EB] from-5% to-[#24D6D9] to-95%"

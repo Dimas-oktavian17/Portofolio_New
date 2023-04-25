@@ -45,7 +45,7 @@ const learn = reactive([
   {
     picture: `logos:vue`,
     title: "VueJS",
-    deskripsi: `Merupakan sebuah framework Javascript, saya belajar VueJs karena learning curve yang sangat tidak terlalu sulit serta untuk kebutuhan pengembangan Front-end Development tingkat lanjut. 
+    deskripsi: `Merupakan sebuah framework Javascript, saya belajar VueJs karena learning curve yang sangat tidak terlalu sulit serta untuk kebutuhan pengembangan Front-end Development tingkat lanjut.
     `,
     btn: `JS Framework`,
   },
@@ -57,8 +57,47 @@ const learn = reactive([
     btn: `Library`,
   },
 ]);
+// const displayFlex = ref({
+//   title: "Flex",
+//   style:
+//     "rounded flex flex-row items-center justify-center gap-[2px] py-[6px] px-3 bg-gradient-to-r from-[#F0D6FF] to-[#D3CDFF] text-[#5C1BAE]/80 dark:text-secondary dark:from-[#FF2497]  dark:to-[#8D2DE3] transition-all duration-500 hover:opacity-60",
+//   icon: "material-symbols:flex-direction-rounded",
+//   iconS: `text-[#5C1BAE]/80 dark:text-secondary`,
+// });
+// const displayGrid = ref({
+//   title: "Grid",
+//   style:
+//     "rounded flex flex-row items-center justify-center gap-[2px] py-[6px] px-3 bg-gradient-to-r from-[#FBCEFF] to-[#FFD1D1] text-[#8C007E]/80 dark:text-secondary dark:from-[#8D2DE3]  dark:to-[#FF2497] transition-all duration-500 hover:opacity-60",
+//   icon: "teenyicons:grid-layout-solid",
+//   iconS: `text-[#8C007E]/80 dark:text-secondary`,
+// });
+// function flex() {
+//   flex === true;
+// }
+// function grid() {
+//   grid === true;
+// }
 </script>
 <template>
+  <!-- <ClientOnly>
+    <div class="flex flex-row items-center justify-center gap-4">
+      <button :class="displayFlex.style" @click="flex">
+        <Icon
+          name="material-symbols:flex-direction-rounded"
+          class="text-[#5C1BAE]/80 dark:text-secondary"
+        />
+        {{ displayFlex.title }}
+      </button>
+      <button :class="displayGrid.style" @click="grid">
+        <Icon
+          name="teenyicons:grid-layout-solid"
+          class="text-[#8C007E]/80 dark:text-secondary"
+        />
+        {{ displayGrid.title }}
+      </button>
+    </div>
+  </ClientOnly> -->
+
   <div class="flex flex-row items-center justify-center pt-[10.75rem]">
     <div class="flex flex-col items-center justify-center gap-12 w-[500px]">
       <!-- current tech stack -->
@@ -70,7 +109,47 @@ const learn = reactive([
       <!-- wrapper  -->
       <div class="flex flex-col items-start gap-5">
         <!-- item stack -->
-        <div class="group" v-for="(stacks, index) in stack" :key="index">
+        <div class="group dflex" v-for="(stacks, index) in stack" :key="index">
+          <div
+            class="flex flex-col items-start gap-4 p-3 transition-all duration-1000 cursor-pointer lg:flex-row group-hover:gradient rounded-2xl isolate"
+          >
+            <picture class="pl-4 lg:pl-0">
+              <Icon
+                class="group-hover:rotate-12 transition-all duration-500 w-20 h-20 lg:w-[6.25rem] lg:h-[6.25rem]"
+                :name="stacks.picture"
+              />
+            </picture>
+            <!-- deskripsi -->
+            <div class="flex items-start flex-col gap-[5px] pl-4 lg:pl-0 w-4/5">
+              <!-- header -->
+              <div
+                class="flex flex-row items-center justify-center gap-3 lg:justify-start"
+              >
+                <h1
+                  class="text-lg font-bold text-primary dark:text-secondary/70"
+                >
+                  {{ stacks.title }}
+                </h1>
+                <button
+                  class="text-xs lg:text-base bg-gradient-to-r from-[#FBCEFF] to-[#FFD1D1] rounded flex items-start py-[1px] px-[6px] gap-[10px] isolate text-primary/70 dark:text-uniqe/90"
+                >
+                  {{ stacks.btn }}
+                </button>
+              </div>
+              <!-- deskripsi -->
+              <p
+                class="text-base text-left text-primary opacity-60 dark:text-secondary"
+              >
+                {{ stacks.deskripsi }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group dgrid hidden bg-black"
+          v-for="(stacks, index) in stack"
+          :key="index"
+        >
           <div
             class="flex flex-col items-start gap-4 p-3 transition-all duration-1000 cursor-pointer lg:flex-row group-hover:gradient rounded-2xl isolate"
           >

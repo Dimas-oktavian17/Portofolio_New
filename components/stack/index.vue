@@ -2,7 +2,7 @@
 const title = ref(`Tech Stack`);
 const deskripsi = ref(
   `
-  Sharing my on-the-go app stack from working, managing, entertaining and more
+  Berbagi tumpukan teknologi yang saya kuasai serta teknologi yang saya pelajari.
   `
 );
 </script>

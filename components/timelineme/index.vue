@@ -1,7 +1,9 @@
 <script setup>
 const title = ref(`Timeline`);
 const deskripsi = ref(
-  `The linear view of some milestones and notable moments that happened so far. Check other stuff on twitter or linkedin`
+  `
+  Tampilan linier dari beberapa proses saya belajar Front-end Development sampai sekarang. Saya juga membagikanya pada medium dan linkendin.
+  `
 );
 </script>
 <template>

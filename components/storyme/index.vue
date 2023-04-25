@@ -1,7 +1,7 @@
 <script setup>
 const title = ref(`Story`);
 const deskripsi = ref(
-  `Occasionally, I will share my processes and case studies. I usually publish on Medium or through Twitter threads. `
+  `Kadang-kadang, saya akan membagikan proses dan studi kasus saya. Saya biasanya mempublikasikan di Medium atau Linkendin.`
 );
 </script>
 <template>
