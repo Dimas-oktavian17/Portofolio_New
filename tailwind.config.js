@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ["Inter", "sans-serif"],
-      profil: ["Tilt Prism", "cursive"],
+      profil: ["Tilt Prism", "Tilt Prism"],
     },
     extend: {
       colors: {

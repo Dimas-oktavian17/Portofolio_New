@@ -1,20 +1,28 @@
 <script setup>
 const acordion = reactive([
   {
-    title: "Siapa Dimas Oktavian?",
-    deskripsi: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+    title: "Sejak kapan Dimas Oktavian menggeluti Front-end Development?",
+    deskripsi: `Dimas Oktavian menggeluti Front-end Development sejak duduk dibangku kelas 10, namun baru serius menekuni pada oktober 2021.`,
   },
   {
-    title: "Mengapa harus menghire Dimas Oktavian?",
-    deskripsi: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+    title: "Dimana tempat tinggal Dimas Oktavian?",
+    deskripsi: `Dimas Oktavian tinggal di sebuah kota terbesar kedua di Indonesia, tepat'nya Surabaya.
+    Namun Dimas Oktavian siap berpindah jika ada kesempatan dan peluang di daerah lain.
+    `,
   },
   {
-    title: "Bagaimana proses Dimas Oktavian belajar?",
-    deskripsi: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+    title: "Bagaimana proses belajar Dimas Oktavian?",
+    deskripsi: `Dimas Oktavian belajar Front-end Developer melalui berbagai tempat, seperti Sekolah dan juga belajar otodidak sendiri melalui youtube, dokumentasi resmi, artikel, serta forum komunitas online.`,
   },
   {
     title: "Apa saja skill yang dimiliki Dimas Oktavian?",
-    deskripsi: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+    deskripsi: `Dimas Oktavian memiliki berbagai skill khusus'nya dalam Front-end Development, seperti Html-5, Css3 dan lain". Dia juga belajar tools ataupun framework saat ini, untuk lebih tepat'nya bisa klik`,
+    link: "/stack",
+    skil: " disini",
+  },
+  {
+    title: "Mengapa harus menghire Dimas Oktavian?",
+    deskripsi: `Dimas Oktavian memiliki skill serta portofolio yang relate dengan Front-end Development, dia juga siap beradaptasi serta belajar agar tetap relevan di Industri.`,
   },
 ]);
 </script>
@@ -32,16 +40,17 @@ const acordion = reactive([
           <summary
             class="transition-all duration-500 text-base lg:text-xl text-uniqe/70 dark:text-secondary/70 font-semibold select-none"
           >
-            Why do they call it Ovaltine?
+            Siapa Dimas Oktavian?
           </summary>
           <div
             class="transition-all duration-500 mt-3 text-sm leading-6 text-primary/70 dark:text-secondary/70"
           >
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              Dimas Oktavian merupakan seorang Lulusan baru tahun 2023 dari SMK
+              Kawung 1. Dimas Oktavian memiliki passion yang tinggi dalam
+              Front-end, tepat'nya oktober tahun 2021 dia mulai sangat menekuni
+              bidang Front-end Development dan bercita" menjadi seorang
+              Front-end Developer dimasa depan.
             </p>
           </div>
         </details>
@@ -61,6 +70,9 @@ const acordion = reactive([
           >
             <p>
               {{ item.deskripsi }}
+              <NuxtLink class="font-bold" :to="item.link">
+                {{ item.skil }}
+              </NuxtLink>
             </p>
           </div>
         </details>

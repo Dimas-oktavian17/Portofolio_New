@@ -1,8 +1,9 @@
 <script setup>
 const title = ref(`About`);
 const deskripsi = ref(
-  `It's not that difficult to find my contact information by searching realvjy. Know little more about me here`
+  `Ketahui lebih banyak tentang saya di sini, saya juga sering menulis di medium:)`
 );
+const picture = ref("/v1682418516/portofolio/setup.jpg");
 // import {
 //   Scene,
 //   PerspectiveCamera,
@@ -96,11 +97,11 @@ const deskripsi = ref(
     <div class="flex flex-col items-center justify-center pt-28">
       <picture>
         <nuxt-img
-          class="w-[708px] h-[422px] rounded-3xl"
+          class="w-auto h-auto grayscale transition-all duration-300 cursor-pointer hover:grayscale-0 rounded-3xl"
           loading="lazy"
           format="webp"
           provider="cloudinary"
-          src="/v1681651592/portofolio/oval.png"
+          :src="picture"
         />
       </picture>
       <h1

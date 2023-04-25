@@ -3,40 +3,40 @@
 const title = ref("FEATURED PROJECTS");
 const workOne = reactive([
   {
-    style: "w-24 h-24 rounded-xl lg:w-auto lg:h-auto",
-    picture: "/v1681651592/portofolio/oval.png",
-    title: "Overlayz",
+    style: "rounded-xl",
+    picture: "/v1681990026/portofolio/PPDB.png",
+    title: "Website PPDB Kawung 1",
     deskripsi: "My Dream Studio",
   },
   {
     style: "rounded-xl ",
-    picture: "/v1681651592/portofolio/3dicons.png",
-    title: "3dicons",
+    picture: "/v1681990026/portofolio/mountain.png",
+    title: "Volcano",
     deskripsi: "Beautifully crafted open source 3D icons",
   },
   {
     style: " rounded-xl",
-    picture: "/v1681652146/portofolio/V5.png",
-    title: "V5 UI Kit",
+    picture: "/v1681990025/portofolio/vue.png",
+    title: "MSTSKP Landing Page",
     deskripsi: "Open-source Figma UI Kit made for this website",
   },
 ]);
 const workTwo = reactive([
   {
-    picture: "/v1681651592/portofolio/love.png",
-    title: "uiLogos",
+    picture: "/v1681990026/portofolio/shorlink.png",
+    title: "Short Url",
     deskripsi: "Add dummby logos to your design quickly",
   },
-  {
-    picture: "/v1681651592/portofolio/uihues.png",
-    title: "UIHues",
-    deskripsi: "Generate color palattes directly on figma",
-  },
-  {
-    picture: "/v1681651592/portofolio/croods.png",
-    title: "croods",
-    deskripsi: "illustration system made for blush.design",
-  },
+  // {
+  //   picture: "/v1681651592/portofolio/uihues.png",
+  //   title: "UIHues",
+  //   deskripsi: "Generate color palattes directly on figma",
+  // },
+  // {
+  //   picture: "/v1681651592/portofolio/croods.png",
+  //   title: "croods",
+  //   deskripsi: "illustration system made for blush.design",
+  // },
 ]);
 </script>
 
@@ -60,11 +60,11 @@ const workTwo = reactive([
         <div
           v-for="projectFirst in workOne"
           :key="projectFirst"
-          class="items-center w-[366px] max-w-xs p-3 cursor-pointer transition-all duration-500 lg:w-[224px] flex lg:flex-col lg:items-start lg:px-3 lg:pt-3 lg:pb-4 hover:bg-gradient-to-tr hover:from-[#ffe9f4] hover:to-[#eaf3ff] dark:hover:from-[#1e1c32] dark:hover:to-[#2b161d] isolate rounded-2xl"
+          class="items-center p-3 cursor-pointer transition-all duration-500 lg:w-[224px] flex lg:flex-col lg:items-start lg:px-3 lg:pt-3 lg:pb-4 hover:bg-gradient-to-tr hover:from-[#ffe9f4] hover:to-[#eaf3ff] dark:hover:from-[#1e1c32] dark:hover:to-[#2b161d] isolate rounded-2xl"
         >
           <!-- picture wrapper -->
           <div
-            class="flex flex-row items-center gap-[10px] rounded-xl lg:w-[200px] lg:h-[200px]"
+            class="flex flex-row w-1/2 items-center gap-[10px] rounded-xl lg:w-[200px] lg:h-[200px]"
           >
             <nuxt-img
               :class="projectFirst.style"
@@ -75,16 +75,16 @@ const workTwo = reactive([
             />
           </div>
           <div
-            class="flex flex-col items-start gap-[2px] pl-3 pr-8 lg:pt-2 lg:px-0"
+            class="flex flex-col items-start gap-[2px] w-1/2 lg:w-auto pl-3 pr-8 lg:pt-2 lg:px-0"
           >
             <h1 class="font-bold text-base text-[#22242C] dark:text-[#ECEDEE]">
               {{ projectFirst.title }}
             </h1>
-            <p
+            <!-- <p
               class="font-normal text-[15px] text-[#22242C] opacity-60 dark:text-[#ECEDEE] leading-5 -tracking-[0.009em]"
             >
               {{ projectFirst.deskripsi }}
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
@@ -112,11 +112,11 @@ const workTwo = reactive([
             <h1 class="font-bold text-base text-[#22242C] dark:text-[#ECEDEE]">
               {{ projectSecond.title }}
             </h1>
-            <p
+            <!-- <p
               class="font-normal text-[15px] text-[#22242C] opacity-60 dark:text-[#ECEDEE] leading-5 -tracking-[0.009em]"
             >
               {{ projectSecond.deskripsi }}
-            </p>
+            </p> -->
           </div>
         </div>
       </div>

@@ -1,21 +1,13 @@
 <script setup>
 const article = ref(`
-        I am a digital artist who has been bringing a little more color to the
-        internet for years through my illustrations and designs. I help brands
-        develop their visual identity and design language to make their products
-        more appealing and accessible. Currently, building design tools and
-        resources @overlayz. I also love sharing my learnings and open source
-        design resources to assist my fellow designers, developers, and
-        enthusiasts when possible.
+Saya seorang otodidak Front-end Developer yang telah belajar sejak oktober 2021. Saya telah belajar banyak tentang Front-end Development, namun saya tetap belajar sampai detik ini. Saat ini, saya juga telah mencoba untuk konsisten membuat berbagai project yang saya open source'kan melalui github. Saya juga suka berbagi pembelajaran dan pengalaman saya dalam belajar Front-end Development di medium.
 `);
 const current = ref(`
           Current
 `);
 const deskripsi = ref(`
-          Working as independent contractor to help brands with visuals and
-          design ssystem. And most of time spending time at my studio buildding
-          design tool and resources, Learning 3d, Experimenting in Figma,
-          Exploring web3/NFT and Metaverse.
+          Mencari kerja sebagai Front-end Developer ataupun Web Designer. Dan sebagian besar waktu dihabiskan di rumah saya untuk membangun website dan menulis di medium. 
+Saat ini saya juga belajar VueJs,figma dan masih tetap mengasah keterampilan Front-end Development.
           `);
 </script>
 <template>

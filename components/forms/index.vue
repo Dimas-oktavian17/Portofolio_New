@@ -20,6 +20,7 @@ export default {
           }
         );
         alert("sukses");
+        uu;
         e.target.reset();
       } catch (err) {
         if (err instanceof ReferenceError) {
