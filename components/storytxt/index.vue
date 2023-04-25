@@ -23,7 +23,7 @@ const story = reactive([
       <div
         v-for="storys in story"
         :key="storys"
-        class="flex flex-col items-start gap-4 pl-8 lg:pl-0"
+        class="blur flex flex-col items-start gap-4 pl-8 lg:pl-0"
       >
         <h1
           class="text-lg font-semibold uppercase text-primary dark:text-secondary"
