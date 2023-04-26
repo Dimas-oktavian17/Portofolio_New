@@ -38,7 +38,7 @@ const nav = reactive([
           class="flex ml-4 transition-all duration-500 hover:rotate-12"
         >
           <h1
-            class="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-[#ff1b6b] to-[#45caff] dark:from-[#40c9ff] dark:to-[#e81cff]"
+            class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#ff1b6b] to-[#45caff] dark:from-[#40c9ff] dark:to-[#e81cff]"
           >
             Realdms
           </h1>
