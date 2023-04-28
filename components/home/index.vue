@@ -27,7 +27,7 @@ const footer = ref({
         <Icon
           :name="header.picture"
           size="5.625rem"
-          class="text-primary dark:text-secondary opacity-90 transition-all group-hover:rotate-6"
+          class="transition-all text-primary dark:text-secondary opacity-90 group-hover:rotate-6"
         />
       </picture>
       <div>
@@ -42,7 +42,7 @@ const footer = ref({
           >
             {{ header.subtitle }}
             <svg
-              class="group-hover:ml-2 transition-all inline-block"
+              class="inline-block transition-all group-hover:ml-2"
               width="17"
               height="16"
               viewBox="0 0 17 16"

@@ -1709,15 +1709,6 @@ video {
   color: rgb(74 87 111 / 0.7);
 }
 
-.text-red-800{
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
-
-.underline{
-  text-decoration-line: underline;
-}
-
 .opacity-60{
   opacity: 0.6;
 }
@@ -2134,10 +2125,6 @@ video {
 :is(.dark .dark\:to-\[\#e81cff\]){
   --tw-gradient-to: #e81cff var(--tw-gradient-to-position);
   --tw-gradient-to-position:  ;
-}
-
-:is(.dark .dark\:fill-white){
-  fill: #fff;
 }
 
 :is(.dark .dark\:text-\[\#727888\]\/60){

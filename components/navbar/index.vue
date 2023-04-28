@@ -6,10 +6,12 @@ function mode(theme) {
 
 const medsosIcon = reactive([
   {
+    title: "Kunjungi ;inkedin saya",
     url: "https://www.linkedin.com/in/dimas-oktavian/",
     icon: "linkendin",
   },
   {
+    title: "Kunjungi Instagram saya",
     url: "https://github.com/Dimas-oktavian17",
     icon: "github",
   },
@@ -56,7 +58,12 @@ const nav = reactive([
               >
                 <!-- linkendin -->
                 <div v-for="icons in medsosIcon" :key="icons" class="ml-2">
-                  <NuxtLink class="group" :to="icons.url" target="_blank">
+                  <NuxtLink
+                    :aria-label="icons.title"
+                    class="group"
+                    :to="icons.url"
+                    target="_blank"
+                  >
                     <nuxt-icon
                       :name="icons.icon"
                       class="transition-all duration-500 group-hover:rotate-12 dark:text-white"
@@ -67,6 +74,8 @@ const nav = reactive([
               <!-- end -->
               <!-- darkmode -->
               <button
+                type="button"
+                aria-label="switchMode"
                 @click="
                   mode($colorMode.preference === 'dark' ? 'light' : 'dark')
                 "

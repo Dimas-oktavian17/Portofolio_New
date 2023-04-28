@@ -124,6 +124,7 @@ const four = reactive({
       <div>
         <picture>
           <nuxt-img
+            :alt="one.title"
             class="rounded-2xl"
             loading="lazy"
             format="webp"
@@ -197,6 +198,7 @@ const four = reactive({
       <div>
         <picture>
           <nuxt-img
+            :alt="two.title"
             class="rounded-2xl"
             loading="lazy"
             format="webp"
@@ -282,6 +284,7 @@ const four = reactive({
       <div>
         <picture>
           <nuxt-img
+            :alt="three.title"
             class="rounded-2xl"
             loading="lazy"
             format="webp"
@@ -367,6 +370,7 @@ const four = reactive({
       <div>
         <picture>
           <nuxt-img
+            :alt="four.title"
             class="rounded-2xl"
             loading="lazy"
             format="webp"
