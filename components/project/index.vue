@@ -67,6 +67,7 @@ const workTwo = reactive([
             class="flex flex-row w-1/2 items-center gap-[10px] rounded-xl lg:w-[200px] lg:h-[200px]"
           >
             <nuxt-img
+              :alt="projectFirst.title"
               :class="projectFirst.style"
               loading="lazy"
               format="webp"
@@ -101,6 +102,7 @@ const workTwo = reactive([
             class="flex flex-row items-center gap-[10px] rounded-xl lg:w-[200px] lg:h-[200px]"
           >
             <nuxt-img
+              :alt="projectSecond.title"
               class="rounded-xl"
               loading="lazy"
               format="webp"

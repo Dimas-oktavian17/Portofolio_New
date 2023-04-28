@@ -111,6 +111,7 @@ export default {
     </form>
     <picture class="w-full max-w-xs lg:w-1/2">
       <nuxt-img
+        alt="message"
         loading="lazy"
         format="webp"
         provider="cloudinary"
