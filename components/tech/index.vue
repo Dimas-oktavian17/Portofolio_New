@@ -11,7 +11,7 @@ const stack = reactive([
   {
     picture: `skill-icons:css`,
     title: "Css3",
-    deskripsi: `Merupakan sebuah bahasa yang saya gunakan untuk membuat tampilan dalam Front-end Development, dan saya telah menerapkan beberapa fitur dari CSS 3.`,
+    deskripsi: `Merupakan sebuah bahasa yang saya gunakan untuk membuat tampilan dalam Front-end Development, dan saya telah menerapkan beberapa fitur dari CSS3.`,
     btn: `Styling`,
   },
   {
@@ -108,10 +108,10 @@ const learn = reactive([
       </h1>
       <!-- wrapper  -->
       <div class="flex flex-col items-start gap-5">
-        <!-- item stack -->
+        <!-- skill stack -->
         <div class="group dflex" v-for="(stacks, index) in stack" :key="index">
           <div
-            class="flex flex-col items-start gap-4 p-3 transition-all duration-1000 cursor-pointer lg:flex-row group-hover:gradient rounded-2xl isolate"
+            class="flex flex-col items-start max-w-xs gap-4 p-3 transition-all duration-1000 cursor-pointer lg:max-w-max lg:flex-row group-hover:gradient rounded-2xl isolate"
           >
             <picture class="pl-4 lg:pl-0">
               <Icon
@@ -120,7 +120,9 @@ const learn = reactive([
               />
             </picture>
             <!-- deskripsi -->
-            <div class="flex items-start flex-col gap-[5px] pl-4 lg:pl-0 w-4/5">
+            <div
+              class="flex items-start flex-col gap-[5px] pl-4 lg:pl-0 w-full lg:w-4/5"
+            >
               <!-- header -->
               <div
                 class="flex flex-row items-center justify-center gap-3 lg:justify-start"
@@ -146,7 +148,7 @@ const learn = reactive([
           </div>
         </div>
         <div
-          class="group dgrid hidden bg-black"
+          class="hidden bg-black group dgrid"
           v-for="(stacks, index) in stack"
           :key="index"
         >
@@ -194,10 +196,10 @@ const learn = reactive([
       </h1>
       <!-- wrapper  -->
       <div class="flex flex-col items-start gap-5">
-        <!-- item stack -->
+        <!-- learn stack -->
         <div class="group" v-for="(learns, index) in learn" :key="index">
           <div
-            class="flex flex-col items-start gap-4 p-3 transition-all duration-1000 cursor-pointer lg:flex-row group-hover:gradient rounded-2xl isolate"
+            class="flex flex-col items-start max-w-xs gap-4 p-3 transition-all duration-1000 cursor-pointer lg:max-w-max lg:flex-row group-hover:gradient rounded-2xl isolate"
           >
             <picture class="pl-4 lg:pl-0">
               <Icon
@@ -207,7 +209,9 @@ const learn = reactive([
               />
             </picture>
             <!-- deskripsi -->
-            <div class="flex items-start flex-col gap-[5px] pl-4 lg:pl-0 w-4/5">
+            <div
+              class="flex items-start flex-col gap-[5px] pl-4 lg:pl-0 w-full lg:w-4/5"
+            >
               <!-- header -->
               <div
                 class="flex flex-row items-center justify-center gap-3 lg:justify-start"
