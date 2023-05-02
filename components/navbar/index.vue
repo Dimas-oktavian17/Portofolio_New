@@ -79,7 +79,7 @@ const nav = reactive([
                 @click="
                   mode($colorMode.preference === 'dark' ? 'light' : 'dark')
                 "
-                class="pr-4 group"
+                class="group lg:pr-4"
               >
                 <!-- moon -->
                 <nuxt-icon
@@ -89,7 +89,7 @@ const nav = reactive([
                 <!-- sun -->
                 <nuxt-icon
                   name="sun"
-                  class="transition-all duration-500 dark:hidden group-hover:rotate-12"
+                  class="transition-all dark:hidden group-hover:rotate-12"
                 />
               </button>
             </div>
@@ -107,24 +107,24 @@ const nav = reactive([
             <div class="flex flex-col items-end pr-4">
               <p
                 :class="{
-                  ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition duration-1000 ease-in-out w-[9.33px] h-[1.33px] rounded':
+                  ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded':
                     navOpen,
                 }"
-                class="origin-bottom-left rotate-45 pb-1 mb-[2px] dark:bg-white bg-[#0A0A0D] transition duration-1000 ease-in-out w-5 h-[1.33px] rounded"
+                class="origin-bottom-left rotate-45 pb-1 mb-[2px] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded"
               ></p>
               <p
                 :class="{
-                  ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition duration-1000 ease-in-out w-[9.33px] h-[1.33px] rounded':
+                  ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition-all w-3 h-[1.33px] rounded':
                     navOpen,
                 }"
-                class="dark:bg-white origin-bottom-left scale-0 rotate-0 pb-1 mb-[2px] bg-[#0A0A0D] transition duration-1000 ease-in-out w-5 h-[1.33px] rounded"
+                class="dark:bg-white origin-bottom-left scale-0 rotate-0 pb-1 mb-[2px] bg-[#0A0A0D] transition-all w-2 h-[1.33px] rounded"
               ></p>
               <p
                 :class="{
-                  ' origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition duration-1000 ease-in-out w-[9.33px] h-[1.33px] rounded':
+                  'origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition-all h-[1.33px]  rounded':
                     navOpen,
                 }"
-                class="origin-top-left dark:bg-white rotate-45 pb-1 mb-[2px] bg-[#0A0A0D] transition duration-1000 ease-in-out w-5 h-[1.33px] rounded"
+                class="origin-top-left dark:bg-white pb-1 mb-[2px] -rotate-45 bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded"
               ></p>
             </div>
           </button>

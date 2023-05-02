@@ -19,9 +19,7 @@
     @apply dark:from-[#1E1C32] dark:to-[#2B161D] bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50;
   }
 }
-/* .btnGradient {
-    @apply bg-gradient-to-r from-[#DC79FF] to-[#256BFA];
-  } */
+
 @layer components {
   .pages {
     @apply transition-all bg-top bg-no-repeat bg-cover  bg-lightMb dark:bg-darkMb lg:dark:bg-Dark lg:bg-Light;
@@ -41,32 +39,16 @@
 /* scroll */
 @layer components {
   .scrolling {
-    @apply h-[35.6rem] scrollbar scrollbar-thumb-slate-300 scrollbar-track-secondary/40 dark:scrollbar-thumb-primary dark:scrollbar-track-primary/40 overflow-y-scroll scroll-smooth;
-  }
-}
-/* hamburger */
-@layer components {
-  .on > div > p:nth-child(1) {
-    @apply origin-bottom-left rotate-45;
-  }
-}
-@layer components {
-  .on > div > p:nth-child(2) {
-    @apply scale-0;
-  }
-}
-@layer components {
-  .on > div > p:nth-child(3) {
-    @apply -rotate-[45deg] origin-top-left w-[30px];
+    @apply h-screen  scrollbar scrollbar-thumb-slate-300 scrollbar-track-secondary/40 dark:scrollbar-thumb-primary dark:scrollbar-track-primary/40 overflow-y-scroll scroll-smooth;
   }
 }
 
 .rotate-enter-active,
 .rotate-leave-active {
-  @apply transition-all duration-700;
+  @apply transition-all;
 }
 
 .rotate-enter-from,
 .rotate-leave-to {
-  @apply opacity-10 blur  transition-all duration-700;
+  @apply opacity-10 blur  transition-all lg:duration-300;
 }

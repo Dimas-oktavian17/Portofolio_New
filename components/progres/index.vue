@@ -78,7 +78,7 @@ const loaded = computed(() => {
         <button
           v-for="(processes, index) in story"
           :key="index"
-          class="group font-semibold text-primary lg:text-[10px] dark:text-secondary lg:pb-[34rem] lg:pt-3"
+          class="group font-semibold text-primary lg:text-[10px] dark:text-secondary lg:pb-[33rem] lg:pt-3"
         >
           {{ processes.date }}
           <span class="transition-all group-hover:pl-2">-></span>
@@ -122,7 +122,7 @@ const loaded = computed(() => {
               <!-- date  -->
               <picture>
                 <nuxt-img
-                  class="rounded-2xl grayscale"
+                  class="max-w-xs rounded-2xl grayscale"
                   loading="lazy"
                   format="webp"
                   provider="cloudinary"
