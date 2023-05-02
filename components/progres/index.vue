@@ -2,11 +2,25 @@
 const story = reactive([
   {
     link: `https://medium.com/@dimas.ooktavian.17`,
-    title: "elemental - figma",
-    deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-    date: `Oct 22, 2022 • Mirror`,
-    picture: `/v1682158940/portofolio/fire.png`,
+    title: "Pembelajaran pertama",
+    deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
+    date: `Oct 1, 2021 • Life`,
+    picture: `/v1683000561/portofolio/kehidupan.jpg`,
   },
+  // {
+  //   link: `https://medium.com/@dimas.ooktavian.17`,
+  //   title: "Pembelajaran pertama",
+  //   deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
+  //   date: `Oct 1, 2021 • Life`,
+  //   picture: `/v1683000561/portofolio/kehidupan.jpg`,
+  // },
+  // {
+  //   link: `https://medium.com/@dimas.ooktavian.17`,
+  //   title: "Pembelajaran pertama",
+  //   deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
+  //   date: `Oct 1, 2021 • Life`,
+  //   picture: `/v1683000561/portofolio/kehidupan.jpg`,
+  // },
   // {
   //   link: `https://medium.com/@dimas.ooktavian.17`,
   //   title: "elemental - web",
@@ -60,30 +74,38 @@ const loaded = computed(() => {
       class="flex flex-col lg:flex-row items-start justify-center gap-12 w-[500px]"
     >
       <!--wrapper v-for  -->
-      <div class="lg:w-3/12 blur hidden lg:block pl-8 lg:pl-0">
-        <h1
+      <div class="hidden pl-8 lg:w-1/2 lg:block lg:pl-0">
+        <button
           v-for="(processes, index) in story"
           :key="index"
-          class="font-semibold text-primary text-xs lg:text-[6px] dark:text-secondary lg:pb-[28.5rem] lg:pt-3"
+          class="group font-semibold text-primary lg:text-[10px] dark:text-secondary lg:pb-[34rem] lg:pt-3"
         >
           {{ processes.date }}
-        </h1>
+          <span class="transition-all group-hover:pl-2">-></span>
+        </button>
       </div>
       <div class="flex flex-col self-start">
+        <!-- <ul
+          class="hidden lg:block list-disc dark:text-[#CEC8CC]/50 -ml-4 bgy-[#CEC8CC] rounded-full"
+        >
+          {{
+            processes.list
+          }}
+        </ul> -->
         <ul
           v-for="(processes, index) in story"
           :key="index"
-          class="w-full blur lg:w-9/12 lg:list-disc font-black text-[#CEC8CC] text-3xl"
+          class="font-black text-[#CEC8CC] text-3xl"
         >
           <li
-            class="dark:border-[#CEC8CC]/50 border-[#CEC8CC] lg:border-l lg:pl-4"
+            class="lg:pl-4 lg:pb-10 lg:border-l dark:border-[#CEC8CC]/50 -ml-2 border-uniqe lg:border-dashed"
           >
             <NuxtLink
               :to="processes.link"
-              class="flex flex-col items-start gap-3 pb-8 lg:pb-0 pl-8 lg:pl-0"
+              class="flex flex-col items-start gap-3 pb-8 pl-8 lg:pb-0 lg:pl-0"
             >
               <h2
-                class="text-xs lg:hidden font-normal text-primary/60 dark:text-secondary/60"
+                class="text-xs font-normal lg:hidden text-primary/60 dark:text-secondary/60"
               >
                 {{ processes.date }}
               </h2>
@@ -100,7 +122,7 @@ const loaded = computed(() => {
               <!-- date  -->
               <picture>
                 <nuxt-img
-                  class="rounded-2xl"
+                  class="rounded-2xl grayscale"
                   loading="lazy"
                   format="webp"
                   provider="cloudinary"
@@ -113,7 +135,7 @@ const loaded = computed(() => {
       </div>
     </div>
   </div>
-  <div class="pt-8 flex flex-col justify-center items-center">
+  <div class="flex flex-col items-center justify-center pt-8">
     <button
       @click="loadMore"
       class="text-primary/70 dark:text-secondary/70 font-bold transition-all duration-500 hover:opacity-50 dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50 rounded-lg flex flex-row items-center justify-center py-3 px-5 lg:px-16 gap-1"
