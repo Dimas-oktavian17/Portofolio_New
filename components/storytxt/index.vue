@@ -1,9 +1,9 @@
 <script setup>
 const story = reactive([
   {
-    title: "Welcome to the Lil Frenz Group (LFG)",
-    deskripsi: `Lil Frenz Group is a dynamic NFT collection coming to Ethereum very soon. Lil Frenz started with this idea; Instead of generating`,
-    date: `Aug 22, 2022 • Mirror`,
+    title: "Pembelajaran pertama",
+    deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
+    date: `Oct 1, 2021 • Life`,
   },
   //   {
   //     title: "Open-Source 3dicons Library: Case Study And Free Downloads",
@@ -23,7 +23,7 @@ const story = reactive([
       <div
         v-for="storys in story"
         :key="storys"
-        class="blur flex flex-col items-start gap-4 pl-8 lg:pl-0"
+        class="flex flex-col items-start gap-4 pl-8 lg:pl-0"
       >
         <h1
           class="text-lg font-semibold uppercase text-primary dark:text-secondary"
