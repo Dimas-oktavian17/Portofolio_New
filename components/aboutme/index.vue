@@ -57,7 +57,7 @@ const picture = ref("/v1682418516/portofolio/setup.jpg");
 </script>
 <template>
   <div
-    class="flex flex-col items-center gap-4 px-4 transition-all duration-500 py-28 lg:py-24"
+    class="flex flex-col items-center gap-4 px-4 transition-all py-28 lg:py-24"
   >
     <div
       class="flex flex-col items-center gap-[.938rem] pb-[.75rem] w-[15.563rem]"
@@ -97,7 +97,7 @@ const picture = ref("/v1682418516/portofolio/setup.jpg");
     <div class="flex flex-col items-center justify-center pt-28">
       <picture>
         <nuxt-img
-          class="w-auto h-auto grayscale transition-all duration-300 cursor-pointer hover:grayscale-0 rounded-3xl"
+          class="w-auto h-auto transition-all duration-300 cursor-pointer grayscale hover:grayscale-0 rounded-3xl"
           loading="lazy"
           format="webp"
           provider="cloudinary"

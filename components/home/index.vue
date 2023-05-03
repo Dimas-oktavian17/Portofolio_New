@@ -15,9 +15,7 @@ const footer = ref({
 </script>
 <template>
   <!-- wrapper  -->
-  <div
-    class="flex flex-col items-start gap-4 p-4 transition-all duration-500 lg:py-16"
-  >
+  <div class="flex flex-col items-start gap-4 p-4 transition-all lg:py-16">
     <!-- pict profile -->
     <div
       class="flex cursor-pointer flex-row items-center group gap-[.938rem] pb-[.75rem] w-[15.563rem] h-[6.375rem]"

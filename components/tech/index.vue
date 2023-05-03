@@ -102,7 +102,7 @@ const learn = reactive([
     <div class="flex flex-col items-center justify-center gap-12 w-[500px]">
       <!-- current tech stack -->
       <h1
-        class="self-start pl-8 text-base font-bold capitalize lg:pl-0 lg:self-center lg:text-center text-uniqe/70 dark:text-secondary/70"
+        class="text-base font-bold capitalize lg:pl-0 text-uniqe/70 dark:text-secondary/70"
       >
         {{ title }}
       </h1>
@@ -190,7 +190,7 @@ const learn = reactive([
       </div>
       <!-- current tech stack -->
       <h1
-        class="self-start pl-8 text-base font-bold capitalize lg:pl-0 lg:self-center lg:text-center text-uniqe/70 dark:text-secondary/70"
+        class="text-base font-bold capitalize text-uniqe/70 dark:text-secondary/70"
       >
         {{ learnTitle }}
       </h1>

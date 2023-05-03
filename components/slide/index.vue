@@ -70,40 +70,76 @@ function reset4() {
   options4.value = getInitialValues4();
 }
 // slider & modal data
+const oneMore = reactive([
+  {
+    link: `https://psb.smkkawung1sby.sch.id/`,
+    live: "Preview",
+    preview: "material-symbols:search-rounded",
+  },
+]);
+const twoMore = reactive([
+  {
+    link: `https://volcano-project-pi.vercel.app/`,
+    live: "Preview",
+    preview: "material-symbols:search-rounded",
+  },
+  {
+    link: `https://github.com/Dimas-oktavian17/Volcano-Project.git`,
+    live: "Github",
+    preview: "uil:github",
+  },
+]);
+const threeMore = reactive([
+  {
+    link: `https://mstskp-id.vercel.app/`,
+    live: "Preview",
+    preview: "material-symbols:search-rounded",
+  },
+  {
+    link: `https://github.com/Dimas-oktavian17/Mtskp--arrayid.git`,
+    live: "Github",
+    preview: "uil:github",
+  },
+]);
+const fourMore = reactive([
+  {
+    link: `https://url-shortening-api-master-vite-project.vercel.app/`,
+    live: "Preview",
+    preview: "material-symbols:search-rounded",
+  },
+  {
+    link: `https://github.com/Dimas-oktavian17/url-shortening-api-master.git`,
+    live: "Github",
+    preview: "uil:github",
+  },
+]);
 const one = reactive({
   picture: "/v1681990026/portofolio/PPDB.png",
   title: `Website PPDB Kawung 1`,
-  read: "Get Started",
+  read: "Read More",
   modal: `Merupakan website pendaftaran peserta baru, bagi siswa yang ingin melanjutkan pendidikan di SMK Kawung 1 Surabaya.
   Website ini saya buat atas permintaan sekolah saya, dan website ini saya buat menggunakan js,tailwindcss dll.
   Pada project ini saya bertugas fokus pada tampilan front-end saja, bagian backend'nya telah dikerjakan sendiri oleh tim IT disekolah.
   `,
-  link: `https://psb.smkkawung1sby.sch.id/`,
 });
 const two = reactive({
   picture: "/v1681990026/portofolio/mountain.png",
   title: `Volcano`,
-  read: "Get Started",
+  read: "Read More",
   modal: `Merupakan website pencarian gunung berapi yang ada di Indonesia, website ini dibuat menggunakan bantuan API dari Yogi Saputro.
   Website ini memiliki beberapa fitur seperti search, filter dan clear. Untuk info lebih lanjut kalian bisa mencoba'nya sendiri.`,
-  github: `https://github.com/Dimas-oktavian17/Volcano-Project.git`,
-  link: `https://volcano-project-pi.vercel.app/`,
 });
 const three = reactive({
   picture: "/v1681990025/portofolio/vue.png",
   title: `MSTSKP Landing Page`,
-  read: "Get Started",
+  read: "Read More",
   modal: `Merupakan sebuah landing page sedherhana yang dibuat melalui slincing figma dari array id, website ini dibuat dengan vue js 3 serta berbagai macam libray animation`,
-  github: `https://github.com/Dimas-oktavian17/Mtskp--arrayid.git`,
-  link: `//mstskp-id.vercel.app/`,
 });
 const four = reactive({
   picture: "/v1681990026/portofolio/shorlink.png",
   title: `Short Url`,
-  read: "Get Started",
+  read: "Read More",
   modal: `Merupakan website yang saya buat berdasarkan tantangan dari front-end mentor, website ini memiliki fungsi untuk mengkonversi link yang panjang menjadi lebih ringkas.`,
-  link: `https://url-shortening-api-master-vite-project.vercel.app/`,
-  github: `https://github.com/Dimas-oktavian17/url-shortening-api-master.git`,
 });
 </script>
 <template>
@@ -118,6 +154,7 @@ const four = reactive({
     }"
     class="text-center"
   >
+    <!-- 1 -->
     <swiper-slide
       class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
     >
@@ -138,16 +175,37 @@ const four = reactive({
           {{ one.title }}
         </h1>
       </div>
-      <button
-        @click="options.modelValue = true"
-        class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
-      >
-        {{ one.read }}
-        <Icon
-          name="uil:arrow-right"
-          class="transition-all duration-500 group-hover:ml-3"
-        />
-      </button>
+      <!-- preview -->
+      <div class="flex flex-row items-center justify-between py-4">
+        <button
+          @click="options.modelValue = true"
+          class="w-1/2 py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+        >
+          {{ one.read }}
+          <Icon
+            name="uil:arrow-right"
+            class="transition-all duration-500 group-hover:ml-3"
+          />
+        </button>
+        <div
+          v-for="(item, index) in oneMore"
+          :key="index"
+          class="flex flex-col items-center justify-center w-1/2 text-white"
+        >
+          <NuxtLink
+            :aria-label="item.live"
+            class="transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+            :to="item.link"
+            target="_blank"
+          >
+            <Icon
+              :name="item.preview"
+              class="transition-all duration-500 group-hover:rotate-12 dark:text-white"
+            />
+            {{ item.live }}
+          </NuxtLink>
+        </div>
+      </div>
       <!-- modal -->
       <VueFinalModal
         v-model="options.modelValue"
@@ -169,18 +227,6 @@ const four = reactive({
         </h1>
         <p class="text-primary/70 dark:text-secondary/70">
           {{ one.modal }}
-          <NuxtLink
-            class="font-bold group text-primary dark:text-secondary"
-            :to="one.link"
-            target="_blank"
-          >
-            <Icon
-              name="mdi:application"
-              size="1.5rem"
-              class="transition-all duration-500 group-hover:rotate-45"
-            />
-            preview
-          </NuxtLink>
         </p>
         <button
           @click="options.modelValue = false"
@@ -212,6 +258,29 @@ const four = reactive({
           {{ two.title }}
         </h1>
       </div>
+      <!-- preview -->
+      <div class="flex flex-row items-center justify-between py-4">
+        <div
+          v-for="(item, index) in twoMore"
+          :key="index"
+          class="flex flex-col items-center justify-center w-1/2 text-white"
+        >
+          <NuxtLink
+            :aria-label="item.live"
+            class="transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+            :to="item.link"
+            target="_blank"
+          >
+            <Icon
+              :name="item.preview"
+              size="2rem"
+              class="transition-all duration-500 group-hover:rotate-12 dark:text-white"
+            />
+            {{ item.live }}
+          </NuxtLink>
+        </div>
+      </div>
+      <!-- read more -->
       <button
         @click="options2.modelValue = true"
         class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
@@ -243,30 +312,6 @@ const four = reactive({
         </h1>
         <p class="text-primary/70 dark:text-secondary/70">
           {{ two.modal }}
-          <NuxtLink
-            class="font-bold group text-primary dark:text-secondary"
-            :to="two.github"
-            target="_blank"
-          >
-            <Icon
-              name="uil:github"
-              size="1.5rem"
-              class="transition-all duration-500 group-hover:rotate-45"
-            />
-            Repository
-          </NuxtLink>
-          <NuxtLink
-            class="font-bold group text-primary dark:text-secondary"
-            :to="two.link"
-            target="_blank"
-          >
-            <Icon
-              name="mdi:application"
-              size="1.5rem"
-              class="transition-all duration-500 group-hover:rotate-45"
-            />
-            Preview
-          </NuxtLink>
         </p>
         <button
           @click="options2.modelValue = false"
@@ -298,6 +343,29 @@ const four = reactive({
           {{ three.title }}
         </h1>
       </div>
+      <!-- preview -->
+      <div class="flex flex-row items-center justify-between py-4">
+        <div
+          v-for="(item, index) in threeMore"
+          :key="index"
+          class="flex flex-col items-center justify-center w-1/2 text-white"
+        >
+          <NuxtLink
+            :aria-label="item.live"
+            class="transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+            :to="item.link"
+            target="_blank"
+          >
+            <Icon
+              :name="item.preview"
+              size="2rem"
+              class="transition-all duration-500 group-hover:rotate-12 dark:text-white"
+            />
+            {{ item.live }}
+          </NuxtLink>
+        </div>
+      </div>
+      <!-- read more -->
       <button
         @click="options3.modelValue = true"
         class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
@@ -329,30 +397,6 @@ const four = reactive({
         </h1>
         <p class="text-primary/70 dark:text-secondary/70">
           {{ three.modal }}
-          <NuxtLink
-            class="font-bold group text-primary dark:text-secondary"
-            :to="three.github"
-            target="_blank"
-          >
-            <Icon
-              name="uil:github"
-              size="1.5rem"
-              class="transition-all duration-500 group-hover:rotate-45"
-            />
-            Repository
-          </NuxtLink>
-          <NuxtLink
-            class="font-bold group text-primary dark:text-secondary"
-            :to="three.link"
-            target="_blank"
-          >
-            <Icon
-              name="mdi:application"
-              size="1.5rem"
-              class="transition-all duration-500 group-hover:rotate-45"
-            />
-            Preview
-          </NuxtLink>
         </p>
         <button
           @click="options3.modelValue = false"
@@ -384,6 +428,29 @@ const four = reactive({
           {{ four.title }}
         </h1>
       </div>
+      <!-- preview -->
+      <div class="flex flex-row items-center justify-between py-4">
+        <div
+          v-for="(item, index) in fourMore"
+          :key="index"
+          class="flex flex-col items-center justify-center w-1/2 text-white"
+        >
+          <NuxtLink
+            :aria-label="item.live"
+            class="transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
+            :to="item.link"
+            target="_blank"
+          >
+            <Icon
+              :name="item.preview"
+              size="2rem"
+              class="transition-all duration-500 group-hover:rotate-12 dark:text-white"
+            />
+            {{ item.live }}
+          </NuxtLink>
+        </div>
+      </div>
+      <!-- read more -->
       <button
         @click="options4.modelValue = true"
         class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-primary dark:text-secondary"
@@ -415,30 +482,6 @@ const four = reactive({
         </h1>
         <p class="text-primary/70 dark:text-secondary/70">
           {{ four.modal }}
-          <NuxtLink
-            class="font-bold group text-primary dark:text-secondary"
-            :to="four.github"
-            target="_blank"
-          >
-            <Icon
-              name="uil:github"
-              size="1.5rem"
-              class="transition-all duration-500 group-hover:rotate-45"
-            />
-            Repository
-          </NuxtLink>
-          <NuxtLink
-            class="font-bold group text-primary dark:text-secondary"
-            :to="four.link"
-            target="_blank"
-          >
-            <Icon
-              name="mdi:application"
-              size="1.5rem"
-              class="transition-all duration-500 group-hover:rotate-45"
-            />
-            preview
-          </NuxtLink>
         </p>
         <button
           @click="options4.modelValue = false"

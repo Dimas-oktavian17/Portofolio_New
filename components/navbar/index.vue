@@ -141,7 +141,7 @@ const nav = reactive([
               <NuxtLink
                 :to="navMenu.link"
                 @click="navOpen = !navOpen"
-                class="transition-all duration-500 block py-2 pl-3 pr-4 text-base font-medium rounded hover:opacity-70 lg:hover:rotate-12 dark:text-white text-[#0A0A0D] md:bg-transparent md:p-0"
+                class="transition-all duration-500 block py-2 pl-3 pr-4 text-base font-medium rounded lg:hover:bg-transparent lg:dark:hover:bg-transparent hover:bg-[#1E1C32]/50 dark:hover:bg-[rgba(255,233,244,0.3)]/30 hover:opacity-70 lg:hover:rotate-12 dark:text-white text-[#0A0A0D] md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 {{ navMenu.title }}
