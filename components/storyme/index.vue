@@ -6,7 +6,7 @@ const deskripsi = ref(
 </script>
 <template>
   <div
-    class="flex flex-col items-center gap-4 px-4 transition-all duration-500 py-28 lg:py-24"
+    class="flex flex-col items-center gap-4 px-4 transition-all py-28 lg:py-24"
   >
     <div
       class="flex flex-col items-center gap-[.938rem] pb-[.75rem] w-[15.563rem]"
