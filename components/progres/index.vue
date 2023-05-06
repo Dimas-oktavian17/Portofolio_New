@@ -1,11 +1,11 @@
 <script setup>
 const story = reactive([
   {
-    link: `https://medium.com/@dimas.ooktavian.17`,
-    title: "Pembelajaran pertama",
+    title: "Perjalanan pertama",
     deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
     date: `Oct 1, 2021 • Life`,
     picture: `/v1683000561/portofolio/kehidupan.jpg`,
+    url: "https://medium.com/@dimas.ooktavian.17/perjalanan-pertama-9cb05d8f1804",
   },
   // {
   //   link: `https://medium.com/@dimas.ooktavian.17`,
@@ -101,7 +101,7 @@ const loaded = computed(() => {
             class="lg:pl-4 lg:pb-10 lg:border-l dark:border-[#CEC8CC]/50 -ml-2 border-uniqe lg:border-dashed"
           >
             <NuxtLink
-              :to="processes.link"
+              :to="processes.url"
               class="flex flex-col items-start gap-3 pb-8 pl-8 lg:pb-0 lg:pl-0"
             >
               <h2

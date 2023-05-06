@@ -1,9 +1,10 @@
 <script setup>
 const story = reactive([
   {
-    title: "Pembelajaran pertama",
+    title: "Perjalanan pertama",
     deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
-    date: `Oct 1, 2021 • Life`,
+    date: `Apr 6, 2023 • Life`,
+    url: "https://medium.com/@dimas.ooktavian.17/perjalanan-pertama-9cb05d8f1804",
   },
   //   {
   //     title: "Open-Source 3dicons Library: Case Study And Free Downloads",
@@ -25,20 +26,23 @@ const story = reactive([
         :key="storys"
         class="flex flex-col items-start gap-4 pl-8 lg:pl-0"
       >
-        <h1
-          class="text-lg font-semibold uppercase text-primary dark:text-secondary"
-        >
-          {{ storys.title }}
-        </h1>
-        <h2
-          class="text-base font-normal text-primary/60 dark:text-secondary/60"
-        >
-          {{ storys.deskripsi }}
-        </h2>
-        <!-- date  -->
-        <p class="text-xs font-medium text-primary/60 dark:text-secondary/60">
-          {{ storys.date }}
-        </p>
+        <!-- url -->
+        <NuxtLink :aria-label="storys.title" :to="storys.url" target="_blank">
+          <h1
+            class="text-lg font-semibold uppercase text-primary dark:text-secondary"
+          >
+            {{ storys.title }}
+          </h1>
+          <h2
+            class="text-base font-normal text-primary/60 dark:text-secondary/60"
+          >
+            {{ storys.deskripsi }}
+          </h2>
+          <!-- date  -->
+          <p class="text-xs font-medium text-primary/60 dark:text-secondary/60">
+            {{ storys.date }}
+          </p>
+        </NuxtLink>
       </div>
     </div>
   </div>
