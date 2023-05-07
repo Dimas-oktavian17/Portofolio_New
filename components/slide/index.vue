@@ -156,13 +156,13 @@ const four = reactive({
   >
     <!-- 1 -->
     <swiper-slide
-      class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+      class="group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
     >
       <div>
         <picture>
           <nuxt-img
             :alt="one.title"
-            class="rounded-2xl"
+            class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
             loading="lazy"
             format="webp"
             provider="cloudinary"
@@ -239,13 +239,13 @@ const four = reactive({
     </swiper-slide>
     <!-- 2 -->
     <swiper-slide
-      class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+      class="group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
     >
       <div>
         <picture>
           <nuxt-img
             :alt="two.title"
-            class="rounded-2xl"
+            class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
             loading="lazy"
             format="webp"
             provider="cloudinary"
@@ -324,13 +324,13 @@ const four = reactive({
     </swiper-slide>
     <!-- tiga -->
     <swiper-slide
-      class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+      class="group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
     >
       <div>
         <picture>
           <nuxt-img
             :alt="three.title"
-            class="rounded-2xl"
+            class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
             loading="lazy"
             format="webp"
             provider="cloudinary"
@@ -409,13 +409,13 @@ const four = reactive({
     </swiper-slide>
     <!-- four -->
     <swiper-slide
-      class="dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+      class="group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
     >
       <div>
         <picture>
           <nuxt-img
             :alt="four.title"
-            class="rounded-2xl"
+            class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
             loading="lazy"
             format="webp"
             provider="cloudinary"
