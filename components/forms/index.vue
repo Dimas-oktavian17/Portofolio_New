@@ -1,7 +1,16 @@
 <script>
+// import email js & vee-validation
 import emailjs from "@emailjs/browser";
+// import { Form, Field, ErrorMessage } from "vee-validate";
 export default {
+  // components: {
+  //   Form,
+  //   Field,
+  //   ErrorMessage,
+  // },
+
   setup() {
+    //  v-model form
     let name = ref("");
     let email = ref("");
     let msg = ref("");
@@ -34,6 +43,8 @@ export default {
       email,
       msg,
       sendEmail,
+      // regex,
+      // validateEmail,
     };
   },
 };
@@ -42,73 +53,110 @@ export default {
   <div
     class="flex flex-col-reverse items-center justify-center pt-64 lg:flex-row-reverse lg:justify-center"
   >
-    <form
-      class="w-full max-w-xs space-y-6 lg:w-1/2"
-      @submit.prevent="sendEmail"
+    <FormKit
+      type="form"
+      submit-label="Send message"
+      @submit="sendEmail"
+      :classes="{
+        outer: 'mb-2',
+        inner: 'w-full lg:w-1/2 max-w-xs space-y-6',
+      }"
     >
       <h1
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#DC79FF] to-[#256BFA]"
+        class="mb-5 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#DC79FF] to-[#256BFA]"
       >
         Send message
       </h1>
       <div>
         <!-- result -->
         <!-- name -->
-        <label
+        <!-- <label
           for="text"
           class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
         >
           Your name
-        </label>
-        <input
+        </label> -->
+        <FormKit
+          label="Your name"
           required
+          validation="required|length:3|matches:/^[a-zA-Z ]+$/"
           v-model="name"
           type="text"
           name="name"
-          class="dark:text-secondary/70 text-sm rounded-lg focus:outline-1 capitalize gradientForm block w-full p-2.5"
           placeholder="Oktaa"
+          validation-visibility="live"
+          :classes="{
+            outer: 'mb-2',
+            label:
+              'block mb-2 text-sm font-medium text-primary dark:text-secondary/70',
+            inner: 'focus:outline-1',
+            input:
+              'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
+          }"
         />
       </div>
       <!-- email -->
       <div>
-        <label
+        <!-- <label
           for="email"
           class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
         >
           Your email
-        </label>
-        <input
+        </label> -->
+        <FormKit
           required
+          label="Your email"
           v-model="email"
           type="email"
           name="email"
           placeholder="Okta@gmail.com"
-          class="normal-case dark:text-secondary/70 text-sm rounded-lg focus:outline-1 gradientForm block w-full p-2.5"
+          validation="required|email|ends_with:.com"
+          validation-visibility="live"
+          :classes="{
+            outer: 'mb-2',
+            label:
+              'block mb-2 text-sm font-medium text-primary dark:text-secondary/70',
+            inner: 'focus:outline-1',
+            input:
+              'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
+          }"
         />
       </div>
       <!-- text area -->
-      <label
+      <!-- <label
         for="message"
         class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
       >
         Your message
-      </label>
-      <textarea
+      </label> -->
+      <FormKit
+        label="Your message"
+        type="textarea"
         required
         v-model="msg"
         name="msg"
         rows="4"
-        class="normal-case dark:text-secondary/70 text-sm rounded-lg focus:outline-1 gradientForm block w-full p-2.5"
         placeholder="Leave a message..."
-      ></textarea>
-      <button
+        validation="required|length:5"
+        validation-visibility="live"
+        :classes="{
+          label:
+            'block mb-2 text-sm font-medium text-primary dark:text-secondary/70',
+          inner: 'focus:outline-1',
+          input:
+            'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
+        }"
+      />
+
+      <!-- <button
         type="submit"
         value="Send"
         class="w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70"
       >
         Send message
-      </button>
-    </form>
+      </button> -->
+    </FormKit>
+
     <picture class="w-full max-w-xs lg:w-1/2">
       <nuxt-img
         alt="message"
