@@ -12,7 +12,11 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
     "nuxt-icons",
     "nuxt-icon",
+    "@formkit/nuxt",
   ],
+  // formkit: {
+  //   configFile: "./my-configs/formkit.config.mjs",
+  // },
   swiper: {
     // Swiper options
     //----------------------

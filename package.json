@@ -24,8 +24,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@formkit/nuxt": "^0.16.5",
+    "@vee-validate/nuxt": "^4.9.3",
     "hooper": "^0.3.4",
     "nuxt-icons": "^3.1.0",
+    "nuxt-sweetalert2": "^1.0.0",
     "nuxt-swiper": "^1.1.0",
     "vue-final-modal": "^4.3.1",
     "vue-inline-svg": "^2.1.3",

@@ -1,38 +1,38 @@
 <script>
-import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import { reset } from "@formkit/core";
+
 export default {
   setup() {
-    let name = ref("");
-    let email = ref("");
-    let msg = ref("");
+    const form = ref("");
+    const WEB3FORMS_ACCESS_KEY = `7886fbe6-943b-46af-8d97-ec0f2dd7619e`;
+    async function sendEmail(value) {
+      const response = await useFetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          form: [[value.name], [value.email], [value.msg]],
+        }),
+      });
+      // console.log(response);
 
-    const sendEmail = (e) => {
-      try {
-        emailjs.sendForm(
-          "service_rgvnvgg",
-          "template_vz0kpml",
-          e.target,
-          "Hv8LRxk1X5ZHFsgA7",
-          {
-            name: name,
-            email: email,
-            msg: msg,
-          }
-        );
-        alert("sukses");
-        e.target.reset();
-      } catch (err) {
-        if (err instanceof ReferenceError) {
-          alert("JSON Error: " + err.message);
-        } else {
-          throw err; // rethrow
-        }
+      const result = await response.data["_rawValue"].message;
+      if (result === "Email sent successfully!") {
+        Swal.fire("Thank you!", "Email sent successfully!", "success");
+        reset("Myform", "");
+      } else {
+        Swal.fire("Sorry!", "Email not sent successfully!", "error");
       }
-    };
+      //   return result === "Email sent successfully!"
+      //     ? Swal.fire("Thank you!", "Email sent successfully!", "success")
+      //     : Swal.fire("Sorry!", "Email not sent successfully!", "error");
+    }
     return {
-      name,
-      email,
-      msg,
+      form,
       sendEmail,
     };
   },
@@ -42,73 +42,93 @@ export default {
   <div
     class="flex flex-col-reverse items-center justify-center pt-64 lg:flex-row-reverse lg:justify-center"
   >
-    <form
-      class="w-full max-w-xs space-y-6 lg:w-1/2"
-      @submit.prevent="sendEmail"
+    <!-- form parent -->
+    <FormKit
+      id="Myform"
+      ref="form"
+      type="form"
+      submit-label="Send message"
+      @submit="sendEmail"
+      :classes="{
+        outer: 'mb-2',
+        inner: 'w-full lg:w-1/2 max-w-xs space-y-6',
+      }"
     >
+      <!-- title form -->
       <h1
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#DC79FF] to-[#256BFA]"
+        class="mb-5 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#DC79FF] to-[#256BFA]"
       >
         Send message
       </h1>
       <div>
-        <!-- result -->
         <!-- name -->
-        <label
-          for="text"
-          class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
-        >
-          Your name
-        </label>
-        <input
+        <FormKit
+          label="Your name"
           required
-          v-model="name"
+          validation="required|length:3|matches:/^[a-zA-Z ]+$/"
           type="text"
           name="name"
-          class="dark:text-secondary/70 text-sm rounded-lg focus:outline-1 capitalize gradientForm block w-full p-2.5"
           placeholder="Oktaa"
+          validation-visibility="live"
+          :classes="{
+            outer: 'mb-2',
+            label:
+              'block mb-2 text-sm font-medium text-primary dark:text-secondary/70',
+            inner: 'focus:outline-1',
+            input:
+              'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
+          }"
         />
       </div>
       <!-- email -->
       <div>
-        <label
-          for="email"
-          class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
-        >
-          Your email
-        </label>
-        <input
+        <FormKit
           required
-          v-model="email"
+          label="Your email"
           type="email"
           name="email"
           placeholder="Okta@gmail.com"
-          class="normal-case dark:text-secondary/70 text-sm rounded-lg focus:outline-1 gradientForm block w-full p-2.5"
+          validation="required|email|ends_with:.com"
+          validation-visibility="live"
+          :classes="{
+            outer: 'mb-2',
+            label:
+              'block mb-2 text-sm font-medium text-primary dark:text-secondary/70',
+            inner: 'focus:outline-1',
+            input:
+              'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
+          }"
         />
       </div>
-      <!-- text area -->
-      <label
-        for="message"
-        class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
-      >
-        Your message
-      </label>
-      <textarea
+      <!-- message -->
+      <FormKit
+        label="Your message"
+        type="textarea"
         required
-        v-model="msg"
         name="msg"
         rows="4"
-        class="normal-case dark:text-secondary/70 text-sm rounded-lg focus:outline-1 gradientForm block w-full p-2.5"
         placeholder="Leave a message..."
-      ></textarea>
-      <button
+        validation="required|length:5"
+        validation-visibility="live"
+        :classes="{
+          label:
+            'block mb-2 text-sm font-medium text-primary dark:text-secondary/70',
+          inner: 'focus:outline-1',
+          input:
+            'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
+        }"
+      />
+      <!-- <FormKit
+        label="Send message"
         type="submit"
         value="Send"
-        class="w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70"
-      >
-        Send message
-      </button>
-    </form>
+        :classes="{
+          input:
+            'w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70',
+        }"
+      /> -->
+    </FormKit>
+
     <picture class="w-full max-w-xs lg:w-1/2">
       <nuxt-img
         alt="message"
