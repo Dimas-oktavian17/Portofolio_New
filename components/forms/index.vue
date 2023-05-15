@@ -23,7 +23,7 @@ export default {
       const result = await response.data["_rawValue"].message;
       if (result === "Email sent successfully!") {
         Swal.fire("Thank you!", "Email sent successfully!", "success");
-        reset("Myform", "");
+        reset("myForm", "");
       } else {
         Swal.fire("Sorry!", "Email not sent successfully!", "error");
       }
@@ -44,7 +44,7 @@ export default {
   >
     <!-- form parent -->
     <FormKit
-      id="Myform"
+      id="myForm"
       ref="form"
       type="form"
       submit-label="Send message"
