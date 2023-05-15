@@ -1,50 +1,40 @@
 <script>
-// import email js & vee-validation
-import emailjs from "@emailjs/browser";
-// import { Form, Field, ErrorMessage } from "vee-validate";
+import Swal from "sweetalert2";
+
 export default {
-  // components: {
-  //   Form,
-  //   Field,
-  //   ErrorMessage,
-  // },
-
   setup() {
-    //  v-model form
-    let name = ref("");
-    let email = ref("");
-    let msg = ref("");
+    const form = ref("");
+    const WEB3FORMS_ACCESS_KEY = `7886fbe6-943b-46af-8d97-ec0f2dd7619e`;
+    async function sendEmail(value) {
+      const response = await useFetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          form: [[value.name], [value.email], [value.msg]],
+        }),
+      });
+      // console.log(response);
 
-    const sendEmail = (e) => {
-      try {
-        emailjs.sendForm(
-          "service_rgvnvgg",
-          "template_vz0kpml",
-          e.target,
-          "Hv8LRxk1X5ZHFsgA7",
-          {
-            name: name,
-            email: email,
-            msg: msg,
-          }
-        );
-        alert("sukses");
-        e.target.reset();
-      } catch (err) {
-        if (err instanceof ReferenceError) {
-          alert("JSON Error: " + err.message);
-        } else {
-          throw err; // rethrow
-        }
+      const result = await response.data["_rawValue"].message;
+      if (result === "Email sent successfully!") {
+        Swal.fire("Thank you!", "Email sent successfully!", "success");
+        value.target.reset();
+      } else {
+        Swal.fire("Sorry!", "Email not sent successfully!", "error");
       }
-    };
+      //   return result === "Email sent successfully!"
+      //     ? Swal.fire("Thank you!", "Email sent successfully!", "success")
+      //     : Swal.fire("Sorry!", "Email not sent successfully!", "error");
+    }
+
     return {
-      name,
-      email,
-      msg,
+      form,
+
       sendEmail,
-      // regex,
-      // validateEmail,
     };
   },
 };
@@ -53,7 +43,9 @@ export default {
   <div
     class="flex flex-col-reverse items-center justify-center pt-64 lg:flex-row-reverse lg:justify-center"
   >
+    <!-- form parent -->
     <FormKit
+      ref="form"
       type="form"
       submit-label="Send message"
       @submit="sendEmail"
@@ -62,25 +54,18 @@ export default {
         inner: 'w-full lg:w-1/2 max-w-xs space-y-6',
       }"
     >
+      <!-- title form -->
       <h1
         class="mb-5 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#DC79FF] to-[#256BFA]"
       >
         Send message
       </h1>
       <div>
-        <!-- result -->
         <!-- name -->
-        <!-- <label
-          for="text"
-          class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
-        >
-          Your name
-        </label> -->
         <FormKit
           label="Your name"
           required
           validation="required|length:3|matches:/^[a-zA-Z ]+$/"
-          v-model="name"
           type="text"
           name="name"
           placeholder="Oktaa"
@@ -97,16 +82,9 @@ export default {
       </div>
       <!-- email -->
       <div>
-        <!-- <label
-          for="email"
-          class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
-        >
-          Your email
-        </label> -->
         <FormKit
           required
           label="Your email"
-          v-model="email"
           type="email"
           name="email"
           placeholder="Okta@gmail.com"
@@ -122,18 +100,11 @@ export default {
           }"
         />
       </div>
-      <!-- text area -->
-      <!-- <label
-        for="message"
-        class="block mb-2 text-sm font-medium text-primary dark:text-secondary/70"
-      >
-        Your message
-      </label> -->
+      <!-- message -->
       <FormKit
         label="Your message"
         type="textarea"
         required
-        v-model="msg"
         name="msg"
         rows="4"
         placeholder="Leave a message..."
@@ -147,14 +118,15 @@ export default {
             'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
         }"
       />
-
-      <!-- <button
+      <!-- <FormKit
+        label="Send message"
         type="submit"
         value="Send"
-        class="w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70"
-      >
-        Send message
-      </button> -->
+        :classes="{
+          input:
+            'w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70',
+        }"
+      /> -->
     </FormKit>
 
     <picture class="w-full max-w-xs lg:w-1/2">
