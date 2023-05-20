@@ -1,7 +1,6 @@
 <script>
 import Swal from "sweetalert2";
 import { reset } from "@formkit/core";
-
 export default {
   setup() {
     const form = ref("");
@@ -18,18 +17,13 @@ export default {
           form: [[value.name], [value.email], [value.msg]],
         }),
       });
-      // console.log(response);
-
       const result = await response.data["_rawValue"].message;
       if (result === "Email sent successfully!") {
         Swal.fire("Thank you!", "Email sent successfully!", "success");
-        reset("Myform", "");
+        reset("Myform");
       } else {
         Swal.fire("Sorry!", "Email not sent successfully!", "error");
       }
-      //   return result === "Email sent successfully!"
-      //     ? Swal.fire("Thank you!", "Email sent successfully!", "success")
-      //     : Swal.fire("Sorry!", "Email not sent successfully!", "error");
     }
     return {
       form,

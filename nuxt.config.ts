@@ -15,6 +15,9 @@ export default defineNuxtConfig({
     "@formkit/nuxt",
   ],
   // formkit: {
+  //   configFile: "./node_modules/@formkit/core/index.cjs",
+  // },
+  // formkit: {
   //   configFile: "./my-configs/formkit.config.mjs",
   // },
   swiper: {

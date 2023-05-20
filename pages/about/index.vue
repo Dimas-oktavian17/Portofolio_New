@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { reset } from "@formkit/core";
+
 useHead({
   title: "realdms",
   meta: [{ name: "description", content: "My amazing about pages site." }],
