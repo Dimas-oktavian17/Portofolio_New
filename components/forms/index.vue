@@ -20,7 +20,9 @@ export default {
       const result = await response.data["_rawValue"].message;
       if (result === "Email sent successfully!") {
         Swal.fire("Thank you!", "Email sent successfully!", "success");
-        reset("Myform");
+        reset("name");
+        reset("email");
+        reset("msg");
       } else {
         Swal.fire("Sorry!", "Email not sent successfully!", "error");
       }
@@ -57,6 +59,7 @@ export default {
       <div>
         <!-- name -->
         <FormKit
+          id="name"
           label="Your name"
           required
           validation="required|length:3|matches:/^[a-zA-Z ]+$/"
@@ -77,6 +80,7 @@ export default {
       <!-- email -->
       <div>
         <FormKit
+          id="email"
           required
           label="Your email"
           type="email"
@@ -96,6 +100,7 @@ export default {
       </div>
       <!-- message -->
       <FormKit
+        id="msg"
         label="Your message"
         type="textarea"
         required
