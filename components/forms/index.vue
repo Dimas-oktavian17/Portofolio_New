@@ -20,7 +20,7 @@ export default {
       const result = await response.data["_rawValue"].message;
       if (result === "Email sent successfully!") {
         Swal.fire("Thank you!", "Email sent successfully!", "success");
-        reset("Myform");
+        reset("Myform", ``);
       } else {
         Swal.fire("Sorry!", "Email not sent successfully!", "error");
       }
