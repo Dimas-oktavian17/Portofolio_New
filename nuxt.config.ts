@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "nuxt-icons",
     "nuxt-icon",
     "@formkit/nuxt",
+    '@nuxt/content'
   ],
   // formkit: {
   //   configFile: "./node_modules/@formkit/core/index.cjs",
