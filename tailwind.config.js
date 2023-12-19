@@ -15,22 +15,29 @@ module.exports = {
       profil: ["Tilt Prism", "Tilt Prism"],
     },
     extend: {
+      spacing: {
+        'nav': '4rem',
+        'section_x': '5rem',
+      },
       colors: {
+        fromGradient: 'rgba(255, 233, 244, 0.3)',
+        toGradient: 'rgba(234, 243, 255, 0.5)',
         uniqe: "#4A576F",
         primary: "#22242C",
         secondary: "#ECEDEE",
       },
       backgroundImage: {
-        start: "url('./assets/img/startLight.svg')",
-        end: "url('./assets/img/endLight.svg')",
-        startDark: "url('./assets/img/startDark.svg')",
-        endDark: "url('./assets/img/endDark.svg')",
-        Light: "url('./assets/img/BG.svg')",
-        lightMb: "url('./assets/img/Lightmb.svg')",
-        Dark: "url('./assets/img/Dark.svg')",
-        darkMb: "url('./assets/img/Darkmb.svg')",
+        'start': "url('/img/startLight.svg')",
+        'end': "url('/img/endLight.svg')",
+        'startDark': "url('/img/startDark.svg')",
+        'endDark': "url('/img/endDark.svg')",
+        'Light': "url('/img/BG.svg')",
+        'lightMb': "url('/img/Lightmb.svg')",
+        'Dark': "url('/img/Dark-bg.svg')",
+        'darkMb': "url('/img/Darkmb.svg')",
       },
     },
   },
   plugins: [require("tailwind-scrollbar")],
 };
+

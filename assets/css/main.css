@@ -2,112 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 /* container */
 @import url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-/* animation for pending */
-.custom-loader {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 8px solid #0000;
-  border-right-color: #ce77fe97;
-  position: relative;
-  animation: s4 1s infinite linear;
-}
-.custom-loader:before,
-.custom-loader:after {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: inherit;
-  animation: inherit;
-  animation-duration: 2s;
-}
-.custom-loader:after {
-  animation-duration: 4s;
-}
 
-@keyframes s4 {
-  100% {
-    transform: rotate(1turn);
+/* animation for pending */
+@layer utilities {
+  .formkit-message {
+    color: red;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+  }
+
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateX(250px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  [data-invalid] .formkit-input {
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    padding: 0.5em;
+    border-color: red;
+    box-shadow: 0 0 0 1px red;
+    color: red !important;
+  }
+
+  .custom-loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 8px solid #0000;
+    border-right-color: #ce77fe97;
+    position: relative;
+    animation: s4 1s infinite linear;
+  }
+
+  .custom-loader:before,
+  .custom-loader:after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: inherit;
+    animation: inherit;
+    animation-duration: 2s;
+  }
+
+  .custom-loader:after {
+    animation-duration: 4s;
+  }
+
+  @keyframes s4 {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  /* end animation */
+  [data-complete] .formkit-input {
+    border-color: green;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    box-shadow: 0 0 0 1px green;
+  }
+
+  [data-complete] .formkit-inner::after {
+    display: inline-block;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    padding: 0.5em;
+    content: "looks good";
+    color: green;
   }
 }
-/* end animation */
+
 * {
   font-family: "Inter", sans-serif;
 }
-.formkit-message {
-  color: red;
-  animation: myAnim 1s ease 0s 1 normal forwards;
-}
-@keyframes myAnim {
-  0% {
-    opacity: 0;
-    transform: translateX(250px);
-  }
 
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-[data-invalid] .formkit-input {
-  animation: myAnim 1s ease 0s 1 normal forwards;
-  padding: 0.5em;
-  border-color: red;
-  box-shadow: 0 0 0 1px red;
-  color: red !important;
-}
-.formkit-actions {
-  @apply w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70;
-}
-[data-complete] .formkit-input {
-  border-color: green;
-  animation: myAnim 1s ease 0s 1 normal forwards;
-  box-shadow: 0 0 0 1px green;
-}
-[data-complete] .formkit-inner::after {
-  display: inline-block;
-  animation: myAnim 1s ease 0s 1 normal forwards;
-  padding: 0.5em;
-  content: "looks good";
-  color: green;
-}
+
+
 
 @layer components {
   .gradient {
-    @apply dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50;
+    @apply dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-fromGradient to-toGradient;
   }
-  .gradientForm {
-    @apply dark:from-[#1E1C32] dark:to-[#2B161D] bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50;
-  }
-}
 
-@layer components {
-  .pages {
-    @apply transition-all bg-top bg-no-repeat bg-cover  bg-lightMb dark:bg-darkMb lg:dark:bg-Dark lg:bg-Light;
+  .gradientForm {
+    @apply dark:from-[#1E1C32] dark:to-[#2B161D] bg-gradient-to-r from-fromGradient to-toGradient;
   }
-}
-.modall {
-  @apply dark:from-[#1E1C32] rounded-2xl dark:to-[#2B161D] bg-gradient-to-r from-slate-100 to-slate-300;
-}
-@layer components {
+
+  .formkit-actions {
+    @apply w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70;
+  }
+
+  .modall {
+    @apply dark:from-[#1E1C32] rounded-2xl dark:to-[#2B161D] bg-gradient-to-r from-slate-100 to-slate-300;
+  }
+
+  .pages {
+    @apply transition-all bg-top bg-no-repeat bg-cover bg-lightMb dark:bg-darkMb lg:dark:bg-Dark lg:bg-Light;
+  }
+
   .container {
     @apply max-w-3xl py-8 mx-auto;
   }
+
   .emoji {
-    @apply dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-clip-text text-transparent from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50;
+    @apply dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-clip-text text-transparent from-fromGradient to-toGradient;
   }
-}
-/* scroll */
-@layer components {
+
+
+
   .scrolling {
-    @apply h-screen  scrollbar scrollbar-thumb-slate-300 scrollbar-track-secondary/40 dark:scrollbar-thumb-primary dark:scrollbar-track-primary/40 overflow-y-scroll scroll-smooth;
+    @apply h-screen overflow-y-scroll scrollbar scrollbar-thumb-slate-300 scrollbar-track-secondary/40 dark:scrollbar-thumb-primary dark:scrollbar-track-primary/40 scroll-smooth;
   }
 }
 
@@ -118,5 +130,5 @@
 
 .rotate-enter-from,
 .rotate-leave-to {
-  @apply opacity-10 blur  transition-all lg:duration-300;
+  @apply transition-all opacity-10 blur lg:duration-300;
 }

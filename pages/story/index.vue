@@ -1,8 +1,9 @@
-<script setup lang="ts">
+<script setup>
 useHead({
   title: "realdms",
   meta: [{ name: "description", content: "My amazing story pages site." }],
 });
+
 </script>
 <template>
   <div class="pages lg:scrolling">

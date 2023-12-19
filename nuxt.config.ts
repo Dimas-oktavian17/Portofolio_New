@@ -13,14 +13,9 @@ export default defineNuxtConfig({
     "nuxt-icons",
     "nuxt-icon",
     "@formkit/nuxt",
-    '@nuxt/content'
+    '@nuxt/content',
+    '@vueuse/nuxt',
   ],
-  // formkit: {
-  //   configFile: "./node_modules/@formkit/core/index.cjs",
-  // },
-  // formkit: {
-  //   configFile: "./my-configs/formkit.config.mjs",
-  // },
   swiper: {
     // Swiper options
     //----------------------
@@ -37,4 +32,34 @@ export default defineNuxtConfig({
       baseURL: "https://res.cloudinary.com/duvpel2np/image/upload/",
     },
   },
+ ssr: true,
+    experimental: {
+        payloadExtraction: false
+    },
+    router: {
+        options: {
+            strict: false
+        }
+    },
+    sourcemap: false,
+    content: {
+        // https://content.nuxtjs.org/api/configuration
+        highlight: {
+            theme: 'github-dark',
+            preload: ['java','javascript']
+        },
+        markdown: {
+            // https://github.com/rehypejs/rehype-external-links
+            rehypePlugins: [
+                [
+                    'rehype-external-links',
+                    {
+                        target: '_blank',
+                        rel: 'noopener noreferer'
+                    }
+                ]
+            ]
+        }
+    }
+
 });
