@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    "nuxt-swiper",
     "@nuxtjs/color-mode",
     "@nuxt/image-edge",
     "nuxt-icons",
