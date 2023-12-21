@@ -1,12 +1,13 @@
 <script>
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { reset } from "@formkit/core";
 export default {
   setup() {
+    const config = useRuntimeConfig()
     const form = ref("");
-    const WEB3FORMS_ACCESS_KEY = `7886fbe6-943b-46af-8d97-ec0f2dd7619e`;
+    const WEB3FORMS_ACCESS_KEY = config.public.api_form
     async function sendEmail(value) {
-      const response = await useFetch("https://api.web3forms.com/submit", {
+      const response = await useFetch(config.public.api_post, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -19,12 +20,13 @@ export default {
       });
       const result = await response.data["_rawValue"].message;
       if (result === "Email sent successfully!") {
-        Swal.fire("Thank you!", "Email sent successfully!", "success");
+        alert('succes')
         reset("name");
         reset("email");
         reset("msg");
       } else {
-        Swal.fire("Sorry!", "Email not sent successfully!", "error");
+        // Swal.fire("Sorry!", "Email not sent successfully!", "error");
+        alert('error');
       }
     }
     return {
@@ -78,15 +80,10 @@ export default {
           input:
             'normal-case dark:text-secondary/70 text-sm rounded-lg block gradientForm w-full p-2.5',
         }" />
-      <!-- <FormKit
-        label="Send message"
-        type="submit"
-        value="Send"
-        :classes="{
-          input:
-            'w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70',
-        }"
-      /> -->
+      <!-- <FormKit label="Send message" type="submit" value="Send" :classes="{
+        input:
+          'w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 text-center transition-all duration-500 mt-4 text-black dark:text-secondary/70',
+      }" /> -->
     </FormKit>
 
     <picture class="w-full max-w-xs lg:w-1/2">

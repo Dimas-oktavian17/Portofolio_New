@@ -766,6 +766,10 @@ video {
   margin-left: -1rem;
 }
 
+.-mt-8 {
+  margin-top: -2rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -852,14 +856,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.-mt-4 {
-  margin-top: -1rem;
-}
-
-.-mt-8 {
-  margin-top: -2rem;
 }
 
 .block {
@@ -1179,10 +1175,6 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
-}
-
-.gap-8 {
-  gap: 2rem;
 }
 
 .gap-\[\.938rem\] {
@@ -1890,6 +1882,11 @@ video {
   color: rgb(34 36 44 / 0.7);
 }
 
+.text-\[\#242424\] {
+  --tw-text-opacity: 1;
+  color: rgb(36 36 36 / var(--tw-text-opacity));
+}
+
 .text-\[\#4A576FB2\]\/70 {
   color: rgb(74 87 111 / 0.7);
 }
@@ -1925,6 +1922,10 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-black\/70 {
+  color: rgb(0 0 0 / 0.7);
+}
+
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -1954,19 +1955,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-\[\#242424\] {
-  --tw-text-opacity: 1;
-  color: rgb(36 36 36 / var(--tw-text-opacity));
-}
-
-.text-black\/50 {
-  color: rgb(0 0 0 / 0.5);
-}
-
-.text-black\/70 {
-  color: rgb(0 0 0 / 0.7);
 }
 
 .\!no-underline {
@@ -2051,6 +2039,15 @@ video {
   transition-duration: 500ms;
 }
 
+/* container */
+
+/* animation for pending */
+
+.formkit-message {
+  color: red;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
 @keyframes myAnim {
   0% {
     opacity: 0;
@@ -2063,6 +2060,39 @@ video {
   }
 }
 
+[data-invalid] .formkit-input {
+  animation: myAnim 1s ease 0s 1 normal forwards;
+  padding: 0.5em;
+  border-color: red;
+  box-shadow: 0 0 0 1px red;
+  color: red !important;
+}
+
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 8px solid #0000;
+  border-right-color: #ce77fe97;
+  position: relative;
+  animation: s4 1s infinite linear;
+}
+
+.custom-loader:before,
+.custom-loader:after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: inherit;
+  animation: inherit;
+  animation-duration: 2s;
+}
+
+.custom-loader:after {
+  animation-duration: 4s;
+}
+
 @keyframes s4 {
   100% {
     transform: rotate(1turn);
@@ -2071,12 +2101,64 @@ video {
 
 /* end animation */
 
-/* container */
+[data-complete] .formkit-input {
+  border-color: green;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+  box-shadow: 0 0 0 1px green;
+}
 
-/* animation for pending */
+[data-complete] .formkit-inner::after {
+  display: inline-block;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+  padding: 0.5em;
+  content: "looks good";
+  color: green;
+}
 
 * {
   font-family: "Inter", sans-serif;
+}
+
+.formkit-input {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: rgba(255, 233, 244, 0.3) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(255, 233, 244, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgba(234, 243, 255, 0.5) var(--tw-gradient-to-position);
+}
+
+:is(.dark .formkit-input) {
+  --tw-gradient-from: #1E1C32 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(30 28 50 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #2B161D var(--tw-gradient-to-position);
+}
+
+.formkit-input {
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.formkit-input:hover {
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+:is(.dark .formkit-input) {
+  color: rgb(236 237 238 / 0.7);
 }
 
 .rotate-enter-active,
@@ -2516,10 +2598,6 @@ video {
     grid-column: span 5 / span 5;
   }
 
-  .md\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
   .md\:mb-6 {
     margin-bottom: 1.5rem;
   }
@@ -2722,10 +2800,6 @@ video {
 
   .lg\:justify-between {
     justify-content: space-between;
-  }
-
-  .lg\:gap-12 {
-    gap: 3rem;
   }
 
   .lg\:gap-\[14px\] {

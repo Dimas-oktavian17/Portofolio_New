@@ -7,13 +7,13 @@ const story = reactive([
     date: `Apr 6, 2023 • Life`,
     url: "https://medium.com/@dimas.ooktavian.17/perjalanan-pertama-9cb05d8f1804",
   },
-  {
-    id: 2,
-    title: "Open-Source 3dicons Library: Case Study And Free Downloads",
-    deskripsi: `In this article, I describe my learning experiences during the design stages of creating the 3dicons image library (a free library`,
-    date: `May 7, 2022 • Smashingmagzine`,
-    url: "/blog/",
-  },
+  // {
+  //   id: 2,
+  //   title: "Open-Source 3dicons Library: Case Study And Free Downloads",
+  //   deskripsi: `In this article, I describe my learning experiences during the design stages of creating the 3dicons image library (a free library`,
+  //   date: `May 7, 2022 • Smashingmagzine`,
+  //   url: "/blog/",
+  // },
   //   {
   //     title: "Open-Source 3dicons Library: Case Study And Free Downloads",
   //     deskripsi: `In this article, I describe my learning experiences during the design stages of creating the 3dicons image library (a free library`,

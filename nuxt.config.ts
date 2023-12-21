@@ -6,6 +6,13 @@ export default defineNuxtConfig({
       mode: "out-in",
     },
   },
+ runtimeConfig: {
+    public: {
+      api_form: process.env.NUXT_PUBLIC_API_FORM, 
+      api_post: process.env.NUXT_PUBLIC_API_URL
+       // will be also exposed to the client-side
+    }
+  },
   modules: [
     "nuxt-swiper",
     "@nuxtjs/color-mode",

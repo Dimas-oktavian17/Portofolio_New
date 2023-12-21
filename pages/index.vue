@@ -12,7 +12,6 @@ useHead({
     <navbar />
     <main class="container">
       <home />
-      <NuxtLink to="/blog/" class="text-4xl text-white">Read the blog!</NuxtLink>
       <project />
       <contact />
       <footerr />
