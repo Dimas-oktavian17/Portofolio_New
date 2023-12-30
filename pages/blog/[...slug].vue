@@ -205,7 +205,7 @@ function mode(theme) {
 
 </script>
 
-<style scoped>
+<style scoped lang="css">
 .blog-aside {
     @apply sticky;
     top: calc(theme('spacing.nav') + 0.25rem);
