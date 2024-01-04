@@ -2,7 +2,7 @@
     <div class="pages lg:scrolling">
         <Navbar />
         <main class="container">
-            <storyme />
+            <storyme :deskripsi="deskripsi" :title="title" />
             <Section id="main" class="!pt-0">
                 <ContentQuery path="/blog" :only="['headline', 'description', 'excerpt', 'date', 'tags', '_path', 'image']"
                     :sort="{
@@ -18,6 +18,9 @@
 </template>
 
 <script setup>
+// blog props
+const title = ref('Blog')
+const deskripsi = ref(`Di sini, saya berbagi proses-proses dan studi kasus dari pengalaman saya yang penuh warna dalam berbagai proyek. Dari tantangan teknis hingga inspirasi kreatif, blog ini mencakup perjalanan saya dalam menghadapi berbagai aspek kehidupan profesional dan pribadi.`)
 // Find the number of blogs present
 const blogCountLimit = 6;
 const { data } = await useAsyncData(`content-/blog`, async () => {

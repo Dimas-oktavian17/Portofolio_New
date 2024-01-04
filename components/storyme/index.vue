@@ -1,11 +1,9 @@
 <script setup>
-const title = ref(`Story`);
-// const deskripsi = ref(
-//   `Kadang-kadang, saya akan membagikan proses dan studi kasus saya. Saya biasanya mempublikasikan di Medium atau Linkendin.`
-// );
+
 defineProps({
   deskripsi: String,
-  required: true,
+  title: String,
+  require: true
 })
 </script>
 <template>

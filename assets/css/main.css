@@ -89,7 +89,16 @@
   @apply w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 transition-all duration-500 mt-4 text-black dark:text-secondary/70
 }
 
+.blog-content h2 {
+  @apply mt-8 text-3xl;
+}
+
+.blog-content h3 {
+  @apply mt-8 text-2xl;
+}
+
 @layer components {
+
   .gradient {
     @apply dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-fromGradient to-toGradient;
   }
