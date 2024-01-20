@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  extends: '@nuxt-themes/typography',
   app: {
-    pageTransition: {
-      name: "rotate",
-      mode: "out-in",
-    },
+    // pageTransition: {
+    //   name: "rotate",
+    //   mode: "out-in",
+    // },
   },
  runtimeConfig: {
     public: {
@@ -14,6 +15,7 @@ export default defineNuxtConfig({
     }
   },
   modules: [
+    '@nuxtjs/tailwindcss',
     "@nuxtjs/color-mode",
     "@nuxt/image-edge",
     "nuxt-icons",
@@ -22,17 +24,17 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
   ],
-  swiper: {
+  // swiper: {
     // Swiper options
     //----------------------
     // prefix: 'Swiper',
     // styleLang: 'css',
     // modules: ["navigation", "SwiperAutoplay", "pagination"], // all modules are imported by default
-  },
+  // },
   colorMode: {
     classSuffix: "",
   },
-  css: ["~/assets/css/style.css", "vue-final-modal/style.css"],
+  css: [ "vue-final-modal/style.css", '~/assets/css/prism-atom-dark.css'],
   image: {
     cloudinary: {
       baseURL: "https://res.cloudinary.com/duvpel2np/image/upload/",
@@ -52,7 +54,7 @@ export default defineNuxtConfig({
         // https://content.nuxtjs.org/api/configuration
         highlight: {
             theme: 'github-dark',
-            preload: ['java','javascript']
+            preload: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml']
         },
         markdown: {
             // https://github.com/rehypejs/rehype-external-links
@@ -67,5 +69,4 @@ export default defineNuxtConfig({
             ]
         }
     }
-
 });

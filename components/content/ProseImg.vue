@@ -1,7 +1,8 @@
 <template>
     <figure>
-        <img :src="refinedSrc" :alt="alt" :width="width" :height="height" class="mx-auto"/>
-        <figcaption class="text-base leading-base text-center mt-2 opacity-70">{{ alt }}</figcaption>    
+        <img :src="refinedSrc" :alt="alt" :width="width" :height="height"
+            class="mx-auto min-[320px]:w-60 min-[375px]:w-80 min-[425px]:w-96 min-[612px]:w-auto" />
+        <figcaption class="mt-2 text-base text-center leading-base opacity-70">{{ alt }}</figcaption>
     </figure>
 </template>
 

@@ -4,8 +4,6 @@ useHead({
   meta: [{ name: "description", content: "My amazing site." }],
 });
 
-
-
 </script>
 <template>
   <div class="pages lg:scrolling">
