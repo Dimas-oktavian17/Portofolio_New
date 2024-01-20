@@ -31,20 +31,15 @@ const acordion = reactive([
   <div class="flex flex-row items-center justify-center">
     <!-- wrapper accordion -->
     <div class="flex flex-col items-center justify-center gap-12 w-[500px]">
-      <div class="transition-all duration-500 cursor-pointer mx-auto p-8">
+      <div class="p-8 mx-auto transition-all duration-500 cursor-pointer">
         <!-- accordion faq -->
-        <details
-          open
-          class="open:shadow-lg open:dark:from-[#1E1C32]/50 open:dark:to-[#2B161D]/50 bg-gradient-to-r open:from-[rgba(255,233,244,0.3)]/30 open:to-[rgba(234,243,255,0.5)]/50 p-8 rounded-lg"
-        >
+        <details open
+          class="open:shadow-lg open:dark:from-[#1E1C32]/50 open:dark:to-[#2B161D]/50 bg-gradient-to-r open:from-[rgba(255,233,244,0.3)]/30 open:to-[rgba(234,243,255,0.5)]/50 p-8 rounded-lg">
           <summary
-            class="transition-all duration-500 text-base lg:text-xl text-uniqe/70 dark:text-secondary/70 font-semibold select-none"
-          >
+            class="text-base font-semibold transition-all duration-500 select-none lg:text-xl text-[#4A576F]/70 dark:text-[#ECEDEE]/70">
             Siapa Dimas Oktavian?
           </summary>
-          <div
-            class="transition-all duration-500 mt-3 text-sm leading-6 text-primary/70 dark:text-secondary/70"
-          >
+          <div class="mt-3 text-sm leading-6 transition-all duration-500 text-primary/70 dark:text-[#ECEDEE]/70">
             <p>
               Dimas Oktavian merupakan seorang Lulusan baru tahun 2023 dari SMK
               Kawung 1. Dimas Oktavian memiliki passion yang tinggi dalam
@@ -55,19 +50,13 @@ const acordion = reactive([
           </div>
         </details>
         <!-- close -->
-        <details
-          v-for="item in acordion"
-          :key="item"
-          class="open:shadow-lg open:my-4 open:dark:from-[#1E1C32]/50 open:dark:to-[#2B161D]/50 bg-gradient-to-r open:from-[rgba(255,233,244,0.3)]/30 open:to-[rgba(234,243,255,0.5)]/50 p-8 rounded-lg"
-        >
+        <details v-for="item in acordion" :key="item"
+          class="open:shadow-lg open:my-4 open:dark:from-[#1E1C32]/50 open:dark:to-[#2B161D]/50 bg-gradient-to-r open:from-[rgba(255,233,244,0.3)]/30 open:to-[rgba(234,243,255,0.5)]/50 p-8 rounded-lg">
           <summary
-            class="transition-all duration-500 text-base lg:text-xl text-uniqe/70 dark:text-secondary/70 font-semibold select-none"
-          >
+            class="text-base font-semibold transition-all duration-500 select-none lg:text-xl text-[#4A576F]/70 dark:text-[#ECEDEE]/70">
             {{ item.title }}
           </summary>
-          <div
-            class="transition-all duration-500 mt-3 text-sm leading-6 text-primary/70 dark:text-secondary/70"
-          >
+          <div class="mt-3 text-sm leading-6 transition-all duration-500 text-primary/70 dark:text-[#ECEDEE]/70">
             <p>
               {{ item.deskripsi }}
               <NuxtLink class="font-bold" :to="item.link">

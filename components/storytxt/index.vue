@@ -27,14 +27,14 @@ const story = reactive([
       <div v-for="storys in story" :key="storys" class="flex flex-col items-start gap-4 pl-8 lg:pl-0">
         <!-- url -->
         <NuxtLink :aria-label="storys.title" :to="storys.url" target="_blank">
-          <h1 class="text-lg font-semibold uppercase text-primary dark:text-secondary">
+          <h1 class="text-lg font-semibold uppercase text-[#22242C] dark:text-[#ECEDEE]">
             {{ storys.title }}
           </h1>
-          <h2 class="text-base font-normal text-primary/60 dark:text-secondary/60">
+          <h2 class="text-base font-normal text-[#22242C]/60 dark:text-[#ECEDEE]/60">
             {{ storys.deskripsi }}
           </h2>
           <!-- date  -->
-          <p class="text-xs font-medium text-primary/60 dark:text-secondary/60">
+          <p class="text-xs font-medium text-[#22242C]/60 dark:text-[#ECEDEE]/60">
             {{ storys.date }}
           </p>
         </NuxtLink>

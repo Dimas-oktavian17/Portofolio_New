@@ -24,6 +24,7 @@ const nav = reactive([
   { link: "/about", title: "about" },
   { link: "/work", title: "work" },
   { link: "/story", title: "story" },
+  { link: "/blog", title: "blog" },
   { link: "/timeline", title: "timeline" },
   { link: "/stack", title: "stack" },
 ]);

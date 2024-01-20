@@ -31,7 +31,7 @@ const props = defineProps({
 });
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .full-height.full-height--forced {
     height: calc(100vh - theme('spacing.nav'));
 }
@@ -41,4 +41,4 @@ const props = defineProps({
         height: calc(100vh - theme('spacing.nav'));
     }
 }
-</style>
+</style> -->

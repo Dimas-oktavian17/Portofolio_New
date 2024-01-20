@@ -6,35 +6,28 @@ const current = ref(`
           Current
 `);
 const deskripsi = ref(`
-          Mencari kerja sebagai Front-end Developer ataupun Web Designer. Dan sebagian besar waktu dihabiskan di rumah saya untuk membangun website dan menulis di medium. 
-Saat ini saya juga belajar VueJs,figma dan masih tetap mengasah keterampilan Front-end Development.
-          `);
+          Mencari kerja sebagai Front-end Developer ataupun Web Designer. Dan sebagian besar waktu dihabiskan di rumah saya untuk membangun website, menulis di blog dan membuat konten edukasi. 
+Saat ini saya juga belajar Pinia, Figma dan masih tetap mengasah keterampilan Front-end Development.`);
 </script>
 <template>
   <div class="flex flex-row items-center justify-center">
     <div class="flex flex-col items-center justify-center gap-12 w-[500px]">
       <!-- artikel about me  -->
-      <article
-        class="pl-8 text-base font-normal lg:pl-0 text-primary dark:text-secondary"
-      >
+      <article class="pl-8 text-base font-normal lg:pl-0 text-primary dark:text-[#ECEDEE]">
         {{ article }}
       </article>
       <!-- current -->
       <div class="flex flex-col items-start gap-4 pl-8 lg:pl-0">
-        <h1
-          class="text-base font-bold uppercase text-uniqe/70 dark:text-secondary"
-        >
+        <h1 class="text-base font-bold uppercase text-uniqe/70 dark:text-white">
           {{ current }}
         </h1>
-        <p class="text-base font-normal text-primary dark:text-secondary">
+        <p class="text-base font-normal text-primary dark:text-[#ECEDEE]">
           {{ deskripsi }}
         </p>
       </div>
       <!-- faq about me -->
       <div class="flex flex-col items-start justify-start gap-4">
-        <h1
-          class="text-base font-bold uppercase text-start text-uniqe/70 dark:text-secondary/70"
-        >
+        <h1 class="text-base font-bold uppercase text-start text-uniqe/70 dark:text-[#ECEDEE]/70">
           faq
         </h1>
       </div>
