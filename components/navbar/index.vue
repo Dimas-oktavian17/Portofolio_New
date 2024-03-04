@@ -29,6 +29,7 @@ const nav = reactive([
   { link: "/stack", title: "stack" },
 ]);
 </script>
+
 <template>
   <header class="container" id="beranda">
     <nav class="px-2 mb-10 lg:pt-8">
@@ -59,8 +60,8 @@ const nav = reactive([
               <!-- end -->
               <!-- darkmode -->
               <button type="button" aria-label="switchMode" @click="
-                mode($colorMode.preference === 'dark' ? 'light' : 'dark')
-                " class="group lg:pr-4">
+                  mode($colorMode.preference === 'dark' ? 'light' : 'dark')
+                  " class="group lg:pr-4">
                 <!-- moon -->
                 <nuxt-icon name="moon" class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
                 <!-- sun -->
@@ -75,21 +76,21 @@ const nav = reactive([
             <span class="sr-only">Open main menu</span>
             <div class="flex flex-col items-end pr-4">
               <p :class="{
-                ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded':
-                  navOpen,
-              }"
+                  ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded':
+                    navOpen,
+                }"
                 class="origin-bottom-left rotate-45 pb-1 mb-[2px] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded">
               </p>
               <p :class="{
-                ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition-all w-3 h-[1.33px] rounded':
-                  navOpen,
-              }"
+                  ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition-all w-3 h-[1.33px] rounded':
+                    navOpen,
+                }"
                 class="dark:bg-white origin-bottom-left scale-0 rotate-0 pb-1 mb-[2px] bg-[#0A0A0D] transition-all w-2 h-[1.33px] rounded">
               </p>
               <p :class="{
-                'origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition-all h-[1.33px]  rounded':
-                  navOpen,
-              }"
+                  'origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition-all h-[1.33px]  rounded':
+                    navOpen,
+                }"
                 class="origin-top-left dark:bg-white pb-1 mb-[2px] -rotate-45 bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded">
               </p>
             </div>
@@ -113,4 +114,5 @@ const nav = reactive([
     </nav>
   </header>
 </template>
+
 <style></style>

@@ -9,8 +9,8 @@ export default defineNuxtConfig({
   },
  runtimeConfig: {
     public: {
-      api_form: process.env.NUXT_PUBLIC_API_FORM, 
-      api_post: process.env.NUXT_PUBLIC_API_URL
+      api_form: process.env.API_FORM_NUXT_PUBLIC, 
+      api_post: process.env.API_URL_NUXT_PUBLIC
        // will be also exposed to the client-side
     }
   },

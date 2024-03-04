@@ -101,6 +101,10 @@
     @apply w-full gradientForm hover:scale-95 rounded-lg text-base px-5 py-2.5 transition-all duration-500 mt-4 text-black dark:text-[#ECEDEE]/70
 }
 
+#input_0 {
+    @apply mb-5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#DC79FF] to-[#256BFA] w-full gradientForm
+}
+
 /* .blog-content h2 {
   @apply mt-8 text-3xl;
 }
