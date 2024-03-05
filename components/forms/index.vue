@@ -1,55 +1,62 @@
-<script>
+<script setup>
 // import Swal from "sweetalert2";
 import { reset } from "@formkit/core";
-export default {
-  setup() {
-    const config = useRuntimeConfig()
-    const form = ref("");
-    const WEB3FORMS_ACCESS_KEY = config.public.api_form
-    async function sendEmail(value) {
-      const response = await useFetch(config.public.api_post, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          form: [[value.name], [value.email], [value.msg]],
-        }),
-      });
-      const result = await response.data["_rawValue"].message;
-      if (result === "Email sent successfully!") {
-        alert('succes')
-        reset("name");
-        reset("email");
-        reset("msg");
-      } else {
-        // Swal.fire("Sorry!", "Email not sent successfully!", "error");
-        alert('error');
-      }
-    }
-    return {
-      form,
-      sendEmail,
-    };
-  },
-};
+const loading = ref(false)
+const loadingError = ref(false)
+const config = useRuntimeConfig()
+const form = ref("");
+const WEB3FORMS_ACCESS_KEY = config.public.api_form
+
+const AlertSucces = () => {
+  reset("name");
+  reset("email");
+  reset("msg");
+
+}
+async function sendEmail(value) {
+  loading.value = true
+  try {
+    const response = await useFetch(config.public.api_post, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        form: [[value.name], [value.email], [value.msg]],
+      }),
+    });
+    const result = await response.data["_rawValue"].message;
+    result === "Email sent successfully!" ? AlertSucces() : loadingError.value = true
+  } catch (err) {
+    console.error(err.message);
+  } finally {
+    loading.value = false;
+    loadingError.value = false;
+  }
+}
+
 </script>
 
 <template>
   <div class="flex flex-col-reverse items-center justify-center pt-64 lg:flex-row-reverse lg:justify-center">
+
     <!-- form parent -->
     <FormKit id="myForm" ref="form" type="form" submit-label="Send message" @submit="sendEmail" :classes="{
       outer: 'mb-2 py-4 bg-red-100',
       inner: 'py-4 bg-red-100 w-full lg:w-1/2 max-w-xs space-y-6',
       input: 'py-4 bg-red-100'
     }">
+
       <!-- title form -->
       <h1 class="mb-5 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#DC79FF] to-[#256BFA]">
         Send message
       </h1>
+      <h6 v-if="loading" class="py-2 text-lg text-green-500 transition-all">Message Send Succes Succesfully</h6>
+      <h6 v-if="loadingError" class="py-2 text-lg text-red-500 transition-all">Message Failed To Send</h6>
       <div>
+
         <!-- name -->
         <FormKit id="name" label="Your name" required validation="required|length:3|matches:/^[a-zA-Z ]+$/" type="text"
           name="name" placeholder="Oktaa" validation-visibility="live" :classes="{
