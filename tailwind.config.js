@@ -24,7 +24,7 @@ module.exports = {
         'toGradient': 'rgba(234, 243, 255, 0.5)',
         'uniqe': "#4A576F",
         'primary': "#22242C",
-        secondary: "#ECEDEE",
+        'secondary': "#ECEDEE",
         'brand_primary': '#124BCF',
         'brand_secondary': '#5eceeb',
         'brand_secondary_saturated': '#5eceeb',
