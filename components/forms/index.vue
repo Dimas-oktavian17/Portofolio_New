@@ -26,7 +26,7 @@ async function sendEmail(value) {
         form: [[value.name], [value.email], [value.msg]],
       }),
     });
-    const result = await response.data["_rawValue"].message;
+    const result = await response.data["_rawValue"]
     if (result === "Email sent successfully!") return loadingError.value = true
   } catch (err) {
     console.warn(err);
