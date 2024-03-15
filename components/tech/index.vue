@@ -48,7 +48,7 @@ const learnStack = useLearnStack()
                 :name="stacks.picture" />
             </picture>
             <!-- deskripsi -->
-            <div class="flex items-start flex-col gap-[5px] pl-4 lg:pl-0 w-full lg:w-4/5">
+            <div class=" flex items-start flex-col gap-[5px] pl-4 lg:pl-0 w-full lg:w-4/5">
               <!-- header -->
               <div class="flex flex-row items-center justify-center gap-3 lg:justify-start">
                 <h1 class="text-lg font-bold text-[#22242C] dark:text-[#ECEDEE]/70">
