@@ -1,8 +1,5 @@
 <script setup lang="ts">
-useHead({
-  title: "realdms",
-  meta: [{ name: "description", content: "My amazing about pages site." }],
-});
+defineOgImage({ url: 'https://res.cloudinary.com/duvpel2np/image/upload/v1710481946/Screenshot_2024-03-15_125148_fquim6.png', alt: 'My Image' })
 </script>
 <template>
   <div class="pages lg:scrolling">
