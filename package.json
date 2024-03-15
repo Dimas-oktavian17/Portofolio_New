@@ -4,7 +4,7 @@
   "scripts": {
     "css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
     "build": "nuxt build",
-    "dev": "nuxt dev --host",
+    "dev": "nuxt dev --watch",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -15,9 +15,10 @@
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.10.4",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.11.27",
     "@vueuse/core": "^10.7.0",
     "@vueuse/nuxt": "^10.7.0",
-    "nuxt": "^3.3.2",
+    "nuxt": "^3.10.3",
     "nuxt-icon": "^0.3.3",
     "tailwind-scrollbar": "^3.0.0"
   },
