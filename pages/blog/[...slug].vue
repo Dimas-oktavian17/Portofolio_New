@@ -1,4 +1,8 @@
 <script setup>
+definePageMeta({
+    pageTransition: false,
+    layoutTransition: false
+})
 const { $formatDate } = useNuxtApp();
 const { path } = useRoute();
 const cleanPath = path.replace(/\/+$/, '');
@@ -97,36 +101,38 @@ function mode(theme) {
                                 <div
                                     class="flex flex-row items-center justify-center mt-4 transition-all duration-500 md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
                                     <button type="button" aria-label="switchMode" @click="
-                                        mode($colorMode.preference === 'dark' ? 'light' : 'dark')
-                                        " class="mr-4 sm:hidden group lg:pr-4">
+                        mode($colorMode.preference === 'dark' ? 'light' : 'dark')
+                        " class="mr-4 sm:hidden group lg:pr-4">
                                         <!-- moon -->
                                         <nuxt-icon name="moon"
                                             class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
                                         <!-- sun -->
-                                        <nuxt-icon name="sun" class="transition-all dark:hidden group-hover:rotate-12" />
+                                        <nuxt-icon name="sun"
+                                            class="transition-all dark:hidden group-hover:rotate-12" />
                                     </button>
 
-                                    <button @click="navOpen = !navOpen" data-collapse-toggle="mobile-menu-3" type="button"
+                                    <button @click="navOpen = !navOpen" data-collapse-toggle="mobile-menu-3"
+                                        type="button"
                                         class="inline-flex items-center justify-center text-gray-400 transition-all duration-1000 rounded-lg md:hidden group hover:text-gray-900"
                                         aria-controls="mobile-menu-3" aria-expanded="false">
                                         <span class="sr-only">Open main menu</span>
                                         <div class="flex flex-col items-end pr-4">
                                             <p :class="{
-                                                ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded':
-                                                    navOpen,
-                                            }"
+                        ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded':
+                            navOpen,
+                    }"
                                                 class="origin-bottom-left rotate-45 pb-1 mb-[2px] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded">
                                             </p>
                                             <p :class="{
-                                                ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition-all w-3 h-[1.33px] rounded':
-                                                    navOpen,
-                                            }"
+                        ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition-all w-3 h-[1.33px] rounded':
+                            navOpen,
+                    }"
                                                 class="dark:bg-white origin-bottom-left scale-0 rotate-0 pb-1 mb-[2px] bg-[#0A0A0D] transition-all w-2 h-[1.33px] rounded">
                                             </p>
                                             <p :class="{
-                                                'origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition-all h-[1.33px]  rounded':
-                                                    navOpen,
-                                            }"
+                        'origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition-all h-[1.33px]  rounded':
+                            navOpen,
+                    }"
                                                 class="origin-top-left dark:bg-white pb-1 mb-[2px] -rotate-45 bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded">
                                             </p>
                                         </div>
@@ -143,15 +149,15 @@ function mode(theme) {
                                     </li>
                                     <li class="hidden separator dark:text-white sm:block">/</li>
                                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                        <a itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="/blog/"
-                                            href="/blog/">
+                                        <a itemscope itemtype="https://schema.org/WebPage" itemprop="item"
+                                            itemid="/blog/" href="/blog/">
                                             <span itemprop="name" class="dark:text-white">Blog</span></a>
                                         <meta itemprop="position" content="2" />
                                     </li>
                                     <li class="flex-col items-center justify-center hidden lg:flex">
                                         <button type="button" aria-label="switchMode" @click="
-                                            mode($colorMode.preference === 'dark' ? 'light' : 'dark')
-                                            " class="group lg:pr-4">
+                        mode($colorMode.preference === 'dark' ? 'light' : 'dark')
+                        " class="group lg:pr-4">
                                             <!-- moon -->
                                             <nuxt-icon name="moon"
                                                 class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />

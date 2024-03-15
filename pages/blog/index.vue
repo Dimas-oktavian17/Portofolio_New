@@ -4,10 +4,10 @@
         <main class="container">
             <storyme :deskripsi="deskripsi" :title="title" />
             <Section id="main" class="!pt-0">
-                <ContentQuery path="/blog" :only="['headline', 'description', 'excerpt', 'date', 'tags', '_path', 'image']"
-                    :sort="{
-                        date: -1
-                    }" :limit="blogCountLimit" v-slot="{ data }">
+                <ContentQuery path="/blog"
+                    :only="['headline', 'description', 'excerpt', 'date', 'tags', '_path', 'image']" :sort="{
+                date: -1
+            }" :limit="blogCountLimit" v-slot="{ data }">
                     <BlogList :data="data" />
                 </ContentQuery>
                 <BlogPagination v-if="data > 1" class="mt-8" :currentPage="1" :totalPages="data" :nextPage="data > 1"
@@ -18,6 +18,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+    pageTransition: false,
+    layoutTransition: false
+})
 // blog props
 const title = ref('Blog')
 const deskripsi = ref(`Di sini, saya berbagi proses-proses dan studi kasus dari pengalaman saya yang penuh warna dalam berbagai proyek. Dari tantangan teknis hingga inspirasi kreatif, blog ini mencakup perjalanan saya dalam menghadapi berbagai aspek kehidupan profesional dan pribadi.`)

@@ -1,12 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // devtools: { enabled: true },
+  site: {
+    url: 'http://localhost:3000',
+    name: 'Meet realdms: Your Go-To Source for Awesome Front-end Development and Web Design',
+    description: 'Your Go-To Source for Awesome Front-end Development and Web Design',
+    defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
+  },
+  devtools: { enabled: true },
   extends: '@nuxt-themes/typography',
   app: {
-    // pageTransition: {
-    //   name: "rotate",
-    //   mode: "out-in",
-    // },
+    pageTransition: {
+      name: "rotate",
+      mode: "out-in",
+    },
   },
  runtimeConfig: {
     public: {
@@ -24,6 +30,7 @@ export default defineNuxtConfig({
     "@formkit/nuxt",
     '@nuxt/content',
     '@vueuse/nuxt',
+    '@nuxtjs/seo'
   ],
   // swiper: {
     // Swiper options

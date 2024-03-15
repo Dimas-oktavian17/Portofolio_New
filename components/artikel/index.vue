@@ -7,7 +7,7 @@ const current = ref(`
 `);
 const deskripsi = ref(`
           Mencari kerja sebagai Front-end Developer ataupun Web Designer. Dan sebagian besar waktu dihabiskan di rumah saya untuk membangun website, menulis di blog dan membuat konten edukasi. 
-Saat ini saya juga belajar Pinia, Figma dan masih tetap mengasah keterampilan Front-end Development.`);
+Saat ini saya juga belajar Typescript, Figma dan masih tetap mengasah keterampilan Front-end Development.`);
 </script>
 <template>
   <div class="flex flex-row items-center justify-center">

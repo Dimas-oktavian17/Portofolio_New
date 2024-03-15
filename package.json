@@ -13,6 +13,7 @@
     "@nuxt-themes/typography": "^1.0.1",
     "@nuxt/image": "^0.7.1",
     "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/seo": "^2.0.0-rc.9",
     "@nuxtjs/tailwindcss": "^6.10.4",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.11.27",
