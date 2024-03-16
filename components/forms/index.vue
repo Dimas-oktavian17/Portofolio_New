@@ -1,4 +1,5 @@
 <script setup>
+// import emailjs from "@emailjs/browser"
 import { reset } from "@formkit/core";
 const loading = ref(false)
 const loadingError = ref(false)
@@ -10,7 +11,6 @@ const AlertSucces = () => {
   reset("name");
   reset("email");
   reset("msg");
-
 }
 async function sendEmail(value) {
   loading.value = true
@@ -26,7 +26,7 @@ async function sendEmail(value) {
         form: [[value.name], [value.email], [value.msg]],
       }),
     });
-    const result = await response.data["_rawValue"]
+    const result = await response.data.value
     if (result === "Email sent successfully!") return loadingError.value = true
   } catch (err) {
     console.warn(err);
@@ -41,7 +41,6 @@ async function sendEmail(value) {
 
 <template>
   <div class="flex flex-col-reverse items-center justify-center pt-64 lg:flex-row-reverse lg:justify-center">
-
     <!-- form parent -->
     <FormKit id="myForm" ref="form" type="form" submit-label="Send message" @submit="sendEmail" :classes="{
       outer: 'mb-2 py-4 bg-red-100',
