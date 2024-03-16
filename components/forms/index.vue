@@ -27,14 +27,6 @@ async function sendEmail(value) {
       }),
     });
     return response.data
-    // if (response && response.data) {
-    //   loadingError.value = true
-    //   console.log(response.data);
-    //   return response.data
-    // } else {
-    //   console.error("Invalid response format:", response.data);
-    // }
-    // if (result === "Email sent successfully!") return loadingError.value = true
   } catch (err) {
     console.warn(err);
   } finally {
