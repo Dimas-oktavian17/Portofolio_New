@@ -26,14 +26,7 @@ async function sendEmail(value) {
         form: [[value.name], [value.email], [value.msg]],
       }),
     });
-    if (response && response.data) {
-      loadingError.value = true
-      console.log(response.data);
-      return response.data
-    } else {
-      console.error("Invalid response format:", response.data);
-    }
-    // if (result === "Email sent successfully!") return loadingError.value = true
+    return response.data
   } catch (err) {
     console.warn(err);
   } finally {
