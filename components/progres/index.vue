@@ -1,102 +1,37 @@
 <script setup>
-const story = reactive([
-  {
-    title: "Perjalanan pertama",
-    deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
-    date: `Oct 1, 2021 • Life`,
-    picture: `/v1683000561/portofolio/kehidupan.jpg`,
-    url: "https://medium.com/@dimas.ooktavian.17/perjalanan-pertama-9cb05d8f1804",
-  },
-  // {
-  //   link: `https://medium.com/@dimas.ooktavian.17`,
-  //   title: "Pembelajaran pertama",
-  //   deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
-  //   date: `Oct 1, 2021 • Life`,
-  //   picture: `/v1683000561/portofolio/kehidupan.jpg`,
-  // },
-  // {
-  //   link: `https://medium.com/@dimas.ooktavian.17`,
-  //   title: "Pembelajaran pertama",
-  //   deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
-  //   date: `Oct 1, 2021 • Life`,
-  //   picture: `/v1683000561/portofolio/kehidupan.jpg`,
-  // },
-  // {
-  //   link: `https://medium.com/@dimas.ooktavian.17`,
-  //   title: "elemental - web",
-  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-  //   date: `Aug 22, 2022 • Mirror`,
-  //   picture: `/v1682158940/portofolio/fire.png`,
-  // },
-  // {
-  //   link: `https://medium.com/@dimas.ooktavian.17`,
-  //   title: "elemental - figma",
-  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-  //   date: `Oct 22, 2022 • Mirror`,
-  //   picture: `/v1682158940/portofolio/fire.png`,
-  // },
-  // {
-  //   link: `https://medium.com/@dimas.ooktavian.17`,
-  //   title: "elemental - web",
-  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-  //   date: `Aug 22, 2022 • Mirror`,
-  //   picture: `/v1682158940/portofolio/fire.png`,
-  // },
-  // {
-  //   link: `https://medium.com/@dimas.ooktavian.17`,
-  //   title: "elemental - figma",
-  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-  //   date: `Oct 22, 2022 • Mirror`,
-  //   picture: `/v1682158940/portofolio/fire.png`,
-  // },
-  // {
-  //   link: `https://medium.com/@dimas.ooktavian.17`,
-  //   title: "elemental - web",
-  //   deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
-  //   date: `Aug 22, 2022 • Mirror`,
-  //   picture: `/v1682158940/portofolio/fire.png`,
-  // },
-]);
+const story = useStory()
 const length = ref(2);
 const loadMore = () => {
-  if (length > story.length) {
-    length = length + 2;
-  }
-};
+  if (length.value >= story.value.length) return
+  length.value = length.value + 3
+}
 // a computed ref
-const loaded = computed(() => {
-  return story.slice(0, length);
-});
+const loaded = computed(() => story.value.slice(0, length.value));
 </script>
 
 <template>
   <div class="flex flex-row items-center justify-center pt-[10.75rem]">
     <div class="flex flex-col lg:flex-row items-start justify-center gap-12 w-[500px]">
-      <!--wrapper v-for  -->
-      <div class="hidden pl-8 lg:w-1/2 lg:block lg:pl-0">
-        <button v-for="(processes, index) in story" :key="index"
-          class="group font-semibold text-[#22242C] lg:text-[10px] dark:text-[#ECEDEE] lg:pb-[33rem] lg:pt-3">
-          {{ processes.date }}
-          <span class="transition-all group-hover:pl-2">-></span>
-        </button>
-      </div>
       <div class="flex flex-col self-start">
-        <ul v-for="(processes, index) in story" :key="index" class="font-black text-[#CEC8CC] text-3xl">
-          <li class="lg:pl-4 lg:pb-10 lg:border-l dark:border-[#CEC8CC]/50 -ml-2 border-uniqe lg:border-dashed">
-            <NuxtLink :to="processes.url" class="flex flex-col items-start gap-3 pb-8 pl-8 lg:pb-0 lg:pl-0">
-              <h2 class="text-xs font-normal lg:hidden text-[#22242C]/60 dark:text-[#ECEDEE]/60">
-                {{ processes.date }}
+        <ul v-for="({ date, title, deskripsi, picture, url, index }) in loaded" :key="index"
+          class="font-black text-[#CEC8CC] text-3xl">
+          <li
+            class="lg:pl-4 lg:pb-10 lg:border-r border-black dark:border-[#CEC8CC]/50 -ml-2 border-uniqe lg:border-dashed">
+            <NuxtLink :to="url" class="flex flex-col items-start gap-3 pb-8 pl-8 lg:pb-0 lg:pl-0">
+              <h2 class="lg:mr-2 text-xs self-end font-normal text-[#22242C]/60 dark:text-[#ECEDEE]/60">
+                {{ date }}
               </h2>
               <h1 class="text-lg font-semibold uppercase text-[#22242C] dark:text-[#ECEDEE]">
-                {{ processes.title }}
+                {{ title }}
               </h1>
               <h2 class="text-base font-normal text-[#22242C]/60 dark:text-[#ECEDEE]/60">
-                {{ processes.deskripsi }}
+                {{ deskripsi }}
               </h2>
               <!-- date  -->
               <picture>
-                <nuxt-img class="max-w-xs rounded-2xl grayscale" loading="lazy" format="webp" provider="cloudinary"
-                  :src="processes.picture" />
+                <nuxt-img
+                  class="w-auto h-auto max-w-xs transition-all duration-1000 rounded-2xl grayscale hover:grayscale-0"
+                  loading="lazy" format="webp" provider="cloudinary" :src="picture" />
               </picture>
             </NuxtLink>
           </li>

@@ -90,3 +90,21 @@ export const useLearnStack = () => useState("ui-learnStack", () => [
         btn: `Library`,
     },
 ])
+export const useStory = () => useState("ui-story", () =>
+    [
+        {
+            title: "Perjalanan pertama",
+            deskripsi: `Perjalanan pertama saya dalam memulai belajar tentang Front-end Development, baca selengkapnya`,
+            date: `Oct 1, 2021 • Life`,
+            picture: `/v1683000561/portofolio/kehidupan.jpg`,
+            url: "https://medium.com/@dimas.ooktavian.17/perjalanan-pertama-9cb05d8f1804",
+        },
+        // {
+        //     link: `https://medium.com/@dimas.ooktavian.17`,
+        //     title: "elemental - web",
+        //     deskripsi: `The colors and overall poster really inspired me, so I created it in @figma over the weekend 😍`,
+        //     date: `Aug 22, 2022 • Mirror`,
+        //     picture: `/v1682158940/portofolio/fire.png`,
+        // },
+    ]
+)

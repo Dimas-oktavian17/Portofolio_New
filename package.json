@@ -2,7 +2,6 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
     "build": "nuxt build",
     "dev": "nuxt dev --watch",
     "generate": "nuxt generate",
