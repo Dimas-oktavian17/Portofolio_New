@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* container */
 /* @import url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap"); */
@@ -108,7 +107,6 @@
 }
 
 @layer components {
-
     .gradient {
         @apply dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-[#ffe9f44a] to-[#eaf3ff80];
     }
@@ -126,7 +124,8 @@
     }
 
     .pages {
-        @apply transition-all bg-top bg-no-repeat bg-cover bg-[url('/img/Lightmb.svg')] dark:bg-[url('/img/Darkmb.svg')] lg:dark:bg-[url('/img/Dark-bg.svg')] lg:bg-[url('/img/BG.svg')];
+        @apply  bg-top bg-no-repeat bg-cover bg-[url('/img/Lightmb.svg')]  dark:bg-[url('/img/Darkmb.svg')] lg:dark:bg-[url('/img/Dark-bg.svg')]
+        /*  lg:bg-[url('/img/BG.svg')]; */
     }
 
     .container {

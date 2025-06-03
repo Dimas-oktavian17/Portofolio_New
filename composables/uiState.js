@@ -68,8 +68,6 @@ export const useTechStack = () => useState("ui-techStack", () => [
         deskripsi: `Firebase adalah platform pengembangan aplikasi yang membantu Anda mem-build serta mengembangkan aplikasi dan game favorit pengguna. Didukung oleh Google dan dipercaya oleh jutaan bisnis di seluruh dunia.`,
         btn: `Backend as a Services`
     },
-])
-export const useLearnStack = () => useState("ui-learnStack", () => [
     {
         picture: `skill-icons:typescript`,
         title: "Typescript",
@@ -83,12 +81,73 @@ export const useLearnStack = () => useState("ui-learnStack", () => [
         btn: `Design`,
     },
     {
+        "picture": "logos:hono",
+        "title": "Hono.js",
+        "deskripsi": "Hono.js adalah framework web minimalis dan cepat berbasis Deno dan Node.js, dirancang untuk membangun aplikasi server-side yang ringan dan efisien.",
+        "btn": "Web Framework"
+      },
+      {
+          "picture": "skill-icons:prisma",
+        "title": "Prisma",
+        "deskripsi": "Prisma adalah ORM modern yang memudahkan akses database dengan type-safe query dan migrasi database yang mudah digunakan.",
+        "btn": "Database ORM"
+      },
+      {
+        "picture": "skill-icons:githubactions-dark",
+        "title": "CI/CD",
+        "deskripsi": "CI/CD adalah praktik pengembangan perangkat lunak yang mengotomatiskan build, test, dan deployment agar aplikasi dapat dirilis lebih cepat dan andal.",
+        "btn": "DevOps Practice"
+      },
+      {
+          "picture": "skill-icons:nuxtjs-dark",
+        "title": "Nuxt.js",
+        "deskripsi": "Nuxt.js adalah framework berbasis Vue.js untuk membangun aplikasi universal (SSR) dengan pengaturan yang mudah dan optimasi performa.",
+        "btn": "Web Framework"
+      },
+      {
+          "picture": "logos:mysql",
+        "title": "MySQL",
+        "deskripsi": "MySQL adalah sistem manajemen basis data relasional open-source yang banyak digunakan untuk menyimpan dan mengelola data secara efisien.",
+        "btn": "Database"
+      }
+      
+])
+export const useLearnStack = () => useState("ui-learnStack", () => [
+    {
         picture: `material-symbols:library-add-check`,
         style: `text-[#22242C] dark:text-[#ECEDEE]`,
         title: "Library",
-        deskripsi: `Merupakan sebuah perpustakaan yang bertujuan untuk mempermudah pengembangan Front - end Development, Saya juga belajar berbagai macam library sesuai kebutuhan untuk pengembangan Front - end Development.`,
+        deskripsi: `Merupakan sebuah perpustakaan yang bertujuan untuk mempermudah pengembangan Front - end Development, Saya juga belajar berbagai macam library sesuai kebutuhan untuk pengembangan Front - end Development dan Back - end Development.`,
         btn: `Library`,
     },
+    {
+        picture: "skill-icons:docker",
+        style: "text-[#22242C] dark:text-[#ECEDEE]",
+        title: "Docker",
+        deskripsi: "Docker adalah platform open-source untuk mengembangkan, mengirim, dan menjalankan aplikasi dalam kontainer yang ringan dan portabel.",
+        btn: "DevOps Tool"
+      },
+      {
+        picture: "skill-icons:laravel-dark",
+        style: "text-[#22242C] dark:text-[#ECEDEE]",
+        title: "Laravel",
+        deskripsi: "Laravel adalah framework PHP berbasis MVC yang elegan dan ekspresif, dirancang untuk membuat pengembangan aplikasi web menjadi lebih efisien dan menyenangkan.",
+        btn: "Web Framework"
+      },
+      {
+          picture: "devicon:livewire",
+        style: "text-[#22242C] dark:text-[#ECEDEE]",
+        title: "Livewire",
+        deskripsi: "Livewire adalah framework full-stack untuk Laravel yang memungkinkan interaktivitas seperti SPA tanpa harus menggunakan banyak JavaScript.",
+        btn: "Frontend Tool"
+      },
+      {
+        picture: "simple-icons:laravel",
+        style: "text-[#22242C] dark:text-[#ECEDEE]",
+        title: "Eloquent ORM",
+        deskripsi: "Eloquent adalah ORM bawaan Laravel yang menyediakan cara elegan dan intuitif untuk berinteraksi dengan database menggunakan model PHP.",
+        btn: "Database ORM"
+      }
 ])
 export const useStory = () => useState("ui-story", () =>
     [
