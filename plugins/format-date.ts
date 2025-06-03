@@ -12,7 +12,7 @@ import { defineNuxtPlugin } from '#app'
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      formatDate: (dateStr) =>
+      formatDate: (dateStr:any) =>
         dateStr
           ? new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(
               new Date(dateStr)

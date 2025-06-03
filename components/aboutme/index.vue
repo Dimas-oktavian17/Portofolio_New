@@ -59,7 +59,7 @@ const picture = ref("/v1682418516/portofolio/setup.jpg");
   <div class="flex flex-col items-center gap-4 px-4 transition-all py-28 lg:py-24">
     <div class="flex flex-col items-center gap-[.938rem] pb-[.75rem] w-[15.563rem]">
       <div class="">
-        <h1 class="text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-[#DC79FF] to-[#256BFA]">
+        <h1 class="text-2xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-[#DC79FF] to-[#256BFA]">
           {{ title }}
         </h1>
       </div>
@@ -78,7 +78,8 @@ const picture = ref("/v1682418516/portofolio/setup.jpg");
     </div>
     <div class="flex flex-col items-center justify-center pt-28">
       <picture>
-        <nuxt-img class="w-auto h-auto transition-all duration-300 cursor-pointer grayscale hover:grayscale-0 rounded-3xl"
+        <nuxt-img
+          class="w-auto h-auto transition-all duration-300 cursor-pointer grayscale hover:grayscale-0 rounded-3xl"
           loading="lazy" format="webp" provider="cloudinary" :src="picture" />
       </picture>
       <h1 class="pt-4 font-semibold text-xs uppercase text-[#4A576FB2]/70 dark:text-white/70">
