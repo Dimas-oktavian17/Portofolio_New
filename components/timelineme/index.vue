@@ -2,7 +2,7 @@
 const title = ref(`Timeline`);
 const deskripsi = ref(
   `
-  Tampilan linier dari beberapa proses saya belajar Front-end Development sampai sekarang. Saya juga membagikanya pada medium dan linkendin.
+  Tampilan linier dari jenjang pendidikan dan pengalaman kerja.
   `
 );
 </script>

@@ -1,37 +1,14 @@
 <script setup>
 const title = ref(`Stack Technology`);
 const learnTitle = ref(`current learning`);
-
-const grid = ref(false)
-const flex = ref(true)
-const handleGrid = () => {
-  flex.value = false
-  grid.value = true
-}
-const handleFlex = () => {
-  flex.value = true
-  grid.value = false
-}
-const techStack = useTechStack()
-const learnStack = useLearnStack()
+const hamburgerStores = hamburgerStore();
+const techStack = useTechStack();
+const learnStack = useLearnStack();
 </script>
 
 <template>
-  <!-- <ClientOnly> -->
-  <div class="flex flex-row items-center justify-center gap-4">
-    <button @click="handleFlex"
-      class="px-4 py-4 rounded-full bg-slate-50 dark:bg-transparent dark:border dark:border-[#ecedee] group transition-all">
-      <Icon name="material-symbols:flex-direction-rounded"
-        class="text-[#5C1BAE]/80 dark:text-[#ECEDEE] w-12 h-auto group-hover:rotate-45 group-hover:transition-all transition-all " />
-    </button>
-    <button @click="handleGrid"
-      class="px-4 py-4 rounded-full bg-slate-50 dark:bg-transparent dark:border dark:border-[#ecedee]  group transition-all">
-      <Icon name="teenyicons:grid-layout-solid"
-        class="text-[#8C007E]/80 dark:text-[#ECEDEE] w-12 h-auto group-hover:rotate-45 group-hover:transition-all transition-all " />
-    </button>
-  </div>
-  <!-- </ClientOnly> -->
-  <div v-if="flex" class="flex flex-row items-center justify-center pt-[10.75rem]">
+  <ButtonGridFlex @action="hamburgerStores.setGrid" />
+  <div v-if="!hamburgerStores.showGrid.value" class="flex flex-row items-center justify-center pt-[10.75rem]">
     <div class="flex flex-col items-center justify-center gap-12 w-[500px]">
       <!-- current tech stack -->
       <h1 class="text-base font-bold capitalize lg:pl-0 text-uniqe/70 dark:text-[#ECEDEE]/70">
@@ -103,7 +80,7 @@ const learnStack = useLearnStack()
       </div>
     </div>
   </div>
-  <div v-if="grid" class="flex flex-row items-center justify-center pt-[10.75rem]">
+  <div v-if="hamburgerStores.showGrid.value" class="flex flex-row items-center justify-center pt-[10.75rem]">
     <div class="flex flex-col items-center justify-center gap-12 w-[500px]">
       <!-- current tech stack -->
       <h1 class="text-base font-bold capitalize lg:pl-0 text-uniqe/70 dark:text-[#ECEDEE]/70">

@@ -2,7 +2,7 @@
 definePageMeta({
     pageTransition: false,
     layoutTransition: false
-})
+});
 const { $formatDate } = useNuxtApp();
 const { path } = useRoute();
 const cleanPath = path.replace(/\/+$/, '');
@@ -101,8 +101,8 @@ function mode(theme) {
                                 <div
                                     class="flex flex-row items-center justify-center mt-4 transition-all duration-500 md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
                                     <button type="button" aria-label="switchMode" @click="
-                        mode($colorMode.preference === 'dark' ? 'light' : 'dark')
-                        " class="mr-4 sm:hidden group lg:pr-4">
+                                        mode($colorMode.preference === 'dark' ? 'light' : 'dark')
+                                        " class="mr-4 sm:hidden group lg:pr-4">
                                         <!-- moon -->
                                         <nuxt-icon name="moon"
                                             class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
@@ -118,21 +118,21 @@ function mode(theme) {
                                         <span class="sr-only">Open main menu</span>
                                         <div class="flex flex-col items-end pr-4">
                                             <p :class="{
-                        ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded':
-                            navOpen,
-                    }"
+                                                ' origin-bottom-left rotate-[0deg] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded':
+                                                    navOpen,
+                                            }"
                                                 class="origin-bottom-left rotate-45 pb-1 mb-[2px] dark:bg-white bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded">
                                             </p>
                                             <p :class="{
-                        ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition-all w-3 h-[1.33px] rounded':
-                            navOpen,
-                    }"
+                                                ' dark:bg-white origin-bottom-left scale-105  bg-[#0A0A0D] transition-all w-3 h-[1.33px] rounded':
+                                                    navOpen,
+                                            }"
                                                 class="dark:bg-white origin-bottom-left scale-0 rotate-0 pb-1 mb-[2px] bg-[#0A0A0D] transition-all w-2 h-[1.33px] rounded">
                                             </p>
                                             <p :class="{
-                        'origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition-all h-[1.33px]  rounded':
-                            navOpen,
-                    }"
+                                                'origin-top-left dark:bg-white rotate-[0deg] bg-[#0A0A0D] transition-all h-[1.33px]  rounded':
+                                                    navOpen,
+                                            }"
                                                 class="origin-top-left dark:bg-white pb-1 mb-[2px] -rotate-45 bg-[#0A0A0D] transition-all w-5 h-[1.33px] rounded">
                                             </p>
                                         </div>
@@ -156,8 +156,8 @@ function mode(theme) {
                                     </li>
                                     <li class="flex-col items-center justify-center hidden lg:flex">
                                         <button type="button" aria-label="switchMode" @click="
-                        mode($colorMode.preference === 'dark' ? 'light' : 'dark')
-                        " class="group lg:pr-4">
+                                            mode($colorMode.preference === 'dark' ? 'light' : 'dark')
+                                            " class="group lg:pr-4">
                                             <!-- moon -->
                                             <nuxt-icon name="moon"
                                                 class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
@@ -227,7 +227,8 @@ function mode(theme) {
                                             class="absolute text-sm italic font-light -top-8 leading-sm text-typography_primary/75 dark:text-typography_primary_dark/75">(Updated:
                                             {{ $formatDate(doc.dateUpdated) }})</span>
                                         <!-- Blog content -->
-                                        <ContentRenderer :value="doc" class="max-w-3xl py-8 mx-auto dark:text-white" />
+                                        <ContentRenderer :value="doc"
+                                            class="max-w-3xl py-8 mx-auto prose no-underline prose-a:no-underline prose-a:dark:text-white prose-code:dark:text-inherit dark:prose-headings:fill-white dark:text-white" />
                                     </article>
                                 </div>
                             </div>

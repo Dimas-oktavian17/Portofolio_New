@@ -1,215 +1,63 @@
-<script setup>
-// modal
-import { ModalsContainer, VueFinalModal } from "vue-final-modal";
-const getInitialValues = () => ({
+<script setup lang="ts">
+import { VueFinalModal } from 'vue-final-modal';
+import type { ProjectData } from '~/types/stepper';
+// Define the type for a single project data
+
+// Define props to receive the array of projects
+const props = defineProps<{
+  projects: ProjectData[]; // Now accepts an array of projects
+}>();
+
+// State for the currently open modal
+const galleryStores = galleryStore();
+const { showModal, currentModalProject } = galleryStores;
+// action
+const openProjectModal = (project: ProjectData) => galleryStores.openProjectModal(project);
+
+// Default modal options (can be global for all modals)
+const modalOptions = {
   teleportTo: "body",
-  modelValue: false,
-  displayDirective: "if",
-  hideOverlay: false,
+  displayDirective: "if" as const,
+  hideOverlay: true,
   overlayTransition: "vfm-slide-up",
   contentTransition: "vfm-slide-up",
   clickToClose: true,
   escToClose: true,
-  background: "non-interactive",
+  background: "non-interactive" as const,
   lockScroll: true,
-  swipeToClose: "none",
-});
-const getInitialValues2 = () => ({
-  teleportTo: "body",
-  modelValue: false,
-  displayDirective: "if",
-  hideOverlay: false,
-  overlayTransition: "vfm-slide-up",
-  contentTransition: "vfm-slide-up",
-  clickToClose: true,
-  escToClose: true,
-  background: "non-interactive",
-  lockScroll: true,
-  swipeToClose: "none",
-});
-const getInitialValues3 = () => ({
-  teleportTo: "body",
-  modelValue: false,
-  displayDirective: "if",
-  hideOverlay: false,
-  overlayTransition: "vfm-slide-up",
-  contentTransition: "vfm-slide-up",
-  clickToClose: true,
-  escToClose: true,
-  background: "non-interactive",
-  lockScroll: true,
-  swipeToClose: "none",
-});
-const getInitialValues4 = () => ({
-  teleportTo: "body",
-  modelValue: false,
-  displayDirective: "if",
-  hideOverlay: false,
-  overlayTransition: "vfm-slide-up",
-  contentTransition: "vfm-slide-up",
-  clickToClose: true,
-  escToClose: true,
-  background: "non-interactive",
-  lockScroll: true,
-  swipeToClose: "none",
-});
-const options = ref(getInitialValues());
-function reset() {
-  options.value = getInitialValues();
-}
-const options2 = ref(getInitialValues2());
-function reset2() {
-  options2.value = getInitialValues2();
-}
-const options3 = ref(getInitialValues3());
-function reset3() {
-  options3.value = getInitialValues3();
-}
-const options4 = ref(getInitialValues4());
-function reset4() {
-  options4.value = getInitialValues4();
-}
-// slider & modal data
-const oneMore = reactive([
-  {
-    link: `https://psb.smkkawung1sby.sch.id/`,
-    live: "Preview",
-    preview: "material-symbols:search-rounded",
-  },
-]);
-const twoMore = reactive([
-  {
-    link: `https://volcano-vue.vercel.app/`,
-    live: "Preview",
-    preview: "material-symbols:search-rounded",
-  },
-  {
-    link: `https://github.com/Dimas-oktavian17/Volcano-vue.git`,
-    live: "Github",
-    preview: "uil:github",
-  },
-]);
-const threeMore = reactive([
-  {
-    link: `https://mstskp-id.vercel.app/`,
-    live: "Preview",
-    preview: "material-symbols:search-rounded",
-  },
-  {
-    link: `https://github.com/Dimas-oktavian17/Mtskp--arrayid.git`,
-    live: "Github",
-    preview: "uil:github",
-  },
-]);
-const fourMore = reactive([
-  // {
-  //   link: `https://url-shortening-api-master-vite-project.vercel.app/`,
-  //   live: "Preview",
-  //   preview: "material-symbols:search-rounded",
-  // },
-  {
-    link: `https://github.com/Dimas-oktavian17/shortlink-vue.git`,
-    live: "Github",
-    preview: "uil:github",
-  },
-]);
-const one = reactive({
-  picture: "/v1681990026/portofolio/PPDB.png",
-  title: `Website PPDB Kawung 1`,
-  read: "Read More",
-  modal: `Merupakan website pendaftaran peserta baru, bagi siswa yang ingin melanjutkan pendidikan di SMK Kawung 1 Surabaya.
-  Website ini saya buat atas permintaan sekolah saya, dan website ini saya buat menggunakan js,tailwindcss dll.
-  Pada project ini saya bertugas fokus pada tampilan front-end saja, bagian backend'nya telah dikerjakan sendiri oleh tim IT disekolah.
-  `,
-});
-const two = reactive({
-  picture: "/v1681990026/portofolio/mountain.png",
-  title: `Volcano`,
-  read: "Read More",
-  modal: `Merupakan website pencarian gunung berapi yang ada di Indonesia, website ini dibuat menggunakan bantuan API dari Yogi Saputro.
-  Website ini memiliki beberapa fitur seperti search, filter dan clear. Untuk info lebih lanjut kalian bisa mencoba'nya sendiri.`,
-});
-const three = reactive({
-  picture: "/v1681990025/portofolio/vue.png",
-  title: `MSTSKP Landing Page`,
-  read: "Read More",
-  modal: `Merupakan sebuah landing page sedherhana yang dibuat melalui slincing figma dari array id, website ini dibuat dengan vue js 3 serta berbagai macam libray animation`,
-});
-const four = reactive({
-  picture: "/v1681990026/portofolio/shorlink.png",
-  title: `Short Url`,
-  read: "Read More",
-  modal: `Merupakan website yang saya buat berdasarkan tantangan dari front-end mentor, website ini memiliki fungsi untuk mengkonversi link yang panjang menjadi lebih ringkas.`,
-});
+  swipeToClose: "none" as const,
+};
 </script>
+
 <template>
-  <aside class="flex flex-col items-center justify-center  text-center">
-    <!-- 1 -->
-    <div class="flex lg:flex-row flex-col">
-      <article class="lg:w-1/2 w-full lg:mr-8 mb-8 lg:mb-0 group dark:from-[#1E1C32]/50 rounded-2xl 
-      dark:to-[#2B161D]/50 bg-gradient-to-r 
-      from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50">
+  <div class="flex flex-col items-center justify-center text-center">
+    <div v-for="(project, index) in projects" :key="index" :class="{
+      'flex lg:flex-row flex-col': index % 2 === 0, // Start a new row for every two projects
+      'mt-16': index >= 2 && index % 2 === 0 // Add top margin to new rows, except the first one
+    }" class="w-full">
+      <article
+        class="group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50"
+        :class="{
+          'lg:w-1/2 w-full lg:mr-8 mb-8 lg:mb-0': (index % 2 === 0 && index < projects.length - 1) || (index % 2 === 0 && index === projects.length - 1 && projects.length % 2 !== 0), // Styles for the first item in a pair
+          'lg:w-1/2 w-full': index % 2 !== 0 || (index % 2 === 0 && projects.length % 2 === 0), // Styles for the second item in a pair, or single item if odd count
+        }">
         <div>
           <picture>
-            <nuxt-img :alt="one.title" class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
-              loading="lazy" format="webp" provider="cloudinary" :src="one.picture" />
+            <nuxt-img :alt="project.title"
+              class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl" loading="lazy"
+              format="webp" provider="cloudinary" :src="project.picture" />
           </picture>
           <h1 class="pt-16 text-3xl font-bold text-center text-[#22242C] dark:text-[#ECEDEE]">
-            {{ one.title }}
+            {{ project.title }}
           </h1>
         </div>
-        <!-- preview -->
         <div class="flex flex-row items-center justify-between py-4">
-          <button @click="options.modelValue = true"
+          <button @click="openProjectModal(project)"
             class="w-1/2 py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]">
-            {{ one.read }}
+            <!-- {{ project.read }} -->
             <Icon name="uil:arrow-right" class="transition-all duration-500 group-hover:ml-3" />
           </button>
-          <div v-for="(item, index) in oneMore" :key="index"
-            class="flex flex-col items-center justify-center w-1/2 text-white">
-            <NuxtLink :aria-label="item.live"
-              class="transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]"
-              :to="item.link" target="_blank">
-              <Icon :name="item.preview" class="transition-all duration-500 group-hover:rotate-12 dark:text-white" />
-              {{ item.live }}
-            </NuxtLink>
-          </div>
-        </div>
-        <!-- modal -->
-        <VueFinalModal v-model="options.modelValue" :teleport-to="options.teleportTo"
-          :display-directive="options.displayDirective" :hide-overlay="options.hideOverlay"
-          :overlay-transition="options.overlayTransition" :content-transition="options.contentTransition"
-          :click-to-close="options.clickToClose" :esc-to-close="options.escToClose" :background="options.background"
-          :lock-scroll="options.lockScroll" :swipe-to-close="options.swipeToClose"
-          class="flex items-center justify-center" content-class="max-w-xl p-4 mx-4 space-y-2 modall">
-          <h1 class="text-xl font-semibold text-[#22242C] dark:text-[#ECEDEE]">
-            {{ one.title }}
-          </h1>
-          <p class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            {{ one.modal }}
-          </p>
-          <button @click="options.modelValue = false" class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            Close
-          </button>
-        </VueFinalModal>
-        <ModalsContainer />
-      </article>
-      <!-- end one -->
-      <!-- 2 -->
-      <article
-        class="lg:w-1/2 w-full  group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50">
-        <div>
-          <picture>
-            <nuxt-img :alt="two.title" class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
-              loading="lazy" format="webp" provider="cloudinary" :src="two.picture" />
-          </picture>
-          <h1 class="pt-16 text-3xl font-bold text-center text-[#22242C] dark:text-[#ECEDEE]">
-            {{ two.title }}
-          </h1>
-        </div>
-        <!-- preview -->
-        <div class="flex flex-row items-center justify-between py-4">
-          <div v-for="(item, index) in twoMore" :key="index"
+          <div v-for="(item, linkIndex) in project.links" :key="linkIndex"
             class="flex flex-col items-center justify-center w-1/2 text-white">
             <NuxtLink :aria-label="item.live"
               class="transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]"
@@ -220,145 +68,25 @@ const four = reactive({
             </NuxtLink>
           </div>
         </div>
-        <!-- read more -->
-        <button @click="options2.modelValue = true"
-          class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]">
-          {{ two.read }}
-          <Icon name="uil:arrow-right" class="transition-all duration-500 group-hover:ml-3" />
-        </button>
-        <!-- modal -->
-        <VueFinalModal v-model="options2.modelValue" :teleport-to="options2.teleportTo"
-          :display-directive="options2.displayDirective" :hide-overlay="options2.hideOverlay"
-          :overlay-transition="options2.overlayTransition" :content-transition="options2.contentTransition"
-          :click-to-close="options2.clickToClose" :esc-to-close="options2.escToClose" :background="options2.background"
-          :lock-scroll="options2.lockScroll" :swipe-to-close="options2.swipeToClose"
-          class="flex items-center justify-center" content-class="max-w-xl p-4 mx-4 space-y-2 modall">
-          <h1 class="text-xl font-semibold text-[#22242C] dark:text-[#ECEDEE]">
-            {{ two.title }}
-          </h1>
-          <p class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            {{ two.modal }}
-          </p>
-          <button @click="options2.modelValue = false" class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            Close
-          </button>
-        </VueFinalModal>
-        <ModalsContainer />
       </article>
     </div>
-
-    <div class="flex lg:flex-row flex-col mt-16">
-      <!-- tiga -->
-      <article
-        class="lg:w-1/2 w-full  lg:mr-8 mb-8 lg:mb-0 group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50">
-        <div>
-          <picture>
-            <nuxt-img :alt="three.title" class="transition-all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
-              loading="lazy" format="webp" provider="cloudinary" :src="three.picture" />
-          </picture>
-          <h1 class="pt-16 text-3xl font-bold text-center text-[#22242C] dark:text-[#ECEDEE]">
-            {{ three.title }}
-          </h1>
-        </div>
-        <!-- preview -->
-        <div class="flex flex-row items-center justify-between py-4">
-          <div v-for="(item, index) in threeMore" :key="index"
-            class="flex flex-col items-center justify-center w-1/2 text-white">
-            <NuxtLink :aria-label="item.live"
-              class="transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]"
-              :to="item.link" target="_blank">
-              <Icon :name="item.preview" size="2rem"
-                class="transition-all duration-500 group-hover:rotate-12 dark:text-white" />
-              {{ item.live }}
-            </NuxtLink>
-          </div>
-        </div>
-        <!-- read more -->
-        <button @click="options3.modelValue = true"
-          class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]">
-          {{ three.read }}
-          <Icon name="uil:arrow-right" class="transition-all duration-500 group-hover:ml-3" />
-        </button>
-        <!-- modal -->
-        <VueFinalModal v-model="options3.modelValue" :teleport-to="options3.teleportTo"
-          :display-directive="options3.displayDirective" :hide-overlay="options3.hideOverlay"
-          :overlay-transition="options3.overlayTransition" :content-transition="options3.contentTransition"
-          :click-to-close="options3.clickToClose" :esc-to-close="options3.escToClose" :background="options3.background"
-          :lock-scroll="options3.lockScroll" :swipe-to-close="options3.swipeToClose"
-          class="flex items-center justify-center" content-class="max-w-xl p-4 mx-4 space-y-2 modall">
-          <h1 class="text-xl font-semibold text-[#22242C] dark:text-[#ECEDEE]">
-            {{ three.title }}
-          </h1>
-          <p class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            {{ three.modal }}
-          </p>
-          <button @click="options3.modelValue = false" class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            Close
-          </button>
-        </VueFinalModal>
-        <ModalsContainer />
-      </article>
-      <!-- four -->
-      <article
-        class="lg:w-1/2 w-full  group dark:from-[#1E1C32]/50 rounded-2xl dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50">
-        <div>
-          <picture>
-            <nuxt-img :alt="four.title" class="transition- all group-hover:rounded-2xl group-hover:scale-95 rounded-2xl"
-              loading="lazy" format="webp" provider="cloudinary" :src="four.picture" />
-          </picture>
-          <h1 class="pt-16 text-3xl font-bold text-center text-[#22242C] dark:text-[#ECEDEE]">
-            {{ four.title }}
-          </h1>
-        </div>
-        <!-- preview -->
-        <div class="flex flex-row items-center justify-between py-4">
-          <div v-for="(item, index) in fourMore" :key="index"
-            class="flex flex-col items-center justify-center w-1/2 text-white">
-            <NuxtLink :aria-label="item.live"
-              class="transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]"
-              :to="item.link" target="_blank">
-              <Icon :name="item.preview" size="2rem"
-                class="transition-all duration-500 group-hover:rotate-12 dark:text-white" />
-              {{ item.live }}
-            </NuxtLink>
-          </div>
-        </div>
-        <!-- read more -->
-        <button @click="options4.modelValue = true"
-          class="py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]">
-          {{ four.read }}
-          <Icon name="uil:arrow-right" class="transition-all duration-500 group-hover:ml-3" />
-        </button>
-        <!-- modal -->
-        <VueFinalModal v-model="options4.modelValue" :teleport-to="options4.teleportTo"
-          :display-directive="options4.displayDirective" :hide-overlay="options4.hideOverlay"
-          :overlay-transition="options4.overlayTransition" :content-transition="options4.contentTransition"
-          :click-to-close="options4.clickToClose" :esc-to-close="options4.escToClose" :background="options4.background"
-          :lock-scroll="options4.lockScroll" :swipe-to-close="options4.swipeToClose"
-          class="flex items-center justify-center" content-class="max-w-xl p-4 mx-4 space-y-2 modall">
-          <h1 class="text-xl font-semibold text-[#22242C] dark:text-[#ECEDEE]">
-            {{ four.title }}
-          </h1>
-          <p class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            {{ four.modal }}
-          </p>
-          <button @click="options4.modelValue = false" class="text-[#22242C]/70 dark:text-[#ECEDEE]/70">
-            Close
-          </button>
-        </VueFinalModal>
-        <ModalsContainer />
-      </article>
-    </div>
-
-  </aside>
+    <slot />
+  </div>
 </template>
+
 <style scoped>
-.modal {
-  position: fixed;
-  z-index: 999;
-  top: 20%;
-  left: 50%;
-  width: 300px;
-  margin-left: -150px;
+.modall {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  /* Add these lines for scrollable content */
+  max-height: 80vh;
+  /* Or a suitable pixel value like 500px */
+  overflow-y: auto;
+  /* This enables vertical scrolling when content exceeds max-height */
+}
+
+.dark .modall {
+  background-color: #2c2c2c;
 }
 </style>

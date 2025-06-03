@@ -9,7 +9,7 @@ const header = ref({
 const footer = ref({
   title: "Download my curriculum vitae at",
   subtitle: "@here",
-  cv: "http://tinyurl.com/bdf99ft4",
+  cv: "https://drive.google.com/file/d/1x_GHNi6RcoZy65vQSTHSWHjt5bs-Dp8x/view?usp=sharing",
   end: `, thank you`,
 });
 </script>
