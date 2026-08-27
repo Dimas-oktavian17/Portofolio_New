@@ -33,17 +33,14 @@ export default defineNuxtConfig({
   },
   modules: [
     // '@nuxtjs/tailwindcss',
+    '@nuxt/image',
     "@nuxtjs/color-mode",
-    "@nuxt/image-edge",
-    "nuxt-icons",
-    "nuxt-icon",
     '@nuxt/icon',
     '@vueuse/nuxt',
     'vue3-carousel-nuxt',
     '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxtjs/seo',
-    'nuxt-shiki',
     '@nuxtjs/cloudinary'
     // 'pinceau/nuxt',
   ],

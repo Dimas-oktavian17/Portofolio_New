@@ -17,7 +17,7 @@ export const supportStore = () => {
             style:
                 "rounded flex flex-row items-center justify-center gap-[2px] py-[6px] px-3 bg-gradient-to-r from-[#F0D6FF] to-[#D3CDFF] text-[#5C1BAE]/80 dark:text-[#ECEDEE] dark:from-[#FF2497]  dark:to-[#8D2DE3] transition-all duration-500 hover:opacity-60",
             link: `https://www.linkedin.com/in/dimas-oktavian/`,
-            icon: "ion:logo-linkedin",
+            icon: "mdi:linkedin",
             iconS: `text-[#5C1BAE]/80 dark:text-[#ECEDEE]`,
         },
 
@@ -27,14 +27,14 @@ export const supportStore = () => {
             id: 1,
             title: "Work Experience",
             style: "rounded max-w-xs flex flex-row items-center justify-center gap-[2px] py-[6px] px-3 bg-gradient-to-r from-[#FBCEFF] to-[#FFD1D1] text-[#8C007E]/80 dark:text-[#ECEDEE] dark:from-[#8D2DE3]  dark:to-[#FF2497] transition-all duration-500 hover:opacity-60",
-            icon: "material-symbols-light:home-work-outline",
+            icon: "material-symbols:home-work-outline",
             iconS: `text-[#5C1BAE]/80 dark:text-[#ECEDEE]`,
         },
         {
             id: 2,
             title: "Education Experience",
             style:"rounded max-w-xs flex flex-row items-center justify-center gap-[2px] py-[6px] px-3 bg-gradient-to-r from-[#FBCEFF] to-[#FFD1D1] text-[#8C007E]/80 dark:text-[#ECEDEE] dark:from-[#8D2DE3]  dark:to-[#FF2497] transition-all duration-500 hover:opacity-60",
-            icon: "qlementine-icons:education-16",
+            icon: "mdi:school",
             iconS: `text-[#8C007E]/80 dark:text-[#ECEDEE]`,
         },
     ]);

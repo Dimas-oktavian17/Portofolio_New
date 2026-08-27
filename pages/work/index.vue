@@ -65,7 +65,7 @@ onMounted(async()=>{
       </workme>
       <Stepper v-if="!hamburgerStores.showGrid.value" :isButton="true" :data="projectsResultComputed"
         @view="openProjectModal">
-        <Icon size="1.5rem" mode="css" class="text-blue-600 dark:bg-gray-800" name="gravity-ui:code" />
+        <Icon size="1.5rem" mode="css" class="text-blue-600 dark:bg-gray-800" name="codicon:code" />
       </Stepper>
       <project v-if="hamburgerStores.showGrid.value" :data="projects" />
       <Modal :content="result" v-if="currentModalProject !== null" v-model="showModal" :data="currentModalProject"

@@ -104,10 +104,10 @@ function mode(theme) {
                                         mode($colorMode.preference === 'dark' ? 'light' : 'dark')
                                         " class="mr-4 sm:hidden group lg:pr-4">
                                         <!-- moon -->
-                                        <nuxt-icon name="moon"
+                                        <Icon name="material-symbols:dark-mode"
                                             class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
                                         <!-- sun -->
-                                        <nuxt-icon name="sun"
+                                        <Icon name="material-symbols:light-mode"
                                             class="transition-all dark:hidden group-hover:rotate-12" />
                                     </button>
 
@@ -159,10 +159,10 @@ function mode(theme) {
                                             mode($colorMode.preference === 'dark' ? 'light' : 'dark')
                                             " class="group lg:pr-4">
                                             <!-- moon -->
-                                            <nuxt-icon name="moon"
+                                            <Icon name="material-symbols:dark-mode"
                                                 class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
                                             <!-- sun -->
-                                            <nuxt-icon name="sun"
+                                            <Icon name="material-symbols:light-mode"
                                                 class="transition-all dark:hidden group-hover:rotate-12" />
                                         </button>
                                     </li>

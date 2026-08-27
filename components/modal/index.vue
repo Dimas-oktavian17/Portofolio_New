@@ -46,7 +46,7 @@ const { isVideo,setVideo } =  hamburgerStores;
         class="inline-flex items-end px-4 py-2 text-sm   rounded-lg group text-[#22242C]/70 dark:text-[#ECEDEE]/70 font-bold transition-all  hover:opacity-50 ">
         <Icon size="1.5rem" mode="css"
           class="text-[#22242C]/70 dark:text-[#ECEDEE]/70 font-bold transition-all  hover:opacity-50 dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50 group-hover:ml-2"
-          name="solar:close-circle-linear" />
+          name="mdi:close-circle" />
       </button>
     </div>
     <div class="grid grid-flow-row gap-4 md:grid-cols-2">
