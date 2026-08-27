@@ -37,7 +37,7 @@ defineEmits(['view']);
                         'text-gray-500 dark:text-gray-400': level.name === 'Basic',
                         ' text-yellow-600 dark:text-yellow-400': level.name === 'Medium',
                         ' text-red-600 dark:text-red-400': level.name === 'High',
-                    }" name="eva:hash-outline" />
+                    }" name="mdi:hash" />
                     <span :class="{
                         'text-gray-500 dark:text-gray-400': level.name === 'Basic',
                         ' text-yellow-600 dark:text-yellow-400': level.name === 'Medium',
@@ -67,7 +67,7 @@ defineEmits(['view']);
                     View more
                     <Icon size="1.5rem" mode="css"
                         class="text-[#22242C]/70 dark:text-[#ECEDEE]/70 font-bold transition-all  hover:opacity-50 dark:from-[#1E1C32]/50 dark:to-[#2B161D]/50 bg-gradient-to-r from-[rgba(255,233,244,0.3)]/30 to-[rgba(234,243,255,0.5)]/50 group-hover:ml-2"
-                        name="solar:arrow-right-linear" />
+                        name="mdi:arrow-right" />
                 </button>
             </li>
         </ol>

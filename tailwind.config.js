@@ -8,13 +8,14 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
     "./app.vue",
+    "content/**/*.md",
   ],
   theme: {
     fontFamily: {
       display: ["Inter", "sans-serif"],
       profil: ["Tilt Prism", "Tilt Prism"],
     },
-    exstend: {
+    extend: {
       spacing: {
         'nav': '4rem',
         'section_x': '5rem',
@@ -45,4 +46,3 @@ module.exports = {
   },
   plugins: [require("tailwind-scrollbar"), require('@tailwindcss/typography'),],
 };
-

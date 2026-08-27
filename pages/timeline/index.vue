@@ -60,10 +60,10 @@ watch(
       <support :data="supportBtn" :isButton="true" v-on:action="handleToggle" />
       <Stepper :isButton="true" v-if="realtToggle" :data="experinceWork" @view="openProjectModal">
         <Icon size="1.5rem" mode="css" class="text-blue-600 dark:bg-gray-800"
-          name="material-symbols-light:work-outline" />
+          name="material-symbols:work-outline" />
       </Stepper>
       <Stepper v-else :data="experinceEducation">
-        <Icon size="1.5rem" mode="css" class="text-blue-600 dark:bg-gray-800" name="qlementine-icons:education-16" />
+        <Icon size="1.5rem" mode="css" class="text-blue-600 dark:bg-gray-800" name="mdi:school" />
       </Stepper>
       <Modal :content="result" v-if="currentModalProject !== null" v-model="showModal" :data="currentModalProject" :isVideos="false"/>
       <footerr></footerr>
