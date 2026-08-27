@@ -32,7 +32,7 @@ const urlDark = ref("/v1681651613/portofolio/contactDark.svg");
               class="flex flex-row items-center justify-start py-[2px] gap-1 w-full"
             >
               <NuxtLink :to="email">
-                <Icon name="bx:bxl-gmail" class="text-[#1584EB]" />
+                <Icon name="mdi:gmail" class="text-[#1584EB]" />
                 <span
                   class="pl-2 text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#1584EB] from-5% to-[#24D6D9] to-95%"
                 >

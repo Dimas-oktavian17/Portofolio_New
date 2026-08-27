@@ -8,12 +8,12 @@ const medsosIcon = reactive([
   {
     title: "Kunjungi ;inkedin saya",
     url: "https://www.linkedin.com/in/dimas-oktavian/",
-    icon: "linkendin",
+    icon: "mdi:linkedin",
   },
   {
     title: "Kunjungi Instagram saya",
     url: "https://github.com/Dimas-oktavian17",
-    icon: "github",
+    icon: "mdi:github",
   },
   // {
   //   url: "https://www.instagram.com/dimas_okr/",
@@ -52,7 +52,7 @@ const nav = reactive([
                 <!-- linkendin -->
                 <div v-for="icons in medsosIcon" :key="icons" class="ml-2">
                   <NuxtLink :aria-label="icons.title" class="group" :to="icons.url" target="_blank">
-                    <nuxt-icon :name="icons.icon"
+                    <Icon :name="icons.icon"
                       class="transition-all duration-500 group-hover:rotate-12 dark:text-white" />
                   </NuxtLink>
                 </div>
@@ -61,9 +61,9 @@ const nav = reactive([
               <!-- darkmode -->
               <button type="button" aria-label="switchMode" @click="mode($colorMode.preference === 'dark' ? 'light' : 'dark')" class="group lg:pr-4">
                 <!-- moon -->
-                <nuxt-icon name="moon" class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
+                <Icon name="material-symbols:dark-mode" class="hidden transition-all dark:block group-hover:rotate-12 dark:text-white" />
                 <!-- sun -->
-                <nuxt-icon name="sun" class="transition-all dark:hidden group-hover:rotate-12" />
+                <Icon name="material-symbols:light-mode" class="transition-all dark:hidden group-hover:rotate-12" />
               </button>
             </div>
             <!-- end -->

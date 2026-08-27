@@ -131,7 +131,7 @@ export const timelineStore = async () => {
                 {
                     link: `https://github.com/Dimas-oktavian17/Volcano-vue.git`,
                     live: "Github",
-                    preview: "uil:github",
+                    preview: "mdi:github",
                 },
             ],
             images: [
@@ -176,7 +176,7 @@ export const timelineStore = async () => {
                 {
                     link: `https://github.com/Dimas-oktavian17/Mtskp--arrayid.git`,
                     live: "Github",
-                    preview: "uil:github",
+                    preview: "mdi:github",
                 },
             ],
             images: [
@@ -222,7 +222,7 @@ export const timelineStore = async () => {
                 {
                     link: `https://github.com/Dimas-oktavian17/Data-entry-apps.git`,
                     live: "Github",
-                    preview: "uil:github",
+                    preview: "mdi:github",
                 },
             ],
             images: [

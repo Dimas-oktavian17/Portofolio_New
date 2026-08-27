@@ -97,10 +97,7 @@ async function sendEmail(value) {
     </picture>
   </div>
 </template> -->
-<script setup>
-</script>
+<script setup></script>
 <template>
-  <div class="">
-    teas
-  </div>
+    <!-- <div class="">teas</div> -->
 </template>

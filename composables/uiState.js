@@ -135,7 +135,7 @@ export const useLearnStack = () => useState("ui-learnStack", () => [
         btn: "Web Framework"
       },
       {
-          picture: "devicon:livewire",
+          picture: "mdi:lightning-bolt",
         style: "text-[#22242C] dark:text-[#ECEDEE]",
         title: "Livewire",
         deskripsi: "Livewire adalah framework full-stack untuk Laravel yang memungkinkan interaktivitas seperti SPA tanpa harus menggunakan banyak JavaScript.",

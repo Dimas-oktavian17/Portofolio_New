@@ -4,7 +4,7 @@ const header = ref({
   subtitle: `realdms`,
   deskripsi: `Passion dalam Front-end Development. Saya juga menceritakan kisah di medium . Saya menghabiskan sebagian besar waktu saya membuat project dan belajar teknologi dalam Front-end Development.`,
   link: `/about`,
-  picture: "ic:baseline-waving-hand",
+  picture: "mdi:hand-wave",
 });
 const footer = ref({
   title: "Download my curriculum vitae at",

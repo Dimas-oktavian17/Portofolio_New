@@ -55,7 +55,7 @@ const modalOptions = {
           <button @click="openProjectModal(project)"
             class="w-1/2 py-4 text-lg text-center transition-all duration-500 group hover:opacity-70 text-[#22242C] dark:text-[#ECEDEE]">
             <!-- {{ project.read }} -->
-            <Icon name="uil:arrow-right" class="transition-all duration-500 group-hover:ml-3" />
+            <Icon name="mdi:arrow-right" class="transition-all duration-500 group-hover:ml-3" />
           </button>
           <div v-for="(item, linkIndex) in project.links" :key="linkIndex"
             class="flex flex-col items-center justify-center w-1/2 text-white">

@@ -4,10 +4,10 @@ import type { buttonIcons } from '~/types/stepper';
 const props = withDefaults(defineProps<buttonIcons>(),{
 icons: ()=>[
     {
-        name: 'solar:list-line-duotone'
+        name: 'material-symbols:format-list-bulleted'
     },
     {
-        name: 'flowbite:grid-solid'
+        name: 'material-symbols:grid-view'
      },
 ]
 })
